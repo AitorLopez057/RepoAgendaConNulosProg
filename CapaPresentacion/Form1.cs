@@ -5,7 +5,7 @@ namespace CapaPresentacion
 {
     public partial class Form1 : Form
     {
-        Gestion gestion = Program.GlobalConfig.Gestion;
+        Gestion gestion = Program.gestion;
         public Form1()
         {
             InitializeComponent();
@@ -13,12 +13,17 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dgvContactos.DataSource = gestion.ContactosOrdenados();
+            
         }
 
         private void Contactos_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTodosContactos_Click(object sender, EventArgs e)
+        {
+            dgvContactos.DataSource = gestion.ContactosOrdenados();
         }
     }
 }

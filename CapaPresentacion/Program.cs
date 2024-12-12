@@ -7,17 +7,15 @@ using GestionAgenda;
 
 namespace CapaPresentacion
 {
-    internal static class Program
+    public static class Program
     {
 
-        public static class GlobalConfig
-        {
-            public static Gestion Gestion { get; set; } = new Gestion();
-        }
 
+        public static Gestion gestion = new Gestion();
         [STAThread]
         static void Main()
         {
+            gestion = new Gestion();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
