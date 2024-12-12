@@ -18,32 +18,38 @@ namespace Servidores
         }
         public static string ServidorActual ()
         {
-            
+
             string[] servidoresPorDefecto = { "4V-PRO-948*4V-PRO-948\\SQLEXPRESS" };
             if (!Directory.Exists(RUTADIRECTORIO))
             {
                 Directory.CreateDirectory(RUTADIRECTORIO);
-                CrearFichero(servidoresPorDefecto); // todo Como luego vas a preguntar por el fichero esto aquí sobraría
             }
             if (!File.Exists(RUTAFICHERO))
             {
                 CrearFichero(servidoresPorDefecto);
             }
             // TODO Si existía el fichero no controla que tenga la linea servidoresPorDefecto
-            string[] lineas= File.ReadAllLines(RUTAFICHERO);
-            bool reescribir=false;
+
+            string[] lineas = File.ReadAllLines(RUTAFICHERO);
+            bool reescribir = false;
             string servidorDeMaquina = "";
+            if (!lineas.Any(linea => servidoresPorDefecto.Any(defecto => linea.Contains(defecto))))
+            {
+                reescribir = true;
+                lineas = lineas.Concat(servidoresPorDefecto).ToArray();
+            }
             foreach (string linea in lineas)
             {
                 string[] lineaSeparada = linea.Split('*');
+
                 if (lineaSeparada.Length != 2)
                 {
-                    lineas[Array.IndexOf(lineas, linea)]="";
-                    reescribir = true; 
+                    lineas[Array.IndexOf(lineas, linea)] = "";
+                    reescribir = true;
                 }
                 if (Environment.MachineName == lineaSeparada[0])
                 {
-                    servidorDeMaquina= lineaSeparada[1];
+                    servidorDeMaquina = lineaSeparada[1];
                 }
             }
             if (reescribir)
@@ -51,7 +57,7 @@ namespace Servidores
                 File.Delete(RUTAFICHERO);
                 CrearFichero(lineas);
             }
-            if (!string.IsNullOrWhiteSpace( servidorDeMaquina))
+            if (!string.IsNullOrWhiteSpace(servidorDeMaquina))
             {
                 return servidorDeMaquina;
             }
