@@ -78,5 +78,10 @@ namespace GestionAgenda
             }
             return "";
         }
+        public String AnyadirTelefonoContacto()
+        {
+            return "";
+
+        }
     }
 }
