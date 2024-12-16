@@ -37,6 +37,9 @@
             this.txtIdContacto = new System.Windows.Forms.TextBox();
             this.btnTelefonosContacto = new System.Windows.Forms.Button();
             this.lblMensaje = new System.Windows.Forms.Label();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnDarAlta = new System.Windows.Forms.Button();
+            this.btnAñadirTelefonoContacto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonosContacto)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +48,7 @@
             // 
             this.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContactos.Location = new System.Drawing.Point(135, 48);
-            this.dgvContactos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvContactos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.RowHeadersWidth = 51;
             this.dgvContactos.Size = new System.Drawing.Size(901, 370);
@@ -54,7 +57,7 @@
             // btnAltaContactos
             // 
             this.btnAltaContactos.Location = new System.Drawing.Point(176, 453);
-            this.btnAltaContactos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAltaContactos.Margin = new System.Windows.Forms.Padding(4);
             this.btnAltaContactos.Name = "btnAltaContactos";
             this.btnAltaContactos.Size = new System.Drawing.Size(160, 41);
             this.btnAltaContactos.TabIndex = 30;
@@ -64,7 +67,7 @@
             // txtNumeroTelefono
             // 
             this.txtNumeroTelefono.Location = new System.Drawing.Point(817, 462);
-            this.txtNumeroTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTelefono.MaxLength = 9;
             this.txtNumeroTelefono.Name = "txtNumeroTelefono";
             this.txtNumeroTelefono.Size = new System.Drawing.Size(85, 22);
@@ -74,7 +77,7 @@
             // btnContactosTelefono
             // 
             this.btnContactosTelefono.Location = new System.Drawing.Point(580, 454);
-            this.btnContactosTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnContactosTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.btnContactosTelefono.Name = "btnContactosTelefono";
             this.btnContactosTelefono.Size = new System.Drawing.Size(191, 41);
             this.btnContactosTelefono.TabIndex = 28;
@@ -84,7 +87,7 @@
             // btnTodosContactos
             // 
             this.btnTodosContactos.Location = new System.Drawing.Point(371, 454);
-            this.btnTodosContactos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTodosContactos.Margin = new System.Windows.Forms.Padding(4);
             this.btnTodosContactos.Name = "btnTodosContactos";
             this.btnTodosContactos.Size = new System.Drawing.Size(160, 41);
             this.btnTodosContactos.TabIndex = 27;
@@ -95,8 +98,8 @@
             // dgvTelefonosContacto
             // 
             this.dgvTelefonosContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTelefonosContacto.Location = new System.Drawing.Point(539, 612);
-            this.dgvTelefonosContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvTelefonosContacto.Location = new System.Drawing.Point(443, 612);
+            this.dgvTelefonosContacto.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTelefonosContacto.Name = "dgvTelefonosContacto";
             this.dgvTelefonosContacto.RowHeadersWidth = 51;
             this.dgvTelefonosContacto.Size = new System.Drawing.Size(445, 154);
@@ -105,7 +108,7 @@
             // txtIdContacto
             // 
             this.txtIdContacto.Location = new System.Drawing.Point(371, 612);
-            this.txtIdContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdContacto.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdContacto.Name = "txtIdContacto";
             this.txtIdContacto.Size = new System.Drawing.Size(55, 22);
             this.txtIdContacto.TabIndex = 25;
@@ -115,7 +118,7 @@
             // btnTelefonosContacto
             // 
             this.btnTelefonosContacto.Location = new System.Drawing.Point(152, 612);
-            this.btnTelefonosContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTelefonosContacto.Margin = new System.Windows.Forms.Padding(4);
             this.btnTelefonosContacto.Name = "btnTelefonosContacto";
             this.btnTelefonosContacto.Size = new System.Drawing.Size(184, 46);
             this.btnTelefonosContacto.TabIndex = 24;
@@ -133,11 +136,41 @@
             this.lblMensaje.TabIndex = 23;
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(935, 611);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(220, 47);
+            this.btnBorrar.TabIndex = 31;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            // 
+            // btnDarAlta
+            // 
+            this.btnDarAlta.Location = new System.Drawing.Point(935, 664);
+            this.btnDarAlta.Name = "btnDarAlta";
+            this.btnDarAlta.Size = new System.Drawing.Size(220, 47);
+            this.btnDarAlta.TabIndex = 32;
+            this.btnDarAlta.Text = "Dar de Alta";
+            this.btnDarAlta.UseVisualStyleBackColor = true;
+            // 
+            // btnAñadirTelefonoContacto
+            // 
+            this.btnAñadirTelefonoContacto.Location = new System.Drawing.Point(935, 719);
+            this.btnAñadirTelefonoContacto.Name = "btnAñadirTelefonoContacto";
+            this.btnAñadirTelefonoContacto.Size = new System.Drawing.Size(220, 47);
+            this.btnAñadirTelefonoContacto.TabIndex = 33;
+            this.btnAñadirTelefonoContacto.Text = "Añadir Telefono a Conacto";
+            this.btnAñadirTelefonoContacto.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 793);
+            this.Controls.Add(this.btnAñadirTelefonoContacto);
+            this.Controls.Add(this.btnDarAlta);
+            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAltaContactos);
             this.Controls.Add(this.txtNumeroTelefono);
             this.Controls.Add(this.btnContactosTelefono);
@@ -168,6 +201,9 @@
         private System.Windows.Forms.TextBox txtIdContacto;
         private System.Windows.Forms.Button btnTelefonosContacto;
         private System.Windows.Forms.Label lblMensaje;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnDarAlta;
+        private System.Windows.Forms.Button btnAñadirTelefonoContacto;
     }
 }
 

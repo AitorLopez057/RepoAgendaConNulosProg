@@ -53,6 +53,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AñadirTelefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirTelefono.Designer.cs">
+      <DependentUpon>AñadirTelefono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Borrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Borrar.Designer.cs">
+      <DependentUpon>Borrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DarAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DarAlta.Designer.cs">
+      <DependentUpon>DarAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +79,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AñadirTelefono.resx">
+      <DependentUpon>AñadirTelefono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrar.resx">
+      <DependentUpon>Borrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DarAlta.resx">
+      <DependentUpon>DarAlta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
