@@ -41,8 +41,15 @@ namespace GestionAgenda
         }
 
         // Dar de alta un grupo
+        public List<Contactos> contactos()
+        {
+            return null;
+        }
 
-
-
+        //Dar de alta un contacto
+        public String AnyadirContacto()
+        {
+            return "";
+        }
     }
 }
