@@ -46,6 +46,10 @@ namespace GestionAgenda
             return null;
         }
 
-
+        //Dar de alta un contacto
+        public String AnyadirContacto()
+        {
+            return "";
+        }
     }
 }
