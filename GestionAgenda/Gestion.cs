@@ -41,7 +41,10 @@ namespace GestionAgenda
         }
 
         // Dar de alta un grupo
-
+        public List<Contactos> contactos()
+        {
+            return null;
+        }
 
 
     }
