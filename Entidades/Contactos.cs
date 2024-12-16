@@ -21,7 +21,7 @@ namespace Entidades
         }
 
 
-        public Contactos(int idContacto, String nombre, String email, int idGrupo) : this()
+        public Contactos(int idContacto, String nombre, String email, int? idGrupo) : this()
         {
             IdContacto = idContacto;
             Nombre = nombre;
@@ -33,7 +33,7 @@ namespace Entidades
         public int IdContacto { get; set; }
         public string Nombre { get; set; }
         public string Email { get; set; }
-        public int IdGrupo { get; set; }
+        public int? IdGrupo { get; set; }
     
         public virtual Grupos Grupos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
