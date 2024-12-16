@@ -3,7 +3,7 @@ using Servidores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,15 +29,33 @@ namespace GestionAgenda
         }
 
         // Devolver TODOS los contactos ordenados alfabéticamente
-        public List<Contactos> ContactosOrdenados()
+        public List<Contactos> ContactosOrdenados(out string msg)
         {
-            return miAgendaEntities.Contactos.OrderBy(con => con.Nombre).ToList();
+            msg="";
+            try
+            {
+                return miAgendaEntities.Contactos.OrderBy(con => con.Nombre).ToList();
+            }
+            catch (Exception exc) { 
+                msg="Error al obtener los contactos" +exc.Message;
+                return null;
+            }
+            
         }
 
         // Devolver el contacto correspondiente a un identificador pasado como parámetro.
-        public List<Contactos> ContactoPorId(int id)
+        public List<Contactos> ContactoPorId(int id, out string msg)
         {
-            return miAgendaEntities.Contactos.Select(con => con).Where(con => con.IdContacto == id).ToList();
+            msg = "";
+            try
+            {
+                return miAgendaEntities.Contactos.Find(id);
+            }
+            catch (Exception ex)
+            {
+                msg = "Error al buscar el contacto: " + ex.Message;
+                return null;
+            }
         }
 
         // Dar de alta un grupo
