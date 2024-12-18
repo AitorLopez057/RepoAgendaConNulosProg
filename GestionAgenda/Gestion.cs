@@ -44,7 +44,7 @@ namespace GestionAgenda
         // Dar de alta un grupo
         public List<Contactos> contactos()
         {
-            return null;
+            return miAgendaEntities.Contactos.ToList();
         }
 
         //Dar de alta un contacto
@@ -126,7 +126,7 @@ namespace GestionAgenda
                 if (telefono == null)
                 {
                     msg = "El teléfono no existe para el contacto.";
-
+                    return msg;
                 }
 
                 miAgendaEntities.Telefonos.Remove(telefono);
