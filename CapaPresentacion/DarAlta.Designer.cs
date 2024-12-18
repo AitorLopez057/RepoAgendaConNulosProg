@@ -96,6 +96,7 @@
             this.btnAñadirContacto.TabIndex = 14;
             this.btnAñadirContacto.Text = "AÑADIR CONTACTO";
             this.btnAñadirContacto.UseVisualStyleBackColor = true;
+            this.btnAñadirContacto.Click += new System.EventHandler(this.btnAñadirContacto_Click);
             // 
             // lblResultado
             // 
@@ -188,6 +189,7 @@
             this.btnAñadirTelefono.TabIndex = 29;
             this.btnAñadirTelefono.Text = "AÑADIR TELEFONO";
             this.btnAñadirTelefono.UseVisualStyleBackColor = true;
+            this.btnAñadirTelefono.Click += new System.EventHandler(this.btnAñadirTelefono_Click);
             // 
             // DarAlta
             // 

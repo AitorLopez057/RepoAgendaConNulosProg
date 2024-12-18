@@ -34,6 +34,8 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblResultado = new System.Windows.Forms.Label();
             this.btnAñadir = new System.Windows.Forms.Button();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -48,11 +50,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 257);
+            this.label2.Location = new System.Drawing.Point(77, 232);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "TELÉOFNO";
+            this.label2.Text = "TELÉFONO";
             // 
             // txtNombreContacto
             // 
@@ -63,7 +65,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(175, 257);
+            this.txtTelefono.Location = new System.Drawing.Point(175, 232);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(494, 22);
             this.txtTelefono.TabIndex = 3;
@@ -86,11 +88,29 @@
             this.btnAñadir.Text = "Añadir Telefono al Contacto";
             this.btnAñadir.UseVisualStyleBackColor = false;
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(190, 272);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(494, 22);
+            this.txtDescripcion.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(77, 275);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "DESCRIPCIÓN";
+            // 
             // AñadirTelefono
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 468);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.txtTelefono);
@@ -112,5 +132,7 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Button btnAñadir;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label3;
     }
 }
