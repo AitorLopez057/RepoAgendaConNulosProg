@@ -144,6 +144,7 @@
             this.btnBorrar.TabIndex = 31;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnDarAlta
             // 
@@ -153,6 +154,7 @@
             this.btnDarAlta.TabIndex = 32;
             this.btnDarAlta.Text = "Dar de Alta";
             this.btnDarAlta.UseVisualStyleBackColor = true;
+            this.btnDarAlta.Click += new System.EventHandler(this.btnDarAlta_Click);
             // 
             // btnAñadirTelefonoContacto
             // 
@@ -162,6 +164,7 @@
             this.btnAñadirTelefonoContacto.TabIndex = 33;
             this.btnAñadirTelefonoContacto.Text = "Añadir Telefono a Conacto";
             this.btnAñadirTelefonoContacto.UseVisualStyleBackColor = true;
+            this.btnAñadirTelefonoContacto.Click += new System.EventHandler(this.btnAñadirTelefonoContacto_Click);
             // 
             // Form1
             // 
