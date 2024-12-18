@@ -3,6 +3,7 @@ using Servidores;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations.Sql;
+using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Linq;
 
 using System.Text;
@@ -58,6 +59,7 @@ namespace GestionAgenda
             Grupos grupoNuevo = new Grupos(nombreGrupo);
             miAgendaEntities.Grupos.Add(grupoNuevo);
             int nAfectados = miAgendaEntities.SaveChanges();
+            
 
             return "";
         }
