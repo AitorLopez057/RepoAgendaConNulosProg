@@ -34,15 +34,31 @@ namespace CapaPresentacion
                 return;
             }
             Grupos grupoAux = null;
+            string error = "";
+            Contactos contactoAux = null;
             try
             {
-                grupoAux = (Grupos)cboGrupo.Items[cboGrupo.SelectedIndex];
+                if (cboGrupo.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Selecciona un grupo");
+                    //contactoAux = new Contactos(nombre, null, -1);
+                    //contactoAux.Telefonos = telefonos;
+                    //error = gestion.AnyadirContacto(contactoAux);
+
+                }
+                else
+                {
+                    grupoAux = (Grupos)cboGrupo.Items[cboGrupo.SelectedIndex];
+                    contactoAux = new Contactos(nombre, null, grupoAux.IdGrupo);
+                    contactoAux.Telefonos = telefonos;
+                    error = gestion.AnyadirContacto(contactoAux);
+                }
+                
             }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             
-            string error = gestion.AnyadirContacto(new Contactos(nombre,null, grupoAux.IdGrupo));
             if (error != "")
             {
                 MessageBox.Show (error);
