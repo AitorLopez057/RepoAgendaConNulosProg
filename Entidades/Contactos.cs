@@ -51,7 +51,7 @@ namespace Entidades
             String cadenaTelefonos = "";
             foreach (var tel in this.Telefonos)
             {
-                cadenaTelefonos += tel.Numero;
+                cadenaTelefonos += tel.Numero + ",";
             }
             return cadenaTelefonos;
         }
