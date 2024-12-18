@@ -33,5 +33,18 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnAñadirGrupo_Click(object sender, EventArgs e)
+        {
+            String resultado = gestion.anyadirGrupos(txtAñadirGrupo.Text);
+            if (resultado != "")
+            {
+                lblResultado.Text = resultado;
+            }
+            else
+            {
+                lblResultado.Text = $"El grupo con nombre {txtAñadirGrupo.Text} ha sido añadido correctamente.";
+            }
+        }
     }
 }

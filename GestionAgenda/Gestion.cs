@@ -42,10 +42,20 @@ namespace GestionAgenda
         }
 
         // Dar de alta un grupo
-        public List<Contactos> contactos()
+        public String anyadirGrupos(String nombreGrupo)
         {
-            return null;
+            var contactosDuplicados = miAgendaEntities.Grupos.Select(gru => gru).Where(gru => gru.NombreGrupo.Equals(nombreGrupo)).ToList();
+            if (contactosDuplicados.Count() != 0)
+            {
+                return $"El grupo {nombreGrupo} ya existe.";
+            }
+
+            var numeroGrupos = miAgendaEntities.Grupos.Select(gru => gru).Count();
+
+            Grupos grupoNuevo = new Grupos(nombreGrupo);
+            return "";
         }
+
 
         //Dar de alta un contacto
         public String AnyadirContacto(Contactos contacto)
