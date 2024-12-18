@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidades;
+using GestionAgenda;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,24 @@ namespace CapaPresentacion
 {
     public partial class DarAlta : Form
     {
+        List<Telefonos> telefonos;
+        Gestion gestion;
         public DarAlta()
         {
             InitializeComponent();
+            telefonos = new List<Telefonos>();
+            gestion = new Gestion();
+            
+        }
+
+        private void btnAñadirContacto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAñadirTelefono_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
