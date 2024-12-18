@@ -71,9 +71,13 @@ namespace GestionAgenda
             //Controles de los telefonos
             if (contacto.Telefonos != null)
             {
-                foreach (var tel in contacto.Telefonos)
+                if (contacto.Telefonos.Count()>1)
                 {
-                    
+                    if (contacto.Telefonos.GroupBy(tel => tel).Any(tel => tel.Count() > 1) || contacto.Telefonos.Any(tel => tel.Numero.Count()<3))
+                    {
+                        return $"No puede haber números de teléfono repetidos o con menos de 3 dígitos";
+                    }
+
                 }
             }
             return "";
