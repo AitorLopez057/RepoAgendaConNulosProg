@@ -79,7 +79,7 @@ namespace GestionAgenda
                 return $"Ya existe un contacto con el nombre '{contacto.Nombre}'";
             }
             //Controles del grupo
-            if (contacto.IdGrupo != null)
+            if (contacto.IdGrupo != -1)
             {
                 var grupoDeId = miAgendaEntities.Grupos.Single(gru => gru.IdGrupo == contacto.IdGrupo);
                 if (grupoDeId == null)
@@ -90,15 +90,18 @@ namespace GestionAgenda
             //Controles de los telefonos
             if (contacto.Telefonos != null)
             {
-                if (contacto.Telefonos.Count()>1)
-                {
-                    if (contacto.Telefonos.GroupBy(tel => tel).Any(tel => tel.Count() > 1) || contacto.Telefonos.Any(tel => tel.Numero.Count()<3))
-                    {
-                        return $"No puede haber números de teléfono repetidos o con menos de 3 dígitos";
-                    }
 
-                }
+                    if (contacto.Telefonos.GroupBy(tel => tel).Any(tel => tel.Count() > 1))
+                    {
+                        return $"No puede haber números de teléfono repetidos";
+                    }
+                    if (contacto.Telefonos.Any(tel => tel.Numero.Length < 3))
+                    {
+                        return $"No puede haber números de teléfono con menos de 3 dígitos";
+                    }
             }
+            miAgendaEntities.Contactos.Add(contacto);
+            int nAfectados = miAgendaEntities.SaveChanges();
             return "";
         }
         public String AnyadirTelefonoContacto(int idContacto, Telefonos telefono)
