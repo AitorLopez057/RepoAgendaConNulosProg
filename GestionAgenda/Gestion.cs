@@ -55,9 +55,10 @@ namespace GestionAgenda
                 return $"El grupo {nombreGrupo} ya existe.";
             }
 
-            var numeroGrupos = miAgendaEntities.Grupos.Select(gru => gru).Count();
-
             Grupos grupoNuevo = new Grupos(nombreGrupo);
+            miAgendaEntities.Grupos.Add(grupoNuevo);
+            int nAfectados = miAgendaEntities.SaveChanges();
+
             return "";
         }
 
