@@ -166,7 +166,7 @@ namespace GestionAgenda
                 if (contacto == null)
                 {
                     msg = "El contacto no existe.";
-
+                    return msg;
                 }
                 var telefonos = miAgendaEntities.Telefonos.Where(telef => telef.IdContacto == idContacto).ToList();
                 miAgendaEntities.Telefonos.RemoveRange(telefonos);
