@@ -47,10 +47,21 @@ namespace GestionAgenda
         }
 
         // Dar de alta un grupo
-        public List<Contactos> contactos()
+        public String anyadirGrupos(String nombreGrupo)
         {
-            return null;
+            var contactosDuplicados = miAgendaEntities.Grupos.Select(gru => gru).Where(gru => gru.NombreGrupo.Equals(nombreGrupo)).ToList();
+            if (contactosDuplicados.Count() != 0)
+            {
+                return $"El grupo {nombreGrupo} ya existe.";
+            }
+
+            Grupos grupoNuevo = new Grupos(nombreGrupo);
+            miAgendaEntities.Grupos.Add(grupoNuevo);
+            int nAfectados = miAgendaEntities.SaveChanges();
+
+            return "";
         }
+
 
         //Dar de alta un contacto
         public String AnyadirContacto(Contactos contacto)
@@ -134,7 +145,7 @@ namespace GestionAgenda
                 if (telefono == null)
                 {
                     msg = "El teléfono no existe para el contacto.";
-
+                    return msg;
                 }
 
                 miAgendaEntities.Telefonos.Remove(telefono);
@@ -158,7 +169,7 @@ namespace GestionAgenda
                 if (contacto == null)
                 {
                     msg = "El contacto no existe.";
-
+                    return msg;
                 }
                 var telefonos = miAgendaEntities.Telefonos.Where(telef => telef.IdContacto == idContacto).ToList();
                 miAgendaEntities.Telefonos.RemoveRange(telefonos);

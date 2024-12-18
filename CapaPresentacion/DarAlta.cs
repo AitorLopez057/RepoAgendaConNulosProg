@@ -81,5 +81,26 @@ namespace CapaPresentacion
                 txtTelefono.Text = "";
             }
         }
+
+        private void btnAñadirGrupo_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtAñadirGrupo.Text))
+            {
+                lblResultado.Text = "Debes introducir un nombre de grupo.";
+            }
+            else
+            {
+                String resultado = gestion.anyadirGrupos(txtAñadirGrupo.Text);
+                if (resultado != "")
+                {
+                    lblResultado.Text = resultado;
+                }
+                else
+                {
+                    lblResultado.Text = $"El grupo con nombre {txtAñadirGrupo.Text} ha sido añadido correctamente.";
+                }
+            }
+
+        }
     }
 }
