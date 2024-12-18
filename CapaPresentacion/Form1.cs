@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using GestionAgenda;
-¡namespace CapaPresentacion
+using Entidades;
+using System.Linq;
+namespace CapaPresentacion
 {
     public partial class Form1 : Form
     {
@@ -24,7 +26,18 @@ using GestionAgenda;
 
         private void btnTodosContactos_Click(object sender, EventArgs e)
         { 
-            dgvContactos.DataSource = gestion.ContactosOrdenados();
+            List<Contactos> contactos = new List<Contactos>();
+            contactos = gestion.ContactosOrdenados();
+            dgvContactos.DataSource = (from con in contactos
+                                       select new
+                                       {
+                                           IdContacto = con.IdContacto,
+                                           Nombre = con.Nombre,
+                                           Email = con.Email?? "...",
+                                           NombreGrupo = con.Grupos?.NombreGrupo ?? "...",
+                                           Telefonos = con.toStringTelefonos()
+                                       }).ToList();
+            lblMensaje.Text = "Todos los contactos con su nombre de grupo, cantidad de teléfonos y primer teléfono";
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
