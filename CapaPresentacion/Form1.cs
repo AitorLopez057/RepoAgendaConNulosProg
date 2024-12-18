@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using GestionAgenda;
-namespace CapaPresentacion
+¡namespace CapaPresentacion
 {
     public partial class Form1 : Form
     {
@@ -22,7 +23,7 @@ namespace CapaPresentacion
         }
 
         private void btnTodosContactos_Click(object sender, EventArgs e)
-        {
+        { 
             dgvContactos.DataSource = gestion.ContactosOrdenados();
         }
 
