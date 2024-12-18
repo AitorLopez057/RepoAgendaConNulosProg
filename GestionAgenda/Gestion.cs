@@ -87,5 +87,54 @@ namespace GestionAgenda
             return "";
 
         }
+        //Borrar un teléfono
+        public String BorrarTelefono(int idContacto, string numeroTelefono)
+        {
+            string msg = "";
+            try
+            {
+                var telefono = miAgendaEntities.Telefonos.SingleOrDefault(telef => telef.IdContacto == idContacto && telef.Numero == numeroTelefono);
+                if (telefono == null)
+                {
+                    msg = "El teléfono no existe para el contacto.";
+
+                }
+
+                miAgendaEntities.Telefonos.Remove(telefono);
+        
+
+            }
+            catch (Exception ex)
+            {
+                msg = "Error al borrar teléfono: " + ex.Message;
+            }
+            return msg;
+        }
+        //Borrar un contacto con sus teléfonos
+        public String BorrarContacto(int idContacto)
+        {
+            string msg = "";
+            try
+            {
+                var contacto = miAgendaEntities.Contactos.Find(idContacto);
+                if (contacto == null)
+                {
+                    msg = "El contacto no existe.";
+
+                }
+                var telefonos = miAgendaEntities.Telefonos.Where(telef => telef.IdContacto == idContacto).ToList();
+                miAgendaEntities.Telefonos.RemoveRange(telefonos);
+                miAgendaEntities.Contactos.Remove(contacto);
+
+                msg = "Contacto y sus teléfonos eliminados correctamente.";
+
+            }
+            catch (Exception ex)
+            {
+                msg= "Error al borrar el contacto: " + ex.Message;
+            }
+            return msg;
+
+        }
     }
 }
