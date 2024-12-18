@@ -37,7 +37,6 @@
             this.lblResultado = new System.Windows.Forms.Label();
             this.lblBTelefono = new System.Windows.Forms.Label();
             this.lblBContacto = new System.Windows.Forms.Label();
-            this.txtIdGrupo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDescripcionTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAñadirTelefono = new System.Windows.Forms.Button();
+            this.cboGrupo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtAñadirGrupo
@@ -125,21 +125,14 @@
             this.lblBContacto.TabIndex = 11;
             this.lblBContacto.Text = "Añadir Un Contacto";
             // 
-            // txtIdGrupo
-            // 
-            this.txtIdGrupo.Location = new System.Drawing.Point(229, 191);
-            this.txtIdGrupo.Name = "txtIdGrupo";
-            this.txtIdGrupo.Size = new System.Drawing.Size(177, 22);
-            this.txtIdGrupo.TabIndex = 23;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(66, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 16);
+            this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 22;
-            this.label4.Text = "ID GRUPO";
+            this.label4.Text = "GRUPO";
             // 
             // txtDescripcionTelefono
             // 
@@ -192,18 +185,26 @@
             this.btnAñadirTelefono.UseVisualStyleBackColor = true;
             this.btnAñadirTelefono.Click += new System.EventHandler(this.btnAñadirTelefono_Click);
             // 
+            // cboGrupo
+            // 
+            this.cboGrupo.FormattingEnabled = true;
+            this.cboGrupo.Location = new System.Drawing.Point(229, 194);
+            this.cboGrupo.Name = "cboGrupo";
+            this.cboGrupo.Size = new System.Drawing.Size(177, 24);
+            this.cboGrupo.TabIndex = 30;
+            // 
             // DarAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 615);
+            this.Controls.Add(this.cboGrupo);
             this.Controls.Add(this.btnAñadirTelefono);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDescripcionTelefono);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtIdGrupo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtAñadirGrupo);
             this.Controls.Add(this.txtNombreContacto);
@@ -231,7 +232,6 @@
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Label lblBTelefono;
         private System.Windows.Forms.Label lblBContacto;
-        private System.Windows.Forms.TextBox txtIdGrupo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDescripcionTelefono;
         private System.Windows.Forms.Label label3;
@@ -239,5 +239,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAñadirTelefono;
+        private System.Windows.Forms.ComboBox cboGrupo;
     }
 }

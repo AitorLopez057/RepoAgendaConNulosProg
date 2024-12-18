@@ -28,6 +28,11 @@ namespace GestionAgenda
                 // instrucciones ante el error
             }
         }
+        // Devolver TODOS los Grupos ordenados alfabéticamente
+        public List<Grupos> GruposOrdenados()
+        {
+            return miAgendaEntities.Grupos.OrderBy(gru => gru.NombreGrupo).ToList();
+        }
 
         // Devolver TODOS los contactos ordenados alfabéticamente
         public List<Contactos> ContactosOrdenados()

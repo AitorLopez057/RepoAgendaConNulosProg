@@ -21,5 +21,9 @@ namespace Entidades
         public virtual Contactos Contactos { get; set; }
 
         public Telefonos() { }
+        public Telefonos(string numero, string descripcion) {
+            this.Numero = numero;
+            this.Descripcion = descripcion;
+        }
     }
 }
