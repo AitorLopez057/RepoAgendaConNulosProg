@@ -47,9 +47,41 @@ namespace GestionAgenda
         }
 
         //Dar de alta un contacto
-        public String AnyadirContacto()
+        public String AnyadirContacto(Contactos contacto)
+        {
+            //Controles del nombre
+            if (String.IsNullOrWhiteSpace(contacto.Nombre))
+            {
+                return "El nombre no puede quedar vacio";
+            }
+            var contactosNombre = miAgendaEntities.Contactos.Select(con => con).Where(con => con.Nombre.ToLower() == contacto.Nombre.ToLower()).ToList();
+            if (contactosNombre.Count()!= 0)
+            {
+                return $"Ya existe un contacto con el nombre '{contacto.Nombre}'";
+            }
+            //Controles del grupo
+            if (contacto.IdGrupo != null)
+            {
+                var grupoDeId = miAgendaEntities.Grupos.Single(gru => gru.IdGrupo == contacto.IdGrupo);
+                if (grupoDeId == null)
+                {
+                    return $"El grupo de id '{contacto.IdGrupo}' no existe";
+                }
+            }
+            //Controles de los telefonos
+            if (contacto.Telefonos != null)
+            {
+                foreach (var tel in contacto.Telefonos)
+                {
+                    
+                }
+            }
+            return "";
+        }
+        public String AnyadirTelefonoContacto()
         {
             return "";
+
         }
         //Borrar un teléfono
         public String BorrarTelefono(int idContacto, string numeroTelefono)
