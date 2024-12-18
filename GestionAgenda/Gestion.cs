@@ -28,6 +28,11 @@ namespace GestionAgenda
                 // instrucciones ante el error
             }
         }
+        // Devolver TODOS los Grupos ordenados alfabéticamente
+        public List<Grupos> GruposOrdenados()
+        {
+            return miAgendaEntities.Grupos.OrderBy(gru => gru.NombreGrupo).ToList();
+        }
 
         // Devolver TODOS los contactos ordenados alfabéticamente
         public List<Contactos> ContactosOrdenados()
@@ -42,10 +47,21 @@ namespace GestionAgenda
         }
 
         // Dar de alta un grupo
-        public List<Contactos> contactos()
+        public String anyadirGrupos(String nombreGrupo)
         {
-            return miAgendaEntities.Contactos.ToList();
+            var contactosDuplicados = miAgendaEntities.Grupos.Select(gru => gru).Where(gru => gru.NombreGrupo.Equals(nombreGrupo)).ToList();
+            if (contactosDuplicados.Count() != 0)
+            {
+                return $"El grupo {nombreGrupo} ya existe.";
+            }
+
+            Grupos grupoNuevo = new Grupos(nombreGrupo);
+            miAgendaEntities.Grupos.Add(grupoNuevo);
+            int nAfectados = miAgendaEntities.SaveChanges();
+
+            return "";
         }
+
 
         //Dar de alta un contacto
         public String AnyadirContacto(Contactos contacto)

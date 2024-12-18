@@ -19,7 +19,13 @@ namespace Entidades
         {
             this.Contactos = new HashSet<Contactos>();
         }
-    
+
+        public Grupos(String nombreGrupo)
+        {
+            this.NombreGrupo = nombreGrupo;
+            this.Contactos = new HashSet<Contactos>();
+        }
+
         public int IdGrupo { get; set; }
         public string NombreGrupo { get; set; }
     
@@ -28,7 +34,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"{IdGrupo} - {NombreGrupo}";
+            return $"{NombreGrupo}";
         }
     }
 }

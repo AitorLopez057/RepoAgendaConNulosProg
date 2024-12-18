@@ -11,6 +11,7 @@ namespace Entidades
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public partial class Contactos
     {
@@ -20,7 +21,12 @@ namespace Entidades
             this.Telefonos = new HashSet<Telefonos>();
         }
 
-
+        public Contactos(String nombre, String email, int? idGrupo) : this()
+        {
+            Nombre = nombre;
+            Email = email;
+            IdGrupo = idGrupo;
+        }
         public Contactos(int idContacto, String nombre, String email, int? idGrupo) : this()
         {
             IdContacto = idContacto;
@@ -42,7 +48,11 @@ namespace Entidades
 
         public String toStringTelefonos()
         {
-            String cadenaTelefonos = String.Join(",", Telefonos);
+            String cadenaTelefonos = "";
+            foreach (var tel in this.Telefonos)
+            {
+                cadenaTelefonos += tel.Numero + ",";
+            }
             return cadenaTelefonos;
         }
     }
