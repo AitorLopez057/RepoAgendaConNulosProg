@@ -33,8 +33,8 @@ namespace CapaPresentacion
                                        {
                                            IdContacto = con.IdContacto,
                                            Nombre = con.Nombre,
-                                           Email = con.Email?? "...",
-                                           NombreGrupo = con.Grupos?.NombreGrupo ?? "...",
+                                           Email = con.Email?? "---",
+                                           NombreGrupo = con.Grupos?.NombreGrupo ?? "---",
                                            Telefonos = con.toStringTelefonos()
                                        }).ToList();
             lblMensaje.Text = "Todos los contactos con su nombre de grupo, cantidad de teléfonos y primer teléfono";
