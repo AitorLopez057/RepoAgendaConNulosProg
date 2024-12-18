@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEliminarTelefonoContacto = new System.Windows.Forms.TextBox();
-            this.txtEliminarContacto = new System.Windows.Forms.TextBox();
+            this.txtAñadirGrupo = new System.Windows.Forms.TextBox();
+            this.txtNombreContacto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAñadirGrupo = new System.Windows.Forms.Button();
@@ -37,29 +37,29 @@
             this.lblResultado = new System.Windows.Forms.Label();
             this.lblBTelefono = new System.Windows.Forms.Label();
             this.lblBContacto = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdGrupo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDescripcionTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAñadirTelefono = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtEliminarTelefonoContacto
+            // txtAñadirGrupo
             // 
-            this.txtEliminarTelefonoContacto.Location = new System.Drawing.Point(811, 163);
-            this.txtEliminarTelefonoContacto.Name = "txtEliminarTelefonoContacto";
-            this.txtEliminarTelefonoContacto.Size = new System.Drawing.Size(177, 22);
-            this.txtEliminarTelefonoContacto.TabIndex = 20;
+            this.txtAñadirGrupo.Location = new System.Drawing.Point(811, 163);
+            this.txtAñadirGrupo.Name = "txtAñadirGrupo";
+            this.txtAñadirGrupo.Size = new System.Drawing.Size(177, 22);
+            this.txtAñadirGrupo.TabIndex = 20;
             // 
-            // txtEliminarContacto
+            // txtNombreContacto
             // 
-            this.txtEliminarContacto.Location = new System.Drawing.Point(229, 163);
-            this.txtEliminarContacto.Name = "txtEliminarContacto";
-            this.txtEliminarContacto.Size = new System.Drawing.Size(177, 22);
-            this.txtEliminarContacto.TabIndex = 19;
+            this.txtNombreContacto.Location = new System.Drawing.Point(229, 163);
+            this.txtNombreContacto.Name = "txtNombreContacto";
+            this.txtNombreContacto.Size = new System.Drawing.Size(177, 22);
+            this.txtNombreContacto.TabIndex = 19;
             // 
             // label2
             // 
@@ -123,12 +123,12 @@
             this.lblBContacto.TabIndex = 11;
             this.lblBContacto.Text = "Añadir Un Contacto";
             // 
-            // textBox1
+            // txtIdGrupo
             // 
-            this.textBox1.Location = new System.Drawing.Point(229, 191);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 22);
-            this.textBox1.TabIndex = 23;
+            this.txtIdGrupo.Location = new System.Drawing.Point(229, 191);
+            this.txtIdGrupo.Name = "txtIdGrupo";
+            this.txtIdGrupo.Size = new System.Drawing.Size(177, 22);
+            this.txtIdGrupo.TabIndex = 23;
             // 
             // label4
             // 
@@ -139,12 +139,12 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "ID GRUPO";
             // 
-            // textBox2
+            // txtDescripcionTelefono
             // 
-            this.textBox2.Location = new System.Drawing.Point(170, 287);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(378, 22);
-            this.textBox2.TabIndex = 27;
+            this.txtDescripcionTelefono.Location = new System.Drawing.Point(170, 287);
+            this.txtDescripcionTelefono.Name = "txtDescripcionTelefono";
+            this.txtDescripcionTelefono.Size = new System.Drawing.Size(378, 22);
+            this.txtDescripcionTelefono.TabIndex = 27;
             // 
             // label3
             // 
@@ -155,12 +155,12 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "DESCRIPCIÓN";
             // 
-            // textBox3
+            // txtTelefono
             // 
-            this.textBox3.Location = new System.Drawing.Point(151, 251);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(218, 22);
-            this.textBox3.TabIndex = 25;
+            this.txtTelefono.Location = new System.Drawing.Point(151, 251);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(218, 22);
+            this.txtTelefono.TabIndex = 25;
             // 
             // label5
             // 
@@ -180,30 +180,30 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Telefonos";
             // 
-            // button1
+            // btnAñadirTelefono
             // 
-            this.button1.Location = new System.Drawing.Point(69, 326);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 56);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "AÑADIR TELEFONO";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAñadirTelefono.Location = new System.Drawing.Point(69, 326);
+            this.btnAñadirTelefono.Name = "btnAñadirTelefono";
+            this.btnAñadirTelefono.Size = new System.Drawing.Size(147, 56);
+            this.btnAñadirTelefono.TabIndex = 29;
+            this.btnAñadirTelefono.Text = "AÑADIR TELEFONO";
+            this.btnAñadirTelefono.UseVisualStyleBackColor = true;
             // 
             // DarAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 615);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAñadirTelefono);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDescripcionTelefono);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtIdGrupo);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEliminarTelefonoContacto);
-            this.Controls.Add(this.txtEliminarContacto);
+            this.Controls.Add(this.txtAñadirGrupo);
+            this.Controls.Add(this.txtNombreContacto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAñadirGrupo);
@@ -219,8 +219,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtEliminarTelefonoContacto;
-        private System.Windows.Forms.TextBox txtEliminarContacto;
+        private System.Windows.Forms.TextBox txtAñadirGrupo;
+        private System.Windows.Forms.TextBox txtNombreContacto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAñadirGrupo;
@@ -228,13 +228,13 @@
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Label lblBTelefono;
         private System.Windows.Forms.Label lblBContacto;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIdGrupo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescripcionTelefono;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAñadirTelefono;
     }
 }
