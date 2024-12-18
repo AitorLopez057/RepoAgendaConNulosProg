@@ -87,6 +87,7 @@
             this.btnAñadirGrupo.TabIndex = 15;
             this.btnAñadirGrupo.Text = "DAR ALTA UN GRUPO";
             this.btnAñadirGrupo.UseVisualStyleBackColor = true;
+            this.btnAñadirGrupo.Click += new System.EventHandler(this.btnAñadirGrupo_Click);
             // 
             // btnAñadirContacto
             // 
