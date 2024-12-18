@@ -2,6 +2,7 @@
 using Servidores;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations.Sql;
 using System.Linq;
 
 using System.Text;
@@ -87,11 +88,39 @@ namespace GestionAgenda
             }
             return "";
         }
-        public String AnyadirTelefonoContacto()
-        {
-            return "";
+        public String AnyadirTelefonoContacto(int idContacto, Telefonos telefono)
+        {   String msg="";
+            try { 
+
+                var contacto = miAgendaEntities.Contactos.Find(idContacto);
+                if (contacto == null)
+                {
+                    msg = "El contacto de id " + idContacto + " no existe.";
+                    return msg;
+                }
+                if (contacto.Telefonos.Contains(telefono))
+                {
+                    msg = "El teléfono ya existe para el contacto.";
+                    return msg;
+                }
+
+                if (string.IsNullOrWhiteSpace(telefono.Numero) && telefono.Numero.All(char.IsDigit) && telefono.Numero.Length >= 3)
+                {
+                    msg ="El número de teléfono no es válido.";
+                    return msg;
+                }
+                contacto.Telefonos.Add(telefono);
+                miAgendaEntities.SaveChanges();
+            } 
+            catch(Exception ex)
+            {
+             msg= "Error al anyadir teléfono: " + ex.Message;
+            }
+            return msg;
 
         }
+
+
         //Borrar un teléfono
         public String BorrarTelefono(int idContacto, string numeroTelefono)
         {
@@ -106,7 +135,8 @@ namespace GestionAgenda
                 }
 
                 miAgendaEntities.Telefonos.Remove(telefono);
-        
+                miAgendaEntities.SaveChanges();
+
 
             }
             catch (Exception ex)
@@ -130,6 +160,7 @@ namespace GestionAgenda
                 var telefonos = miAgendaEntities.Telefonos.Where(telef => telef.IdContacto == idContacto).ToList();
                 miAgendaEntities.Telefonos.RemoveRange(telefonos);
                 miAgendaEntities.Contactos.Remove(contacto);
+                miAgendaEntities.SaveChanges();
 
                 msg = "Contacto y sus teléfonos eliminados correctamente.";
 
@@ -141,5 +172,6 @@ namespace GestionAgenda
             return msg;
 
         }
+
     }
 }
