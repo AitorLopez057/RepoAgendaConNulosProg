@@ -28,7 +28,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"{IdGrupo} - {NombreGrupo}";
+            return $"{NombreGrupo}";
         }
     }
 }

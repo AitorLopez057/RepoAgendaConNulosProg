@@ -20,7 +20,12 @@ namespace Entidades
             this.Telefonos = new HashSet<Telefonos>();
         }
 
-
+        public Contactos(String nombre, String email, int? idGrupo) : this()
+        {
+            Nombre = nombre;
+            Email = email;
+            IdGrupo = idGrupo;
+        }
         public Contactos(int idContacto, String nombre, String email, int? idGrupo) : this()
         {
             IdContacto = idContacto;
