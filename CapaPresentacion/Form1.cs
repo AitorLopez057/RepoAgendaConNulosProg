@@ -71,6 +71,10 @@ namespace CapaPresentacion
                 lblMensaje.Text = "Debes introducir un número";
             }
             Contactos contacto = gestion.ContactoPorId(id);
+            if( contacto == null )
+            {
+                lblMensaje.Text = $"No hay ningun contacto con el id: '{id}'";
+            }
             dgvContactos.DataSource = (from tel in contacto.Telefonos
                                        select new
                                        {
