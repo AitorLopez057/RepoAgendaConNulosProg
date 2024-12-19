@@ -67,6 +67,7 @@
             this.btnContactosTelefono.TabIndex = 28;
             this.btnContactosTelefono.Text = "Contactos de un teléfono";
             this.btnContactosTelefono.UseVisualStyleBackColor = true;
+            this.btnContactosTelefono.Click += new System.EventHandler(this.btnContactosTelefono_Click);
             // 
             // btnTodosContactos
             // 
@@ -110,7 +111,7 @@
             // btnDarAlta
             // 
             this.btnDarAlta.Location = new System.Drawing.Point(712, 117);
-            this.btnDarAlta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDarAlta.Margin = new System.Windows.Forms.Padding(2);
             this.btnDarAlta.Name = "btnDarAlta";
             this.btnDarAlta.Size = new System.Drawing.Size(165, 38);
             this.btnDarAlta.TabIndex = 32;
@@ -121,7 +122,7 @@
             // btnAñadirTelefonoContacto
             // 
             this.btnAñadirTelefonoContacto.Location = new System.Drawing.Point(712, 161);
-            this.btnAñadirTelefonoContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAñadirTelefonoContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAñadirTelefonoContacto.Name = "btnAñadirTelefonoContacto";
             this.btnAñadirTelefonoContacto.Size = new System.Drawing.Size(165, 38);
             this.btnAñadirTelefonoContacto.TabIndex = 33;
@@ -132,7 +133,7 @@
             // btnBorrar
             // 
             this.btnBorrar.Location = new System.Drawing.Point(712, 72);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(165, 38);
             this.btnBorrar.TabIndex = 31;
@@ -155,7 +156,7 @@
             this.Controls.Add(this.btnTelefonosContacto);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.dgvContactos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();

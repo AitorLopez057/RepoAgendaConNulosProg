@@ -17,7 +17,7 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Contactos_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace CapaPresentacion
         }
 
         private void btnTodosContactos_Click(object sender, EventArgs e)
-        { 
+        {
             List<Contactos> contactos = new List<Contactos>();
             contactos = gestion.ContactosOrdenados();
             dgvContactos.DataSource = (from con in contactos
@@ -34,7 +34,7 @@ namespace CapaPresentacion
                                        {
                                            IdContacto = con.IdContacto,
                                            Nombre = con.Nombre,
-                                           Email = con.Email?? "---",
+                                           Email = con.Email ?? "---",
                                            NombreGrupo = con.Grupos?.NombreGrupo ?? "---",
                                            Telefonos = con.toStringTelefonos()
                                        }).ToList();
@@ -67,12 +67,12 @@ namespace CapaPresentacion
             {
                 id = int.Parse(idStr);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 lblMensaje.Text = "Debes introducir un número";
             }
             Contactos contacto = gestion.ContactoPorId(id);
-            if( contacto == null )
+            if (contacto == null)
             {
                 lblMensaje.Text = $"No hay ningun contacto con el id: '{id}'";
             }
@@ -87,6 +87,32 @@ namespace CapaPresentacion
 
 
 
+        }
+
+        private void btnContactosTelefono_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtNumeroTelefono.Text))
+            {
+                lblMensaje.Text = "Inserte un teléfono";
+            }
+            else
+            {
+                String msg = "";
+                List<Contactos> contactos = gestion.ContactosDeTelefono(txtNumeroTelefono.Text, out msg);
+                if (contactos.Count == 0) lblMensaje.Text = "No hay contactos con ese teléfono";
+                else
+                {
+                    dgvContactos.DataSource = (from con in contactos
+                                               select new
+                                               {
+                                                   con.Nombre,
+                                                   CantTelefonos = con.Telefonos == null ? 0 : con.Telefonos.Count(),
+                                                   con.Grupos.NombreGrupo
+                                               }).ToList();
+                    lblMensaje.Text = msg;
+                }
+
+            }
         }
     }
 }
