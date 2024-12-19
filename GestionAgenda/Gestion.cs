@@ -54,9 +54,9 @@ namespace GestionAgenda
         }
 
         // Devolver el contacto correspondiente a un identificador pasado como parámetro.
-        public List<Contactos> ContactoPorId(int id)
+        public Contactos ContactoPorId(int id)
         {
-            return miAgendaEntities.Contactos.Select(con => con).Where(con => con.IdContacto == id).ToList();
+            return miAgendaEntities.Contactos.FirstOrDefault(con => con.IdContacto == id);
         }
 
         // Dar de alta un grupo

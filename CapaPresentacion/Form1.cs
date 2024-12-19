@@ -59,29 +59,34 @@ namespace CapaPresentacion
             frmAñadirTelefono.ShowDialog();
         }
 
-        private void btnContactosTelefono_Click(object sender, EventArgs e)
+        private void btnTelefonosContacto_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtNumeroTelefono.Text))
+            String idStr = txtIdContacto.Text;
+            int id = 0;
+            try
             {
-                lblMensaje.Text = "Inserte un teléfono";
+                id = int.Parse(idStr);
             }
-            else 
+            catch(Exception ex)
             {
-                String msg = "";
-                List<Contactos> contactos = gestion.ContactosDeTelefono(txtNumeroTelefono.Text, out msg);
-                if (contactos.Count == 0) lblMensaje.Text = "No hay contactos con ese teléfono";
-                else
-                {
-                     dgvContactos.DataSource = (from con in contactos
-                                                select new
-                                                {
-                                                    con.Nombre,
-                                                    CantTelefonos = con.Telefonos == null ? 0 : con.Telefonos.Count(),
-                                                    con.Grupos.NombreGrupo 
-                                                }).ToList();
-                    lblMensaje.Text = msg;
-                }
+                lblMensaje.Text = "Debes introducir un número";
             }
+            Contactos contacto = gestion.ContactoPorId(id);
+            if( contacto == null )
+            {
+                lblMensaje.Text = $"No hay ningun contacto con el id: '{id}'";
+            }
+            dgvContactos.DataSource = (from tel in contacto.Telefonos
+                                       select new
+                                       {
+                                           Telefono = tel.Numero,
+                                           Descripcion = tel.Descripcion ?? "---"
+                                       }).ToList();
+            lblMensaje.Text = $"Telefonos de contacto: '{contacto.Nombre}' del Grupo ''";
+
+
+
+
         }
     }
 }

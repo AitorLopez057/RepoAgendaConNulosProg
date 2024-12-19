@@ -96,6 +96,7 @@
             this.btnTelefonosContacto.TabIndex = 24;
             this.btnTelefonosContacto.Text = "Teléfonos de contacto";
             this.btnTelefonosContacto.UseVisualStyleBackColor = true;
+            this.btnTelefonosContacto.Click += new System.EventHandler(this.btnTelefonosContacto_Click);
             // 
             // lblMensaje
             // 
