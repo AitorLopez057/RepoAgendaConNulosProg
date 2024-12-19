@@ -29,6 +29,18 @@ namespace GestionAgenda
                 // instrucciones ante el error
             }
         }
+        public List<Contactos> ContactosDeTelefono(string numeroTelefono, out string msg)
+        {
+            msg="";
+            try
+            {
+                return miAgendaEntities.Contactos.Where(cont => cont.Telefonos.Any(tel => tel.Numero == numeroTelefono)).ToList();
+
+            }catch (Exception exc) {
+                msg = "Error al obtener los contactos de un teléfono: "+ exc.Message;
+                return null;
+            }
+        }
         // Devolver TODOS los Grupos ordenados alfabéticamente
         public List<Grupos> GruposOrdenados()
         {

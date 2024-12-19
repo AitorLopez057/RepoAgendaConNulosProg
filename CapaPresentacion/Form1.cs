@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using GestionAgenda;
 using Entidades;
 using System.Linq;
+using System.Diagnostics.Contracts;
 namespace CapaPresentacion
 {
     public partial class Form1 : Form
@@ -56,6 +57,31 @@ namespace CapaPresentacion
         {
             AñadirTelefono frmAñadirTelefono = new AñadirTelefono();
             frmAñadirTelefono.ShowDialog();
+        }
+
+        private void btnContactosTelefono_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtNumeroTelefono.Text))
+            {
+                lblMensaje.Text = "Inserte un teléfono";
+            }
+            else 
+            {
+                String msg = "";
+                List<Contactos> contactos = gestion.ContactosDeTelefono(txtNumeroTelefono.Text, out msg);
+                if (contactos.Count == 0) lblMensaje.Text = "No hay contactos con ese teléfono";
+                else
+                {
+                     dgvContactos.DataSource = (from con in contactos
+                                                select new
+                                                {
+                                                    con.Nombre,
+                                                    CantTelefonos = con.Telefonos == null ? 0 : con.Telefonos.Count(),
+                                                    con.Grupos.NombreGrupo 
+                                                }).ToList();
+                    lblMensaje.Text = msg;
+                }
+            }
         }
     }
 }
