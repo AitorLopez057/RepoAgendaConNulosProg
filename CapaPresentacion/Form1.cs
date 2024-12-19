@@ -57,5 +57,31 @@ namespace CapaPresentacion
             AñadirTelefono frmAñadirTelefono = new AñadirTelefono();
             frmAñadirTelefono.ShowDialog();
         }
+
+        private void btnTelefonosContacto_Click(object sender, EventArgs e)
+        {
+            String idStr = txtIdContacto.Text;
+            int id = 0;
+            try
+            {
+                id = int.Parse(idStr);
+            }
+            catch(Exception ex)
+            {
+                lblMensaje.Text = "Debes introducir un número";
+            }
+            Contactos contacto = gestion.ContactoPorId(id);
+            dgvContactos.DataSource = (from tel in contacto.Telefonos
+                                       select new
+                                       {
+                                           Telefono = tel.Numero,
+                                           Descripcion = tel.Descripcion ?? "---"
+                                       }).ToList();
+            lblMensaje.Text = $"Telefonos de contacto: '{contacto.Nombre}' del Grupo ''";
+
+
+
+
+        }
     }
 }
