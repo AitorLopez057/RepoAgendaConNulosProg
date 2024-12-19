@@ -28,7 +28,7 @@ namespace CapaPresentacion
             if (String.IsNullOrEmpty(txtEliminarContacto.Text)) MessageBox.Show("Inserte un contacto");
             else
             {
-                Contactos contacto = gestion.ContactosOrdenados().SingleOrDefault(con => con.Nombre == txtEliminarContacto.Text)
+                Contactos contacto = gestion.ContactosOrdenados().SingleOrDefault(con => con.Nombre == txtEliminarContacto.Text);
                 if (contacto == null) MessageBox.Show("El contacto no existe");
                 else
                 {
