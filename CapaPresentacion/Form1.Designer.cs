@@ -67,7 +67,6 @@
             this.btnContactosTelefono.TabIndex = 28;
             this.btnContactosTelefono.Text = "Contactos de un teléfono";
             this.btnContactosTelefono.UseVisualStyleBackColor = true;
-            this.btnContactosTelefono.Click += new System.EventHandler(this.btnContactosTelefono_Click);
             // 
             // btnTodosContactos
             // 
