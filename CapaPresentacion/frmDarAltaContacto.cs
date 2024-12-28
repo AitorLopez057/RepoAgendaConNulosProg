@@ -13,11 +13,11 @@ using System.Windows.Forms.VisualStyles;
 
 namespace CapaPresentacion
 {
-    public partial class DarAlta : Form
+    public partial class frmDarAltaContacto : Form
     {
         List<Telefonos> telefonos;
         Gestion gestion;
-        public DarAlta()
+        public frmDarAltaContacto()
         {
             InitializeComponent();
             telefonos = new List<Telefonos>();
@@ -82,25 +82,5 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnAñadirGrupo_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtAñadirGrupo.Text))
-            {
-                lblResultado.Text = "Debes introducir un nombre de grupo.";
-            }
-            else
-            {
-                String resultado = gestion.anyadirGrupos(txtAñadirGrupo.Text);
-                if (resultado != "")
-                {
-                    lblResultado.Text = resultado;
-                }
-                else
-                {
-                    lblResultado.Text = $"El grupo con nombre {txtAñadirGrupo.Text} ha sido añadido correctamente.";
-                }
-            }
-
-        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class AñadirTelefono
+    partial class frmAñadirTelefono
     {
         /// <summary>
         /// Required designer variable.

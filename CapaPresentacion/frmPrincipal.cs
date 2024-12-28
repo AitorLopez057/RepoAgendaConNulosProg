@@ -7,10 +7,10 @@ using System.Linq;
 using System.Diagnostics.Contracts;
 namespace CapaPresentacion
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
         Gestion gestion = Program.gestion;
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
@@ -38,24 +38,18 @@ namespace CapaPresentacion
                                            NombreGrupo = con.Grupos?.NombreGrupo ?? "---",
                                            Telefonos = con.toStringTelefonos()
                                        }).ToList();
-            lblMensaje.Text = "Todos los contactos con su nombre de grupo, cantidad de teléfonos y primer teléfono";
+            lblMensaje.Text = "Todos los contactos con su nombre de grupo, cantidad de teléfonos y teléfonos";
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            Borrar frmBorrar = new Borrar();
+            frmEliminarContacto frmBorrar = new frmEliminarContacto();
             frmBorrar.ShowDialog();
-        }
-
-        private void btnDarAlta_Click(object sender, EventArgs e)
-        {
-            DarAlta frmDarAlta = new DarAlta();
-            frmDarAlta.ShowDialog();
         }
 
         private void btnAñadirTelefonoContacto_Click(object sender, EventArgs e)
         {
-            AñadirTelefono frmAñadirTelefono = new AñadirTelefono();
+            frmAñadirTelefono frmAñadirTelefono = new frmAñadirTelefono();
             frmAñadirTelefono.ShowDialog();
         }
 
@@ -70,22 +64,34 @@ namespace CapaPresentacion
             catch (Exception ex)
             {
                 lblMensaje.Text = "Debes introducir un número";
+                dgvContactos.DataSource = "";
+                return;
             }
             Contactos contacto = gestion.ContactoPorId(id);
             if (contacto == null)
             {
                 lblMensaje.Text = $"No hay ningun contacto con el id: '{id}'";
+                dgvContactos.DataSource = "";
             }
-            dgvContactos.DataSource = (from tel in contacto.Telefonos
-                                       select new
-                                       {
-                                           Telefono = tel.Numero,
-                                           Descripcion = tel.Descripcion ?? "---"
-                                       }).ToList();
-            lblMensaje.Text = $"Telefonos de contacto: '{contacto.Nombre}' del Grupo ''";
+            else
+            {
+                var telefonos = gestion.TelefonosDeUnContacto(id);
+                dgvContactos.DataSource = (from tel in telefonos
+                                           select new
+                                           {
+                                               Número = tel.Numero,
+                                               Descripción = tel.Descripcion ?? "---"
+                                           }).ToList();
 
-
-
+                if (contacto.Grupos != null)
+                {
+                    lblMensaje.Text = $"Telefonos de contacto: '{contacto.Nombre}' del Grupo '{contacto.Grupos}'";
+                }
+                else
+                {
+                    lblMensaje.Text = $"Telefonos de contacto: '{contacto.Nombre}', no pertenece a ningún grupo";
+                }
+            }
 
         }
 
@@ -94,25 +100,55 @@ namespace CapaPresentacion
             if (String.IsNullOrEmpty(txtNumeroTelefono.Text))
             {
                 lblMensaje.Text = "Inserte un teléfono";
+                dgvContactos.DataSource = "";
             }
             else
             {
                 String msg = "";
                 List<Contactos> contactos = gestion.ContactosDeTelefono(txtNumeroTelefono.Text, out msg);
-                if (contactos.Count == 0) lblMensaje.Text = "No hay contactos con ese teléfono";
+                if (contactos.Count == 0)
+                {
+                    lblMensaje.Text = $"No hay contactos del teléfono {txtNumeroTelefono.Text}";
+                    dgvContactos.DataSource = "";
+                }
                 else
                 {
                     dgvContactos.DataSource = (from con in contactos
                                                select new
                                                {
-                                                   con.Nombre,
-                                                   CantTelefonos = con.Telefonos == null ? 0 : con.Telefonos.Count(),
-                                                   con.Grupos.NombreGrupo
+                                                   Nombre = con.Nombre,
+                                                   CantTelefonos = con.Telefonos.Count(),
+                                                   NombreGrupo = con.Grupos
+
                                                }).ToList();
-                    lblMensaje.Text = msg;
+                    lblMensaje.Text = $"Contactos del teléfono {txtNumeroTelefono.Text}";
                 }
 
             }
+        }
+
+        private void btnDarDeAltaUnGrupo_Click_1(object sender, EventArgs e)
+        {
+            frmDarAltaGrupo frmDarAltaGrupo = new frmDarAltaGrupo();
+            frmDarAltaGrupo.ShowDialog();
+        }
+
+        private void btnEliminarGrupo_Click(object sender, EventArgs e)
+        {
+            frmEliminarGrupo frmEliminarGrupo = new frmEliminarGrupo();
+            frmEliminarGrupo.ShowDialog();
+        }
+
+        private void btnDarAltaContacto_Click(object sender, EventArgs e)
+        {
+            frmDarAltaContacto frmDarAltaContacto = new frmDarAltaContacto();
+            frmDarAltaContacto.ShowDialog();
+        }
+
+        private void btnEliminarContacto_Click(object sender, EventArgs e)
+        {
+            frmEliminarContacto frmEliminarContacto = new frmEliminarContacto();
+            frmEliminarContacto.ShowDialog();
         }
     }
 }

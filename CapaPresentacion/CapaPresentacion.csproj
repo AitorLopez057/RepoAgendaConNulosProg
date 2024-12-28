@@ -53,43 +53,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AñadirTelefono.cs">
+    <Compile Include="frmAñadirTelefono.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AñadirTelefono.Designer.cs">
-      <DependentUpon>AñadirTelefono.cs</DependentUpon>
+    <Compile Include="frmAñadirTelefono.Designer.cs">
+      <DependentUpon>frmAñadirTelefono.cs</DependentUpon>
     </Compile>
-    <Compile Include="Borrar.cs">
+    <Compile Include="frmEliminarContacto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Borrar.Designer.cs">
-      <DependentUpon>Borrar.cs</DependentUpon>
+    <Compile Include="frmEliminarContacto.Designer.cs">
+      <DependentUpon>frmEliminarContacto.cs</DependentUpon>
     </Compile>
-    <Compile Include="DarAlta.cs">
+    <Compile Include="frmDarAltaContacto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DarAlta.Designer.cs">
-      <DependentUpon>DarAlta.cs</DependentUpon>
+    <Compile Include="frmDarAltaContacto.Designer.cs">
+      <DependentUpon>frmDarAltaContacto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmDarAltaGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmDarAltaGrupo.Designer.cs">
+      <DependentUpon>frmDarAltaGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEliminarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminarGrupo.Designer.cs">
+      <DependentUpon>frmEliminarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AñadirTelefono.resx">
-      <DependentUpon>AñadirTelefono.cs</DependentUpon>
+    <EmbeddedResource Include="frmAñadirTelefono.resx">
+      <DependentUpon>frmAñadirTelefono.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Borrar.resx">
-      <DependentUpon>Borrar.cs</DependentUpon>
+    <EmbeddedResource Include="frmEliminarContacto.resx">
+      <DependentUpon>frmEliminarContacto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DarAlta.resx">
-      <DependentUpon>DarAlta.cs</DependentUpon>
+    <EmbeddedResource Include="frmDarAltaContacto.resx">
+      <DependentUpon>frmDarAltaContacto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmDarAltaGrupo.resx">
+      <DependentUpon>frmDarAltaGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminarGrupo.resx">
+      <DependentUpon>frmEliminarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,6 +118,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

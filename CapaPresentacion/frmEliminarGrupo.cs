@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class AñadirTelefono : Form
+    public partial class frmEliminarGrupo : Form
     {
-        public AñadirTelefono()
+        public frmEliminarGrupo()
         {
             InitializeComponent();
+        }
+
+        private void btnAñadirGrupo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
