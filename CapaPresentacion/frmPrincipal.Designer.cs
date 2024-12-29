@@ -35,8 +35,6 @@
             this.txtIdContacto = new System.Windows.Forms.TextBox();
             this.btnTelefonosContacto = new System.Windows.Forms.Button();
             this.lblMensaje = new System.Windows.Forms.Label();
-            this.btnAñadirTelefonoContacto = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.gbMantenimiento = new System.Windows.Forms.GroupBox();
             this.btnAnyadirTelefonoAContacto = new System.Windows.Forms.Button();
             this.btnEliminarContacto = new System.Windows.Forms.Button();
@@ -118,7 +116,7 @@
             // 
             // lblMensaje
             // 
-            this.lblMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.Location = new System.Drawing.Point(31, 16);
             this.lblMensaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -126,28 +124,6 @@
             this.lblMensaje.Size = new System.Drawing.Size(1081, 47);
             this.lblMensaje.TabIndex = 23;
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAñadirTelefonoContacto
-            // 
-            this.btnAñadirTelefonoContacto.Location = new System.Drawing.Point(1407, 17);
-            this.btnAñadirTelefonoContacto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAñadirTelefonoContacto.Name = "btnAñadirTelefonoContacto";
-            this.btnAñadirTelefonoContacto.Size = new System.Drawing.Size(220, 47);
-            this.btnAñadirTelefonoContacto.TabIndex = 33;
-            this.btnAñadirTelefonoContacto.Text = "Añadir Telefono a Conacto";
-            this.btnAñadirTelefonoContacto.UseVisualStyleBackColor = true;
-            this.btnAñadirTelefonoContacto.Click += new System.EventHandler(this.btnAñadirTelefonoContacto_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(1181, 17);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(220, 47);
-            this.btnBorrar.TabIndex = 31;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // gbMantenimiento
             // 
@@ -173,6 +149,7 @@
             this.btnAnyadirTelefonoAContacto.TabIndex = 2;
             this.btnAnyadirTelefonoAContacto.Text = "Añadir/Borrar un teléfono de un contacto";
             this.btnAnyadirTelefonoAContacto.UseVisualStyleBackColor = false;
+            this.btnAnyadirTelefonoAContacto.Click += new System.EventHandler(this.btnAnyadirTelefonoAContacto_Click);
             // 
             // btnEliminarContacto
             // 
@@ -218,7 +195,7 @@
             this.btnEliminarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEliminarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarGrupo.Location = new System.Drawing.Point(347, 58);
+            this.btnEliminarGrupo.Location = new System.Drawing.Point(351, 58);
             this.btnEliminarGrupo.Name = "btnEliminarGrupo";
             this.btnEliminarGrupo.Size = new System.Drawing.Size(138, 49);
             this.btnEliminarGrupo.TabIndex = 3;
@@ -231,7 +208,7 @@
             this.btnDarDeAltaUnGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnDarDeAltaUnGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDarDeAltaUnGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDarDeAltaUnGrupo.Location = new System.Drawing.Point(82, 58);
+            this.btnDarDeAltaUnGrupo.Location = new System.Drawing.Point(72, 58);
             this.btnDarDeAltaUnGrupo.Name = "btnDarDeAltaUnGrupo";
             this.btnDarDeAltaUnGrupo.Size = new System.Drawing.Size(138, 49);
             this.btnDarDeAltaUnGrupo.TabIndex = 3;
@@ -247,8 +224,6 @@
             this.ClientSize = new System.Drawing.Size(1777, 612);
             this.Controls.Add(this.gbGrupos);
             this.Controls.Add(this.gbMantenimiento);
-            this.Controls.Add(this.btnAñadirTelefonoContacto);
-            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.txtNumeroTelefono);
             this.Controls.Add(this.btnContactosTelefono);
             this.Controls.Add(this.btnTodosContactos);
@@ -258,7 +233,7 @@
             this.Controls.Add(this.dgvContactos);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmPrincipal";
-            this.Text = "Form1";
+            this.Text = "App Contactos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
             this.gbMantenimiento.ResumeLayout(false);
             this.gbGrupos.ResumeLayout(false);
@@ -276,8 +251,6 @@
         private System.Windows.Forms.TextBox txtIdContacto;
         private System.Windows.Forms.Button btnTelefonosContacto;
         private System.Windows.Forms.Label lblMensaje;
-        private System.Windows.Forms.Button btnAñadirTelefonoContacto;
-        private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.GroupBox gbMantenimiento;
         private System.Windows.Forms.Button btnAnyadirTelefonoAContacto;
         private System.Windows.Forms.Button btnEliminarContacto;

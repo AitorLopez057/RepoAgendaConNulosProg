@@ -15,16 +15,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Contactos_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnTodosContactos_Click(object sender, EventArgs e)
         {
             List<Contactos> contactos = new List<Contactos>();
@@ -49,7 +39,7 @@ namespace CapaPresentacion
 
         private void btnAñadirTelefonoContacto_Click(object sender, EventArgs e)
         {
-            frmAñadirTelefono frmAñadirTelefono = new frmAñadirTelefono();
+            frmAnñadirTelefono frmAñadirTelefono = new frmAnñadirTelefono();
             frmAñadirTelefono.ShowDialog();
         }
 
@@ -149,6 +139,12 @@ namespace CapaPresentacion
         {
             frmEliminarContacto frmEliminarContacto = new frmEliminarContacto();
             frmEliminarContacto.ShowDialog();
+        }
+
+        private void btnAnyadirTelefonoAContacto_Click(object sender, EventArgs e)
+        {
+            frmAnñadirTelefono frmAnñadirTelefono = new frmAnñadirTelefono();
+            frmAnñadirTelefono.ShowDialog();
         }
     }
 }

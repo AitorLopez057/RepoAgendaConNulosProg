@@ -72,10 +72,12 @@
             // lblResultado
             // 
             this.lblResultado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblResultado.Location = new System.Drawing.Point(66, 33);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(922, 46);
             this.lblResultado.TabIndex = 13;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBContacto
             // 
@@ -155,7 +157,7 @@
             this.cboGrupo.Size = new System.Drawing.Size(177, 24);
             this.cboGrupo.TabIndex = 30;
             // 
-            // frmDarAlta
+            // frmDarAltaContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,7 +175,7 @@
             this.Controls.Add(this.btnAñadirContacto);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.lblBContacto);
-            this.Name = "frmDarAlta";
+            this.Name = "frmDarAltaContacto";
             this.Text = "DarAlta";
             this.ResumeLayout(false);
             this.PerformLayout();

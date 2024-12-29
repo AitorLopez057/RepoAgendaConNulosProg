@@ -28,25 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEliminarGrupo));
             this.lblResultado = new System.Windows.Forms.Label();
             this.txtAñadirGrupo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAñadirGrupo = new System.Windows.Forms.Button();
+            this.btnEliminarGrupo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblBTelefono = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblResultado
             // 
             this.lblResultado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblResultado.Location = new System.Drawing.Point(550, 67);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(562, 40);
             this.lblResultado.TabIndex = 32;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtAñadirGrupo
             // 
@@ -65,37 +63,27 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "NOMBRE GRUPO";
             // 
-            // btnAñadirGrupo
+            // btnEliminarGrupo
             // 
-            this.btnAñadirGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAñadirGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAñadirGrupo.Location = new System.Drawing.Point(601, 275);
-            this.btnAñadirGrupo.Name = "btnAñadirGrupo";
-            this.btnAñadirGrupo.Size = new System.Drawing.Size(259, 53);
-            this.btnAñadirGrupo.TabIndex = 28;
-            this.btnAñadirGrupo.Text = "Eliminar grupo";
-            this.btnAñadirGrupo.UseVisualStyleBackColor = false;
-            this.btnAñadirGrupo.Click += new System.EventHandler(this.btnAñadirGrupo_Click);
+            this.btnEliminarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEliminarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEliminarGrupo.Location = new System.Drawing.Point(553, 334);
+            this.btnEliminarGrupo.Name = "btnEliminarGrupo";
+            this.btnEliminarGrupo.Size = new System.Drawing.Size(259, 53);
+            this.btnEliminarGrupo.TabIndex = 28;
+            this.btnEliminarGrupo.Text = "Eliminar grupo";
+            this.btnEliminarGrupo.UseVisualStyleBackColor = false;
+            this.btnEliminarGrupo.Click += new System.EventHandler(this.btnEliminarGrupo_Click_1);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(0, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(517, 454);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(110, 128);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(297, 199);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
             // 
             // lblBTelefono
             // 
@@ -118,11 +106,9 @@
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.txtAñadirGrupo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnAñadirGrupo);
+            this.Controls.Add(this.btnEliminarGrupo);
             this.Name = "frmEliminarGrupo";
             this.Text = "frmEliminarGrupo";
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,9 +119,8 @@
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.TextBox txtAñadirGrupo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAñadirGrupo;
+        private System.Windows.Forms.Button btnEliminarGrupo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblBTelefono;
     }
 }

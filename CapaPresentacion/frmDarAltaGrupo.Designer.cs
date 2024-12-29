@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDarAltaGrupo));
             this.txtAñadirGrupo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAñadirGrupo = new System.Windows.Forms.Button();
             this.lblBTelefono = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblResultado = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtAñadirGrupo
@@ -60,8 +56,9 @@
             // btnAñadirGrupo
             // 
             this.btnAñadirGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAñadirGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAñadirGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAñadirGrupo.Location = new System.Drawing.Point(554, 259);
+            this.btnAñadirGrupo.Location = new System.Drawing.Point(554, 308);
             this.btnAñadirGrupo.Name = "btnAñadirGrupo";
             this.btnAñadirGrupo.Size = new System.Drawing.Size(259, 53);
             this.btnAñadirGrupo.TabIndex = 22;
@@ -80,19 +77,9 @@
             this.lblBTelefono.TabIndex = 21;
             this.lblBTelefono.Text = "Dar de Alta un Grupo";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(105, 112);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(297, 199);
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(0, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(519, 455);
@@ -102,10 +89,12 @@
             // lblResultado
             // 
             this.lblResultado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblResultado.Location = new System.Drawing.Point(551, 75);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(608, 40);
             this.lblResultado.TabIndex = 27;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmDarAltaGrupo
             // 
@@ -120,8 +109,6 @@
             this.Controls.Add(this.lblBTelefono);
             this.Name = "frmDarAltaGrupo";
             this.Text = "frmDarAltaGrupo";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,7 +120,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAñadirGrupo;
         private System.Windows.Forms.Label lblBTelefono;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblResultado;
     }

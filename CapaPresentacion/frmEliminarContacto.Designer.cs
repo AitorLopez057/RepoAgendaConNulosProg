@@ -28,42 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblBContacto = new System.Windows.Forms.Label();
-            this.lblBTelefono = new System.Windows.Forms.Label();
             this.lblResultado = new System.Windows.Forms.Label();
             this.btnBorrarContacto = new System.Windows.Forms.Button();
-            this.btnBorrarTelefono = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtEliminarContacto = new System.Windows.Forms.TextBox();
-            this.txtEliminarTelefonoContacto = new System.Windows.Forms.TextBox();
-            this.txtEliminarTelefono = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblBTelefono = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblBContacto
-            // 
-            this.lblBContacto.AutoSize = true;
-            this.lblBContacto.Location = new System.Drawing.Point(184, 100);
-            this.lblBContacto.Name = "lblBContacto";
-            this.lblBContacto.Size = new System.Drawing.Size(117, 16);
-            this.lblBContacto.TabIndex = 0;
-            this.lblBContacto.Text = "Borrar un Contacto";
-            // 
-            // lblBTelefono
-            // 
-            this.lblBTelefono.AutoSize = true;
-            this.lblBTelefono.Location = new System.Drawing.Point(591, 100);
-            this.lblBTelefono.Name = "lblBTelefono";
-            this.lblBTelefono.Size = new System.Drawing.Size(118, 16);
-            this.lblBTelefono.TabIndex = 1;
-            this.lblBTelefono.Text = "Borrar un Telefono";
             // 
             // lblResultado
             // 
-            this.lblResultado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblResultado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblResultado.Location = new System.Drawing.Point(77, 14);
+            this.lblResultado.Location = new System.Drawing.Point(542, 63);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(731, 46);
             this.lblResultado.TabIndex = 2;
@@ -71,95 +48,68 @@
             // 
             // btnBorrarContacto
             // 
-            this.btnBorrarContacto.Location = new System.Drawing.Point(100, 331);
+            this.btnBorrarContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBorrarContacto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorrarContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBorrarContacto.Location = new System.Drawing.Point(546, 324);
             this.btnBorrarContacto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBorrarContacto.Name = "btnBorrarContacto";
             this.btnBorrarContacto.Size = new System.Drawing.Size(271, 65);
             this.btnBorrarContacto.TabIndex = 3;
-            this.btnBorrarContacto.Text = "Borrar Contacto";
-            this.btnBorrarContacto.UseVisualStyleBackColor = true;
+            this.btnBorrarContacto.Text = "Eliminar Contacto";
+            this.btnBorrarContacto.UseVisualStyleBackColor = false;
             this.btnBorrarContacto.Click += new System.EventHandler(this.btnBorrarContacto_Click);
-            // 
-            // btnBorrarTelefono
-            // 
-            this.btnBorrarTelefono.Location = new System.Drawing.Point(513, 331);
-            this.btnBorrarTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBorrarTelefono.Name = "btnBorrarTelefono";
-            this.btnBorrarTelefono.Size = new System.Drawing.Size(271, 65);
-            this.btnBorrarTelefono.TabIndex = 4;
-            this.btnBorrarTelefono.Text = "Borrar Telefono";
-            this.btnBorrarTelefono.UseVisualStyleBackColor = true;
-            this.btnBorrarTelefono.Click += new System.EventHandler(this.btnBorrarTelefono_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 149);
+            this.label1.Location = new System.Drawing.Point(543, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "NOMBRE CONTACTO";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(491, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "NOMBRE CONTACTO";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(491, 209);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "TELÉFONO";
-            // 
             // txtEliminarContacto
             // 
-            this.txtEliminarContacto.Location = new System.Drawing.Point(240, 143);
+            this.txtEliminarContacto.Location = new System.Drawing.Point(706, 168);
             this.txtEliminarContacto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEliminarContacto.Name = "txtEliminarContacto";
             this.txtEliminarContacto.Size = new System.Drawing.Size(177, 22);
             this.txtEliminarContacto.TabIndex = 8;
             // 
-            // txtEliminarTelefonoContacto
+            // groupBox1
             // 
-            this.txtEliminarTelefonoContacto.Location = new System.Drawing.Point(645, 143);
-            this.txtEliminarTelefonoContacto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEliminarTelefonoContacto.Name = "txtEliminarTelefonoContacto";
-            this.txtEliminarTelefonoContacto.Size = new System.Drawing.Size(177, 22);
-            this.txtEliminarTelefonoContacto.TabIndex = 9;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Location = new System.Drawing.Point(0, -1);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(517, 454);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
             // 
-            // txtEliminarTelefono
+            // lblBTelefono
             // 
-            this.txtEliminarTelefono.Location = new System.Drawing.Point(587, 209);
-            this.txtEliminarTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEliminarTelefono.Name = "txtEliminarTelefono";
-            this.txtEliminarTelefono.Size = new System.Drawing.Size(231, 22);
-            this.txtEliminarTelefono.TabIndex = 10;
+            this.lblBTelefono.AutoSize = true;
+            this.lblBTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBTelefono.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblBTelefono.Location = new System.Drawing.Point(541, 18);
+            this.lblBTelefono.Name = "lblBTelefono";
+            this.lblBTelefono.Size = new System.Drawing.Size(269, 29);
+            this.lblBTelefono.TabIndex = 35;
+            this.lblBTelefono.Text = "Eliminar un Contacto";
             // 
-            // Borrar
+            // frmEliminarContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 608);
-            this.Controls.Add(this.txtEliminarTelefono);
-            this.Controls.Add(this.txtEliminarTelefonoContacto);
+            this.ClientSize = new System.Drawing.Size(1298, 450);
+            this.Controls.Add(this.lblBTelefono);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtEliminarContacto);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnBorrarTelefono);
             this.Controls.Add(this.btnBorrarContacto);
             this.Controls.Add(this.lblResultado);
-            this.Controls.Add(this.lblBTelefono);
-            this.Controls.Add(this.lblBContacto);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Borrar";
+            this.Name = "frmEliminarContacto";
             this.Text = "Borrar";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,17 +117,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblBContacto;
-        private System.Windows.Forms.Label lblBTelefono;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Button btnBorrarContacto;
-        private System.Windows.Forms.Button btnBorrarTelefono;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEliminarContacto;
-        private System.Windows.Forms.TextBox txtEliminarTelefonoContacto;
-        private System.Windows.Forms.TextBox txtEliminarTelefono;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblBTelefono;
     }
 }
