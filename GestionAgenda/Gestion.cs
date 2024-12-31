@@ -218,5 +218,22 @@ namespace GestionAgenda
             return miAgendaEntities.Grupos.OrderBy(gru => gru.NombreGrupo).ToList();
         }
 
+        // Borrar un grupo
+        public String BorrarGrupo(Grupos grupo)
+        {
+            string msg = "";
+            try
+            {
+                miAgendaEntities.Grupos.Remove(grupo);
+                miAgendaEntities.SaveChanges();
+                msg = $"Grupo {grupo.NombreGrupo} eliminado correctamente";
+            }
+            catch (Exception exc)
+            {
+                msg = "Error al borrar el Grupo: " + exc.Message;
+            }
+            return msg;
+        }
+
     }
 }

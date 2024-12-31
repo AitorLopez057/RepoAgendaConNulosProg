@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.lblResultado = new System.Windows.Forms.Label();
-            this.txtAñadirGrupo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminarGrupo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblBTelefono = new System.Windows.Forms.Label();
+            this.cboTodosGrupos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblResultado
@@ -46,22 +46,15 @@
             this.lblResultado.TabIndex = 32;
             this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtAñadirGrupo
-            // 
-            this.txtAñadirGrupo.Location = new System.Drawing.Point(728, 155);
-            this.txtAñadirGrupo.Name = "txtAñadirGrupo";
-            this.txtAñadirGrupo.Size = new System.Drawing.Size(177, 22);
-            this.txtAñadirGrupo.TabIndex = 30;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(549, 155);
+            this.label2.Location = new System.Drawing.Point(549, 145);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 20);
+            this.label2.Size = new System.Drawing.Size(243, 20);
             this.label2.TabIndex = 29;
-            this.label2.Text = "NOMBRE GRUPO";
+            this.label2.Text = "Selecciona un Grupo a eliminar";
             // 
             // btnEliminarGrupo
             // 
@@ -96,19 +89,29 @@
             this.lblBTelefono.TabIndex = 34;
             this.lblBTelefono.Text = "Eliminar un Grupo";
             // 
+            // cboTodosGrupos
+            // 
+            this.cboTodosGrupos.FormattingEnabled = true;
+            this.cboTodosGrupos.Location = new System.Drawing.Point(553, 179);
+            this.cboTodosGrupos.Name = "cboTodosGrupos";
+            this.cboTodosGrupos.Size = new System.Drawing.Size(229, 24);
+            this.cboTodosGrupos.TabIndex = 35;
+            this.cboTodosGrupos.SelectedIndexChanged += new System.EventHandler(this.cboTodosGrupos_SelectedIndexChanged);
+            // 
             // frmEliminarGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 450);
+            this.Controls.Add(this.cboTodosGrupos);
             this.Controls.Add(this.lblBTelefono);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblResultado);
-            this.Controls.Add(this.txtAñadirGrupo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnEliminarGrupo);
             this.Name = "frmEliminarGrupo";
             this.Text = "frmEliminarGrupo";
+            this.Load += new System.EventHandler(this.frmEliminarGrupo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,10 +120,10 @@
         #endregion
 
         private System.Windows.Forms.Label lblResultado;
-        private System.Windows.Forms.TextBox txtAñadirGrupo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEliminarGrupo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblBTelefono;
+        private System.Windows.Forms.ComboBox cboTodosGrupos;
     }
 }
