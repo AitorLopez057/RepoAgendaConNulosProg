@@ -44,8 +44,16 @@ namespace CapaPresentacion
                     grupoAux = (Grupos)cboGrupo.Items[cboGrupo.SelectedIndex];
                     contactoAux = new Contactos(nombre, null, grupoAux.IdGrupo);
                     contactoAux.Telefonos = telefonos;
-                    error = gestion.AnyadirContacto(contactoAux);
-                    lblResultado.Text = $"El contacto con nombre {contactoAux.Nombre} se creado correctamente.";
+                    if (telefonos.Count == 0)
+                    {
+                        DialogResult dr = MessageBox.Show($"Estás seguro de que quieres crear un contacto sin teléfonos?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (dr == DialogResult.Yes)
+                        {
+                            error = gestion.AnyadirContacto(contactoAux);
+                            lblResultado.Text = $"El contacto con nombre {contactoAux.Nombre} se creado correctamente.";
+                        }
+                    }
+
                 }
                 
             }catch (Exception ex)
