@@ -39,7 +39,7 @@ namespace CapaPresentacion
 
         private void btnAñadirTelefonoContacto_Click(object sender, EventArgs e)
         {
-            frmAnñadirTelefono frmAñadirTelefono = new frmAnñadirTelefono();
+            frmAnyadirBorrarTelefono frmAñadirTelefono = new frmAnyadirBorrarTelefono();
             frmAñadirTelefono.ShowDialog();
         }
 
@@ -143,7 +143,7 @@ namespace CapaPresentacion
 
         private void btnAnyadirTelefonoAContacto_Click(object sender, EventArgs e)
         {
-            frmAnñadirTelefono frmAnñadirTelefono = new frmAnñadirTelefono();
+            frmAnyadirBorrarTelefono frmAnñadirTelefono = new frmAnyadirBorrarTelefono();
             frmAnñadirTelefono.ShowDialog();
         }
     }

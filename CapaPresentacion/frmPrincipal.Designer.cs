@@ -66,7 +66,7 @@
             // 
             // txtNumeroTelefono
             // 
-            this.txtNumeroTelefono.Location = new System.Drawing.Point(234, 40);
+            this.txtNumeroTelefono.Location = new System.Drawing.Point(231, 40);
             this.txtNumeroTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTelefono.MaxLength = 9;
             this.txtNumeroTelefono.Name = "txtNumeroTelefono";
@@ -90,7 +90,7 @@
             // btnTodosContactos
             // 
             this.btnTodosContactos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTodosContactos.Location = new System.Drawing.Point(27, 31);
+            this.btnTodosContactos.Location = new System.Drawing.Point(30, 29);
             this.btnTodosContactos.Margin = new System.Windows.Forms.Padding(4);
             this.btnTodosContactos.Name = "btnTodosContactos";
             this.btnTodosContactos.Size = new System.Drawing.Size(160, 41);

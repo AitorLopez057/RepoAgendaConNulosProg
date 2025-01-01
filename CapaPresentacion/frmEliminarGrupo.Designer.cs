@@ -34,6 +34,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblBTelefono = new System.Windows.Forms.Label();
             this.cboTodosGrupos = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblResultado
@@ -50,7 +52,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(549, 145);
+            this.label2.Location = new System.Drawing.Point(6, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(243, 20);
             this.label2.TabIndex = 29;
@@ -61,7 +63,7 @@
             this.btnEliminarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEliminarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarGrupo.Location = new System.Drawing.Point(553, 334);
+            this.btnEliminarGrupo.Location = new System.Drawing.Point(10, 208);
             this.btnEliminarGrupo.Name = "btnEliminarGrupo";
             this.btnEliminarGrupo.Size = new System.Drawing.Size(259, 53);
             this.btnEliminarGrupo.TabIndex = 28;
@@ -92,26 +94,38 @@
             // cboTodosGrupos
             // 
             this.cboTodosGrupos.FormattingEnabled = true;
-            this.cboTodosGrupos.Location = new System.Drawing.Point(553, 179);
+            this.cboTodosGrupos.Location = new System.Drawing.Point(10, 88);
             this.cboTodosGrupos.Name = "cboTodosGrupos";
             this.cboTodosGrupos.Size = new System.Drawing.Size(229, 24);
             this.cboTodosGrupos.TabIndex = 35;
             this.cboTodosGrupos.SelectedIndexChanged += new System.EventHandler(this.cboTodosGrupos_SelectedIndexChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.cboTodosGrupos);
+            this.groupBox2.Controls.Add(this.btnEliminarGrupo);
+            this.groupBox2.Location = new System.Drawing.Point(554, 150);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(558, 276);
+            this.groupBox2.TabIndex = 36;
+            this.groupBox2.TabStop = false;
             // 
             // frmEliminarGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 450);
-            this.Controls.Add(this.cboTodosGrupos);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblBTelefono);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblResultado);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnEliminarGrupo);
             this.Name = "frmEliminarGrupo";
             this.Text = "frmEliminarGrupo";
             this.Load += new System.EventHandler(this.frmEliminarGrupo_Load);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +139,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblBTelefono;
         private System.Windows.Forms.ComboBox cboTodosGrupos;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

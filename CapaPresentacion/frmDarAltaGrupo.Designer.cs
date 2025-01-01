@@ -34,11 +34,13 @@
             this.lblBTelefono = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtAñadirGrupo
             // 
-            this.txtAñadirGrupo.Location = new System.Drawing.Point(726, 182);
+            this.txtAñadirGrupo.Location = new System.Drawing.Point(29, 80);
             this.txtAñadirGrupo.Name = "txtAñadirGrupo";
             this.txtAñadirGrupo.Size = new System.Drawing.Size(177, 22);
             this.txtAñadirGrupo.TabIndex = 24;
@@ -47,18 +49,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(550, 184);
+            this.label2.Location = new System.Drawing.Point(25, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 20);
+            this.label2.Size = new System.Drawing.Size(146, 20);
             this.label2.TabIndex = 23;
-            this.label2.Text = "NOMBRE GRUPO";
+            this.label2.Text = "Nombre del Grupo";
             // 
             // btnAñadirGrupo
             // 
             this.btnAñadirGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAñadirGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAñadirGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAñadirGrupo.Location = new System.Drawing.Point(554, 308);
+            this.btnAñadirGrupo.Location = new System.Drawing.Point(29, 186);
             this.btnAñadirGrupo.Name = "btnAñadirGrupo";
             this.btnAñadirGrupo.Size = new System.Drawing.Size(225, 53);
             this.btnAñadirGrupo.TabIndex = 22;
@@ -73,7 +75,7 @@
             this.lblBTelefono.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblBTelefono.Location = new System.Drawing.Point(549, 27);
             this.lblBTelefono.Name = "lblBTelefono";
-            this.lblBTelefono.Size = new System.Drawing.Size(250, 36);
+            this.lblBTelefono.Size = new System.Drawing.Size(200, 29);
             this.lblBTelefono.TabIndex = 21;
             this.lblBTelefono.Text = "Crear un Grupo";
             // 
@@ -96,19 +98,31 @@
             this.lblResultado.TabIndex = 27;
             this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.btnAñadirGrupo);
+            this.groupBox2.Controls.Add(this.txtAñadirGrupo);
+            this.groupBox2.Location = new System.Drawing.Point(555, 151);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(604, 266);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            // 
             // frmDarAltaGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 450);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtAñadirGrupo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnAñadirGrupo);
             this.Controls.Add(this.lblBTelefono);
             this.Name = "frmDarAltaGrupo";
             this.Text = "frmDarAltaGrupo";
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +136,6 @@
         private System.Windows.Forms.Label lblBTelefono;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

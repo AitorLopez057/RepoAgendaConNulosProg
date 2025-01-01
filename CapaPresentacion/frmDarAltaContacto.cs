@@ -20,10 +20,10 @@ namespace CapaPresentacion
 
         private void btnAñadirContacto_Click(object sender, EventArgs e)
         {
-            string nombre= txtNombreContacto.Text;
+            string nombre = txtNombreContacto.Text;
             if (String.IsNullOrWhiteSpace(nombre))
             {
-                MessageBox.Show($"El nombre del contacto no puede quedar vacio");
+                lblResultado.Text = "El nombre del contacto no puede quedar vacio";
                 return;
             }
             Grupos grupoAux = null;
@@ -33,7 +33,7 @@ namespace CapaPresentacion
             {
                 if (cboGrupo.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Selecciona un grupo");
+                    lblResultado.Text = "Selecciona un grupo";
                     //contactoAux = new Contactos(nombre, null, -1);
                     //contactoAux.Telefonos = telefonos;
                     //error = gestion.AnyadirContacto(contactoAux);
@@ -45,6 +45,7 @@ namespace CapaPresentacion
                     contactoAux = new Contactos(nombre, null, grupoAux.IdGrupo);
                     contactoAux.Telefonos = telefonos;
                     error = gestion.AnyadirContacto(contactoAux);
+                    lblResultado.Text = $"El contacto con nombre {contactoAux.Nombre} se creado correctamente.";
                 }
                 
             }catch (Exception ex)

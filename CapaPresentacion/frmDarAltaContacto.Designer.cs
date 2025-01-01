@@ -48,9 +48,9 @@
             // 
             // txtNombreContacto
             // 
-            this.txtNombreContacto.Location = new System.Drawing.Point(762, 137);
+            this.txtNombreContacto.Location = new System.Drawing.Point(641, 137);
             this.txtNombreContacto.Name = "txtNombreContacto";
-            this.txtNombreContacto.Size = new System.Drawing.Size(177, 22);
+            this.txtNombreContacto.Size = new System.Drawing.Size(262, 22);
             this.txtNombreContacto.TabIndex = 19;
             // 
             // label1
@@ -59,9 +59,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(537, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 20);
+            this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 16;
-            this.label1.Text = "NOMBRE CONTACTO";
+            this.label1.Text = "Nombre";
             // 
             // btnAñadirContacto
             // 
@@ -91,15 +91,15 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.Location = new System.Drawing.Point(537, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 22;
-            this.label4.Text = "GRUPO";
+            this.label4.Text = "Grupo";
             // 
             // txtDescripcionTelefono
             // 
-            this.txtDescripcionTelefono.Location = new System.Drawing.Point(160, 89);
+            this.txtDescripcionTelefono.Location = new System.Drawing.Point(210, 89);
             this.txtDescripcionTelefono.Name = "txtDescripcionTelefono";
-            this.txtDescripcionTelefono.Size = new System.Drawing.Size(298, 22);
+            this.txtDescripcionTelefono.Size = new System.Drawing.Size(309, 22);
             this.txtDescripcionTelefono.TabIndex = 27;
             // 
             // label3
@@ -108,15 +108,15 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.Location = new System.Drawing.Point(21, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 25);
+            this.label3.Size = new System.Drawing.Size(99, 20);
             this.label3.TabIndex = 26;
-            this.label3.Text = "DESCRIPCIÓN";
+            this.label3.Text = "Descripción";
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(175, 53);
+            this.txtTelefono.Location = new System.Drawing.Point(210, 53);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(283, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(309, 22);
             this.txtTelefono.TabIndex = 25;
             // 
             // label5
@@ -125,38 +125,39 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(21, 50);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 25);
+            this.label5.Size = new System.Drawing.Size(160, 20);
             this.label5.TabIndex = 24;
-            this.label5.Text = "TELEFONO";
+            this.label5.Text = "Numero de Teléfono";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(171, 9);
+            this.label6.Location = new System.Drawing.Point(95, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 29);
+            this.label6.Size = new System.Drawing.Size(295, 29);
             this.label6.TabIndex = 28;
-            this.label6.Text = "Telefonos";
+            this.label6.Text = "Telefonos del Contacto";
             // 
             // btnAñadirTelefono
             // 
+            this.btnAñadirTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAñadirTelefono.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAñadirTelefono.Location = new System.Drawing.Point(24, 130);
+            this.btnAñadirTelefono.Location = new System.Drawing.Point(25, 127);
             this.btnAñadirTelefono.Name = "btnAñadirTelefono";
-            this.btnAñadirTelefono.Size = new System.Drawing.Size(184, 38);
+            this.btnAñadirTelefono.Size = new System.Drawing.Size(351, 45);
             this.btnAñadirTelefono.TabIndex = 29;
-            this.btnAñadirTelefono.Text = "Añadir Teléfono";
-            this.btnAñadirTelefono.UseVisualStyleBackColor = true;
+            this.btnAñadirTelefono.Text = "Añadir Teléfono al contacto";
+            this.btnAñadirTelefono.UseVisualStyleBackColor = false;
             this.btnAñadirTelefono.Click += new System.EventHandler(this.btnAñadirTelefono_Click);
             // 
             // cboGrupo
             // 
             this.cboGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGrupo.FormattingEnabled = true;
-            this.cboGrupo.Location = new System.Drawing.Point(762, 165);
+            this.cboGrupo.Location = new System.Drawing.Point(641, 165);
             this.cboGrupo.Name = "cboGrupo";
-            this.cboGrupo.Size = new System.Drawing.Size(177, 24);
+            this.cboGrupo.Size = new System.Drawing.Size(262, 24);
             this.cboGrupo.TabIndex = 30;
             // 
             // groupBox1
@@ -175,7 +176,7 @@
             this.lblBTelefono.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblBTelefono.Location = new System.Drawing.Point(536, 80);
             this.lblBTelefono.Name = "lblBTelefono";
-            this.lblBTelefono.Size = new System.Drawing.Size(294, 36);
+            this.lblBTelefono.Size = new System.Drawing.Size(235, 29);
             this.lblBTelefono.TabIndex = 36;
             this.lblBTelefono.Text = "Crear un Contacto";
             // 
@@ -190,7 +191,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(541, 204);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(508, 189);
+            this.groupBox2.Size = new System.Drawing.Size(566, 189);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             // 

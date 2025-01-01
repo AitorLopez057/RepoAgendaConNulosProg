@@ -34,6 +34,8 @@
             this.lblBTelefono = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboTodosContactos = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblResultado
@@ -51,7 +53,7 @@
             this.btnBorrarContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnBorrarContacto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBorrarContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnBorrarContacto.Location = new System.Drawing.Point(546, 324);
+            this.btnBorrarContacto.Location = new System.Drawing.Point(29, 194);
             this.btnBorrarContacto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBorrarContacto.Name = "btnBorrarContacto";
             this.btnBorrarContacto.Size = new System.Drawing.Size(271, 65);
@@ -84,7 +86,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(542, 153);
+            this.label2.Location = new System.Drawing.Point(34, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(264, 20);
             this.label2.TabIndex = 36;
@@ -93,27 +95,39 @@
             // cboTodosContactos
             // 
             this.cboTodosContactos.FormattingEnabled = true;
-            this.cboTodosContactos.Location = new System.Drawing.Point(546, 196);
+            this.cboTodosContactos.Location = new System.Drawing.Point(38, 92);
             this.cboTodosContactos.Name = "cboTodosContactos";
             this.cboTodosContactos.Size = new System.Drawing.Size(201, 24);
             this.cboTodosContactos.TabIndex = 37;
             this.cboTodosContactos.SelectedIndexChanged += new System.EventHandler(this.cboTodosContactos_SelectedIndexChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.cboTodosContactos);
+            this.groupBox2.Controls.Add(this.btnBorrarContacto);
+            this.groupBox2.Location = new System.Drawing.Point(546, 131);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(727, 291);
+            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabStop = false;
             // 
             // frmEliminarContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1298, 450);
-            this.Controls.Add(this.cboTodosContactos);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblBTelefono);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnBorrarContacto);
             this.Controls.Add(this.lblResultado);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmEliminarContacto";
             this.Text = "Borrar";
             this.Load += new System.EventHandler(this.frmEliminarContacto_Load);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +140,6 @@
         private System.Windows.Forms.Label lblBTelefono;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboTodosContactos;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
