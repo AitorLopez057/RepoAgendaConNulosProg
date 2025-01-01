@@ -17,19 +17,23 @@ namespace CapaPresentacion
 
         private void btnEliminarGrupo_Click_1(object sender, EventArgs e)
         {
-            if(grupoSeleccionado != null)
-            {
-                string resultado = gestion.BorrarGrupo(grupoSeleccionado);
-                lblResultado.Text = resultado;
-                cboTodosGrupos.Items.Clear();
-                cboTodosGrupos.Text = "";
-                cboTodosGrupos.Items.AddRange(gestion.GruposOrdenados().ToArray());
-            }
-            else
-            {
-                lblResultado.Text = "Debes de seleccionar un grupo para borrar. ";
-            }
-            
+                if (grupoSeleccionado != null)
+                {
+                    DialogResult dr = MessageBox.Show($"Estás seguro de que quieres borrar el Grupo {grupoSeleccionado.NombreGrupo}?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.Yes)
+                    {
+                        string resultado = gestion.BorrarGrupo(grupoSeleccionado);
+                        lblResultado.Text = resultado;
+                        cboTodosGrupos.Items.Clear();
+                        cboTodosGrupos.Text = "";
+                        cboTodosGrupos.Items.AddRange(gestion.GruposOrdenados().ToArray());
+                    }
+
+                }
+                else
+                {
+                    lblResultado.Text = "Debes de seleccionar un grupo para borrar. ";
+                }
         }
 
         private void frmEliminarGrupo_Load(object sender, EventArgs e)

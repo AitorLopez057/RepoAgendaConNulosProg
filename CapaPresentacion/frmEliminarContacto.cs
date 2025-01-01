@@ -9,29 +9,46 @@ namespace CapaPresentacion
     public partial class frmEliminarContacto : Form
     {
         Gestion gestion;
+        Contactos contactoSeleccionado;
 
         public frmEliminarContacto()
         {
             InitializeComponent();
             gestion = new Gestion();
+            contactoSeleccionado = new Contactos();
         }
 
         private void btnBorrarContacto_Click(object sender, EventArgs e)
-        {
-
-            if (String.IsNullOrEmpty(txtEliminarContacto.Text)) lblResultado.Text = "Debes de introducir el nombre del Contacto que quieres borrar";
-            else
+            
             {
-                Contactos contacto = gestion.ContactosOrdenados().SingleOrDefault(con => con.Nombre == txtEliminarContacto.Text);
-                if (contacto == null) lblResultado.Text=$"El contacto {txtEliminarContacto.Text} no existe";
-                else
+                if (contactoSeleccionado.IdContacto != 0)
                 {
-                    String resultado = gestion.BorrarContacto(contacto.IdContacto);
-                    if (resultado != "") MessageBox.Show(resultado);
+                    DialogResult dr = MessageBox.Show($"Estás seguro de que quieres borrar el Contacto {contactoSeleccionado.Nombre}?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        String resultado = gestion.BorrarContacto(contactoSeleccionado.IdContacto);
+                        if (resultado != "") lblResultado.Text = resultado;
+                        cboTodosContactos.Items.Clear();
+                        cboTodosContactos.Text = "";
+                        cboTodosContactos.Items.AddRange(gestion.ContactosOrdenados().ToArray());
+                    }
 
                 }
-            }         
+                else
+                {
+                    lblResultado.Text = "Debes de seleccionar un contacto en la lista.";
+                }
+            }
+
+        private void frmEliminarContacto_Load(object sender, EventArgs e)
+        {
+            cboTodosContactos.Items.AddRange(gestion.ContactosOrdenados().ToArray());
         }
-        
+
+        private void cboTodosContactos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            contactoSeleccionado = cboTodosContactos.SelectedItem as Contactos;
+        }
     }
 }

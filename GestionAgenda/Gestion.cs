@@ -176,7 +176,7 @@ namespace GestionAgenda
                 miAgendaEntities.Contactos.Remove(contacto);
                 miAgendaEntities.SaveChanges();
 
-                msg = "Contacto y sus teléfonos eliminados correctamente.";
+                msg = $"Contacto {contacto.Nombre} y sus teléfonos eliminados correctamente.";
 
             }
             catch (Exception ex)

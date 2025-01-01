@@ -45,6 +45,10 @@ namespace Entidades
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Telefonos> Telefonos { get; set; }
 
+        public override String ToString()
+        {
+            return $"{Nombre}";
+        }
 
         public String toStringTelefonos()
         {
