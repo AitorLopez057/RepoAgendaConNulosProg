@@ -66,18 +66,19 @@
             // 
             // txtNumeroTelefono
             // 
-            this.txtNumeroTelefono.Location = new System.Drawing.Point(242, 40);
+            this.txtNumeroTelefono.Location = new System.Drawing.Point(234, 40);
             this.txtNumeroTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTelefono.MaxLength = 9;
             this.txtNumeroTelefono.Name = "txtNumeroTelefono";
             this.txtNumeroTelefono.Size = new System.Drawing.Size(85, 22);
             this.txtNumeroTelefono.TabIndex = 29;
             this.txtNumeroTelefono.Text = "611111111";
+            this.txtNumeroTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnContactosTelefono
             // 
             this.btnContactosTelefono.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnContactosTelefono.Location = new System.Drawing.Point(28, 31);
+            this.btnContactosTelefono.Location = new System.Drawing.Point(20, 29);
             this.btnContactosTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.btnContactosTelefono.Name = "btnContactosTelefono";
             this.btnContactosTelefono.Size = new System.Drawing.Size(191, 41);
@@ -100,18 +101,18 @@
             // 
             // txtIdContacto
             // 
-            this.txtIdContacto.Location = new System.Drawing.Point(258, 40);
+            this.txtIdContacto.Location = new System.Drawing.Point(246, 40);
             this.txtIdContacto.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdContacto.Name = "txtIdContacto";
             this.txtIdContacto.Size = new System.Drawing.Size(55, 22);
             this.txtIdContacto.TabIndex = 25;
             this.txtIdContacto.Text = "14";
-            this.txtIdContacto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtIdContacto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnTelefonosContacto
             // 
             this.btnTelefonosContacto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTelefonosContacto.Location = new System.Drawing.Point(32, 28);
+            this.btnTelefonosContacto.Location = new System.Drawing.Point(30, 28);
             this.btnTelefonosContacto.Margin = new System.Windows.Forms.Padding(4);
             this.btnTelefonosContacto.Name = "btnTelefonosContacto";
             this.btnTelefonosContacto.Size = new System.Drawing.Size(184, 46);
@@ -149,9 +150,9 @@
             this.btnAnyadirTelefonoAContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAnyadirTelefonoAContacto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnyadirTelefonoAContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAnyadirTelefonoAContacto.Location = new System.Drawing.Point(333, 59);
+            this.btnAnyadirTelefonoAContacto.Location = new System.Drawing.Point(317, 70);
             this.btnAnyadirTelefonoAContacto.Name = "btnAnyadirTelefonoAContacto";
-            this.btnAnyadirTelefonoAContacto.Size = new System.Drawing.Size(169, 77);
+            this.btnAnyadirTelefonoAContacto.Size = new System.Drawing.Size(206, 49);
             this.btnAnyadirTelefonoAContacto.TabIndex = 2;
             this.btnAnyadirTelefonoAContacto.Text = "Añadir/Borrar un teléfono de un contacto";
             this.btnAnyadirTelefonoAContacto.UseVisualStyleBackColor = false;
@@ -162,7 +163,7 @@
             this.btnEliminarContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEliminarContacto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarContacto.Location = new System.Drawing.Point(72, 108);
+            this.btnEliminarContacto.Location = new System.Drawing.Point(72, 106);
             this.btnEliminarContacto.Name = "btnEliminarContacto";
             this.btnEliminarContacto.Size = new System.Drawing.Size(138, 49);
             this.btnEliminarContacto.TabIndex = 1;

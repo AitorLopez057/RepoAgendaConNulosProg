@@ -60,9 +60,9 @@
             this.btnAñadirGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnAñadirGrupo.Location = new System.Drawing.Point(554, 308);
             this.btnAñadirGrupo.Name = "btnAñadirGrupo";
-            this.btnAñadirGrupo.Size = new System.Drawing.Size(259, 53);
+            this.btnAñadirGrupo.Size = new System.Drawing.Size(225, 53);
             this.btnAñadirGrupo.TabIndex = 22;
-            this.btnAñadirGrupo.Text = "Dar de alta el grupo";
+            this.btnAñadirGrupo.Text = "Crear el grupo";
             this.btnAñadirGrupo.UseVisualStyleBackColor = false;
             this.btnAñadirGrupo.Click += new System.EventHandler(this.btnAñadirGrupo_Click);
             // 
@@ -73,9 +73,9 @@
             this.lblBTelefono.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblBTelefono.Location = new System.Drawing.Point(549, 27);
             this.lblBTelefono.Name = "lblBTelefono";
-            this.lblBTelefono.Size = new System.Drawing.Size(270, 29);
+            this.lblBTelefono.Size = new System.Drawing.Size(250, 36);
             this.lblBTelefono.TabIndex = 21;
-            this.lblBTelefono.Text = "Dar de Alta un Grupo";
+            this.lblBTelefono.Text = "Crear un Grupo";
             // 
             // groupBox1
             // 

@@ -24,7 +24,6 @@ namespace CapaPresentacion
                 if (contactoSeleccionado.IdContacto != 0)
                 {
                     DialogResult dr = MessageBox.Show($"Estás seguro de que quieres borrar el Contacto {contactoSeleccionado.Nombre}?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
                     if (dr == DialogResult.Yes)
                     {
                         String resultado = gestion.BorrarContacto(contactoSeleccionado.IdContacto);
@@ -33,7 +32,6 @@ namespace CapaPresentacion
                         cboTodosContactos.Text = "";
                         cboTodosContactos.Items.AddRange(gestion.ContactosOrdenados().ToArray());
                     }
-
                 }
                 else
                 {
