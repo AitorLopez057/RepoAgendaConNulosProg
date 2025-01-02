@@ -14,7 +14,13 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             telefonos = new List<Telefonos>();
-            gestion = new Gestion();
+            gestion = Program.gestion;
+            
+            if (gestion == null)
+            {
+                MessageBox.Show("La inicialización de la aplicación ha fallado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();  
+            }
             cboGrupo.Items.AddRange(gestion.GruposOrdenados().ToArray());
         }
 
@@ -92,5 +98,9 @@ namespace CapaPresentacion
             }
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -57,21 +57,19 @@
             // 
             this.dgvContactos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContactos.Location = new System.Drawing.Point(31, 82);
-            this.dgvContactos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvContactos.Location = new System.Drawing.Point(23, 67);
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.RowHeadersWidth = 51;
-            this.dgvContactos.Size = new System.Drawing.Size(1081, 370);
+            this.dgvContactos.Size = new System.Drawing.Size(811, 301);
             this.dgvContactos.TabIndex = 15;
             this.dgvContactos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellDoubleClick);
             // 
             // txtNumeroTelefono
             // 
-            this.txtNumeroTelefono.Location = new System.Drawing.Point(231, 40);
-            this.txtNumeroTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumeroTelefono.Location = new System.Drawing.Point(173, 32);
             this.txtNumeroTelefono.MaxLength = 9;
             this.txtNumeroTelefono.Name = "txtNumeroTelefono";
-            this.txtNumeroTelefono.Size = new System.Drawing.Size(85, 22);
+            this.txtNumeroTelefono.Size = new System.Drawing.Size(65, 20);
             this.txtNumeroTelefono.TabIndex = 29;
             this.txtNumeroTelefono.Text = "611111111";
             this.txtNumeroTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -79,10 +77,9 @@
             // btnContactosTelefono
             // 
             this.btnContactosTelefono.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnContactosTelefono.Location = new System.Drawing.Point(20, 29);
-            this.btnContactosTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.btnContactosTelefono.Location = new System.Drawing.Point(15, 24);
             this.btnContactosTelefono.Name = "btnContactosTelefono";
-            this.btnContactosTelefono.Size = new System.Drawing.Size(191, 41);
+            this.btnContactosTelefono.Size = new System.Drawing.Size(143, 33);
             this.btnContactosTelefono.TabIndex = 28;
             this.btnContactosTelefono.Text = "Contactos de un teléfono";
             this.btnContactosTelefono.UseVisualStyleBackColor = true;
@@ -91,10 +88,9 @@
             // btnTodosContactos
             // 
             this.btnTodosContactos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTodosContactos.Location = new System.Drawing.Point(30, 29);
-            this.btnTodosContactos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTodosContactos.Location = new System.Drawing.Point(22, 24);
             this.btnTodosContactos.Name = "btnTodosContactos";
-            this.btnTodosContactos.Size = new System.Drawing.Size(160, 41);
+            this.btnTodosContactos.Size = new System.Drawing.Size(120, 33);
             this.btnTodosContactos.TabIndex = 27;
             this.btnTodosContactos.Text = "Todos los contactos";
             this.btnTodosContactos.UseVisualStyleBackColor = true;
@@ -102,10 +98,9 @@
             // 
             // txtIdContacto
             // 
-            this.txtIdContacto.Location = new System.Drawing.Point(246, 40);
-            this.txtIdContacto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdContacto.Location = new System.Drawing.Point(184, 32);
             this.txtIdContacto.Name = "txtIdContacto";
-            this.txtIdContacto.Size = new System.Drawing.Size(55, 22);
+            this.txtIdContacto.Size = new System.Drawing.Size(42, 20);
             this.txtIdContacto.TabIndex = 25;
             this.txtIdContacto.Text = "14";
             this.txtIdContacto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -113,10 +108,9 @@
             // btnTelefonosContacto
             // 
             this.btnTelefonosContacto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTelefonosContacto.Location = new System.Drawing.Point(30, 28);
-            this.btnTelefonosContacto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTelefonosContacto.Location = new System.Drawing.Point(22, 23);
             this.btnTelefonosContacto.Name = "btnTelefonosContacto";
-            this.btnTelefonosContacto.Size = new System.Drawing.Size(184, 46);
+            this.btnTelefonosContacto.Size = new System.Drawing.Size(138, 37);
             this.btnTelefonosContacto.TabIndex = 24;
             this.btnTelefonosContacto.Text = "Teléfonos de contacto";
             this.btnTelefonosContacto.UseVisualStyleBackColor = true;
@@ -126,10 +120,9 @@
             // 
             this.lblMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Location = new System.Drawing.Point(31, 16);
-            this.lblMensaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMensaje.Location = new System.Drawing.Point(23, 13);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(1081, 47);
+            this.lblMensaje.Size = new System.Drawing.Size(811, 38);
             this.lblMensaje.TabIndex = 23;
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -139,9 +132,11 @@
             this.gboMantenimiento.Controls.Add(this.btnAnyadirTelefonoAContacto);
             this.gboMantenimiento.Controls.Add(this.btnEliminarContacto);
             this.gboMantenimiento.Controls.Add(this.btnDarAltaContacto);
-            this.gboMantenimiento.Location = new System.Drawing.Point(1181, 82);
+            this.gboMantenimiento.Location = new System.Drawing.Point(886, 67);
+            this.gboMantenimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gboMantenimiento.Name = "gboMantenimiento";
-            this.gboMantenimiento.Size = new System.Drawing.Size(557, 182);
+            this.gboMantenimiento.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gboMantenimiento.Size = new System.Drawing.Size(418, 148);
             this.gboMantenimiento.TabIndex = 34;
             this.gboMantenimiento.TabStop = false;
             this.gboMantenimiento.Text = "Mantenimiento de Contactos";
@@ -151,9 +146,10 @@
             this.btnAnyadirTelefonoAContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAnyadirTelefonoAContacto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnyadirTelefonoAContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAnyadirTelefonoAContacto.Location = new System.Drawing.Point(317, 70);
+            this.btnAnyadirTelefonoAContacto.Location = new System.Drawing.Point(238, 57);
+            this.btnAnyadirTelefonoAContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAnyadirTelefonoAContacto.Name = "btnAnyadirTelefonoAContacto";
-            this.btnAnyadirTelefonoAContacto.Size = new System.Drawing.Size(206, 49);
+            this.btnAnyadirTelefonoAContacto.Size = new System.Drawing.Size(154, 40);
             this.btnAnyadirTelefonoAContacto.TabIndex = 2;
             this.btnAnyadirTelefonoAContacto.Text = "Añadir/Borrar un teléfono de un contacto";
             this.btnAnyadirTelefonoAContacto.UseVisualStyleBackColor = false;
@@ -164,9 +160,10 @@
             this.btnEliminarContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEliminarContacto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarContacto.Location = new System.Drawing.Point(72, 106);
+            this.btnEliminarContacto.Location = new System.Drawing.Point(54, 86);
+            this.btnEliminarContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarContacto.Name = "btnEliminarContacto";
-            this.btnEliminarContacto.Size = new System.Drawing.Size(138, 49);
+            this.btnEliminarContacto.Size = new System.Drawing.Size(104, 40);
             this.btnEliminarContacto.TabIndex = 1;
             this.btnEliminarContacto.Text = "Eliminar un Contacto";
             this.btnEliminarContacto.UseVisualStyleBackColor = false;
@@ -178,9 +175,10 @@
             this.btnDarAltaContacto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDarAltaContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDarAltaContacto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDarAltaContacto.Location = new System.Drawing.Point(72, 35);
+            this.btnDarAltaContacto.Location = new System.Drawing.Point(54, 28);
+            this.btnDarAltaContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDarAltaContacto.Name = "btnDarAltaContacto";
-            this.btnDarAltaContacto.Size = new System.Drawing.Size(138, 49);
+            this.btnDarAltaContacto.Size = new System.Drawing.Size(104, 40);
             this.btnDarAltaContacto.TabIndex = 0;
             this.btnDarAltaContacto.Text = "Dar de alta un Contacto";
             this.btnDarAltaContacto.UseVisualStyleBackColor = false;
@@ -191,9 +189,11 @@
             this.gboGrupos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gboGrupos.Controls.Add(this.btnEliminarGrupo);
             this.gboGrupos.Controls.Add(this.btnDarDeAltaUnGrupo);
-            this.gboGrupos.Location = new System.Drawing.Point(1181, 304);
+            this.gboGrupos.Location = new System.Drawing.Point(886, 247);
+            this.gboGrupos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gboGrupos.Name = "gboGrupos";
-            this.gboGrupos.Size = new System.Drawing.Size(557, 148);
+            this.gboGrupos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gboGrupos.Size = new System.Drawing.Size(418, 120);
             this.gboGrupos.TabIndex = 35;
             this.gboGrupos.TabStop = false;
             this.gboGrupos.Text = "Mantenimiento de Grupos";
@@ -203,9 +203,10 @@
             this.btnEliminarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEliminarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarGrupo.Location = new System.Drawing.Point(351, 58);
+            this.btnEliminarGrupo.Location = new System.Drawing.Point(263, 47);
+            this.btnEliminarGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarGrupo.Name = "btnEliminarGrupo";
-            this.btnEliminarGrupo.Size = new System.Drawing.Size(138, 49);
+            this.btnEliminarGrupo.Size = new System.Drawing.Size(104, 40);
             this.btnEliminarGrupo.TabIndex = 3;
             this.btnEliminarGrupo.Text = "Eliminar un Grupo";
             this.btnEliminarGrupo.UseVisualStyleBackColor = false;
@@ -216,9 +217,10 @@
             this.btnDarDeAltaUnGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnDarDeAltaUnGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDarDeAltaUnGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDarDeAltaUnGrupo.Location = new System.Drawing.Point(72, 58);
+            this.btnDarDeAltaUnGrupo.Location = new System.Drawing.Point(54, 47);
+            this.btnDarDeAltaUnGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDarDeAltaUnGrupo.Name = "btnDarDeAltaUnGrupo";
-            this.btnDarDeAltaUnGrupo.Size = new System.Drawing.Size(138, 49);
+            this.btnDarDeAltaUnGrupo.Size = new System.Drawing.Size(104, 40);
             this.btnDarDeAltaUnGrupo.TabIndex = 3;
             this.btnDarDeAltaUnGrupo.Text = "Dar de alta un  Grupo";
             this.btnDarDeAltaUnGrupo.UseVisualStyleBackColor = false;
@@ -229,9 +231,11 @@
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox1.Controls.Add(this.btnContactosTelefono);
             this.groupBox1.Controls.Add(this.txtNumeroTelefono);
-            this.groupBox1.Location = new System.Drawing.Point(778, 469);
+            this.groupBox1.Location = new System.Drawing.Point(584, 381);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 95);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(250, 77);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             // 
@@ -240,9 +244,11 @@
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox2.Controls.Add(this.btnTelefonosContacto);
             this.groupBox2.Controls.Add(this.txtIdContacto);
-            this.groupBox2.Location = new System.Drawing.Point(355, 469);
+            this.groupBox2.Location = new System.Drawing.Point(266, 381);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(329, 95);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(247, 77);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             // 
@@ -250,18 +256,20 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox3.Controls.Add(this.btnTodosContactos);
-            this.groupBox3.Location = new System.Drawing.Point(31, 469);
+            this.groupBox3.Location = new System.Drawing.Point(23, 381);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(221, 95);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(166, 77);
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1777, 612);
+            this.ClientSize = new System.Drawing.Size(1370, 497);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -269,9 +277,10 @@
             this.Controls.Add(this.gboMantenimiento);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.dgvContactos);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPrincipal";
             this.Text = "App Contactos";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
             this.gboMantenimiento.ResumeLayout(false);
             this.gboGrupos.ResumeLayout(false);

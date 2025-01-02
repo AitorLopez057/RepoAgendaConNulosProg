@@ -10,12 +10,18 @@ namespace CapaPresentacion
     public static class Program
     {
 
-
-        public static Gestion gestion = new Gestion();
+        public static Gestion gestion ;
         [STAThread]
         static void Main()
         {
-            gestion = new Gestion();
+            string mensaje = "";
+            gestion = new Gestion(out mensaje);
+
+            if (!string.IsNullOrEmpty(mensaje))
+            {
+                MessageBox.Show(mensaje, "Error de inicialización");
+                return; 
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmPrincipal());

@@ -12,7 +12,13 @@ namespace CapaPresentacion
         public frmEliminarGrupo()
         {
             InitializeComponent();
-            gestion = new Gestion();
+            gestion = Program.gestion;
+
+            if (gestion == null)
+            {
+                MessageBox.Show("La inicialización de la aplicación ha fallado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
 
         private void btnEliminarGrupo_Click_1(object sender, EventArgs e)

@@ -16,16 +16,18 @@ namespace GestionAgenda
 
         // TODO: Constructor: Intenta crear un objeto de la clase Entities y si se
         // provoca error de ejecución lo devolverá al exterior.
-        public Gestion() {
+        public Gestion(out string mensaje) {
+            mensaje = "";
             try
             {
                 string servidor = Servidor.ServidorActual();
                 string cadenaConexion = $@"metadata = res://*/ModeloAgenda.csdl|res://*/ModeloAgenda.ssdl|res://*/ModeloAgenda.msl; provider = System.Data.SqlClient;provider connection string= 'data source={servidor};initial catalog=Agenda;integrated security=True;encrypt=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework'";
                 miAgendaEntities = new MiAgendaEntities(cadenaConexion); // Modificar el constructor
             }
-            catch (Exception exc)
+            catch (Exception ex)
             {
-                // instrucciones ante el error
+                mensaje = $"Error al inicializar AgendaEntities: {ex.Message}";
+                miAgendaEntities = null;
             }
         }
 

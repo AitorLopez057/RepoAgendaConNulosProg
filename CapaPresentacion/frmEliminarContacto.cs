@@ -14,7 +14,14 @@ namespace CapaPresentacion
         public frmEliminarContacto()
         {
             InitializeComponent();
-            gestion = new Gestion();
+
+            gestion = Program.gestion;
+
+            if (gestion == null)
+            {
+                MessageBox.Show("La inicialización de la aplicación ha fallado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
             contactoSeleccionado = new Contactos();
         }
 
