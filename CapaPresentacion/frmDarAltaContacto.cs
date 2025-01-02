@@ -38,26 +38,30 @@ namespace CapaPresentacion
                     //contactoAux.Telefonos = telefonos;
                     //error = gestion.AnyadirContacto(contactoAux);
 
-                }
-                else
-                {
-                    grupoAux = (Grupos)cboGrupo.Items[cboGrupo.SelectedIndex];
+                }else{
+                    grupoAux = (Grupos)cboGrupo.SelectedItem;
                     contactoAux = new Contactos(nombre, null, grupoAux.IdGrupo);
                     contactoAux.Telefonos = telefonos;
                     if (telefonos.Count == 0)
                     {
                         DialogResult dr = MessageBox.Show($"Estás seguro de que quieres crear un contacto sin teléfonos?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                        if (dr == DialogResult.Yes)
+                        if (dr == DialogResult.No)
+                        {
+                            return;
+                        }
+                        else
                         {
                             error = gestion.AnyadirContacto(contactoAux);
-                            lblResultado.Text = $"El contacto con nombre {contactoAux.Nombre} se creado correctamente.";
                         }
                     }
-
+                    else
+                    {
+                        error = gestion.AnyadirContacto(contactoAux);
+                    }
+                    
                 }
                 
-            }catch (Exception ex)
-            {
+            }catch (Exception ex){
                 MessageBox.Show(ex.Message);
             }
             
@@ -65,6 +69,10 @@ namespace CapaPresentacion
             {
                 MessageBox.Show (error);
                 return;
+            }
+            else
+            {
+                lblResultado.Text = $"El contacto con nombre {contactoAux.Nombre} se creado correctamente.";
             }
             telefonos = new List<Telefonos>();
         }
