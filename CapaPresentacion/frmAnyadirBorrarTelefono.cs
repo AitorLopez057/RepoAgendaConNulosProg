@@ -52,9 +52,34 @@ namespace CapaPresentacion
 
         private void btnAnyadirTelefono_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                lblResultado.Text = "Debes de introducir un número de teléfono.";
+                return;
+            }
 
+            int resultado;
+            if (!int.TryParse(txtTelefono.Text, out resultado))
+            {
+                lblResultado.Text = "El número de teléfono debe de ser un valor numérico.";
+                return;
+            }
+
+            DialogResult dr = MessageBox.Show($"Vas a añadir un teléfono sin descripción. Realmente deseas hacerlo?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                Telefonos telefonoNuevo = new Telefonos(txtTelefono.Text, txtDescripcion.Text);
+                gestion.AnyadirTelefonoContacto(contactoSeleccionado.IdContacto, telefonoNuevo);
+                lblResultado.Text = $"Teléfono {telefonoNuevo.Numero} añadido correctamente al contacto {contactoSeleccionado.Nombre}.";
+                txtTelefono.Text = "";
+                txtDescripcion.Text = "";
+            }
+            else
+            {
+                lblResultado.Text = $"Creación de teléfono {txtTelefono.Text} del contacto {contactoSeleccionado.Nombre} abortado correctamente.";
+                
+            }
         }
-
         private void cboContactos_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboTelefonos.Items.Clear();
