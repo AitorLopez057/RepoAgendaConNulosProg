@@ -63,6 +63,7 @@
             this.dgvContactos.RowHeadersWidth = 51;
             this.dgvContactos.Size = new System.Drawing.Size(1081, 370);
             this.dgvContactos.TabIndex = 15;
+            this.dgvContactos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentClick);
             // 
             // txtNumeroTelefono
             // 

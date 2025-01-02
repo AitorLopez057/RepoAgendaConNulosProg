@@ -5,6 +5,7 @@ using GestionAgenda;
 using Entidades;
 using System.Linq;
 using System.Diagnostics.Contracts;
+using System.Runtime.Remoting.Channels;
 namespace CapaPresentacion
 {
     public partial class frmPrincipal : Form
@@ -145,6 +146,33 @@ namespace CapaPresentacion
         {
             frmAnyadirBorrarTelefono frmAnñadirTelefono = new frmAnyadirBorrarTelefono();
             frmAnñadirTelefono.ShowDialog();
+        }
+        
+
+        private void dgvContactos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                try
+                {
+                    string id = dgvContactos.Rows[e.RowIndex].Cells["idContacto"].Value.ToString();
+                    string name = dgvContactos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                    string email = dgvContactos.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                    string nGrupo = dgvContactos.Rows[e.RowIndex].Cells["NombreGrupo"].Value.ToString();
+                    string telefonos = dgvContactos.Rows[e.RowIndex].Cells["Telefonos"].Value.ToString();
+
+
+                    // Crea una instancia del formulario de detalle con los datos seleccionados
+                    DetallesForm detalleForm = new DetallesForm();
+                    detalleForm.SetDatos(id, name, email, nGrupo, telefonos);
+                    detalleForm.Show();
+                } catch(Exception ex)
+                {
+                    MessageBox.Show("No se puede ver la informacion en este momento");
+                }
+                // Obtén los datos de la fila seleccionada
+                
+            }
         }
     }
 }

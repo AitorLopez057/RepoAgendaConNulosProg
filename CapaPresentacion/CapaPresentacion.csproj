@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetallesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetallesForm.Designer.cs">
+      <DependentUpon>DetallesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAnyadirBorrarTelefono.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DetallesForm.resx">
+      <DependentUpon>DetallesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAnyadirBorrarTelefono.resx">
       <DependentUpon>frmAnyadirBorrarTelefono.cs</DependentUpon>
     </EmbeddedResource>
