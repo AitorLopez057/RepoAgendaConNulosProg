@@ -25,5 +25,10 @@ namespace Entidades
             this.Numero = numero;
             this.Descripcion = descripcion;
         }
+
+        public override string ToString()
+        {
+            return Numero;
+        }
     }
 }

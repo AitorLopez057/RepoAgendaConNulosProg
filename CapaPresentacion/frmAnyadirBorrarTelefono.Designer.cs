@@ -37,15 +37,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblBTelefono = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEliminarTelefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBorrarTelefono = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboContactos = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cboTelefonos = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(227, 79);
+            this.txtTelefono.Location = new System.Drawing.Point(245, 79);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(437, 22);
             this.txtTelefono.TabIndex = 3;
@@ -93,7 +93,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(227, 118);
+            this.txtDescripcion.Location = new System.Drawing.Point(245, 118);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(437, 22);
             this.txtDescripcion.TabIndex = 7;
@@ -139,14 +139,6 @@
             this.label4.TabIndex = 36;
             this.label4.Text = "Eliminar un Teléfono a un Contacto";
             // 
-            // txtEliminarTelefono
-            // 
-            this.txtEliminarTelefono.Location = new System.Drawing.Point(227, 77);
-            this.txtEliminarTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEliminarTelefono.Name = "txtEliminarTelefono";
-            this.txtEliminarTelefono.Size = new System.Drawing.Size(231, 22);
-            this.txtEliminarTelefono.TabIndex = 42;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -181,13 +173,14 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "Selecciona el contacto";
             // 
-            // comboBox1
+            // cboContactos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(232, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(238, 24);
-            this.comboBox1.TabIndex = 44;
+            this.cboContactos.FormattingEnabled = true;
+            this.cboContactos.Location = new System.Drawing.Point(232, 79);
+            this.cboContactos.Name = "cboContactos";
+            this.cboContactos.Size = new System.Drawing.Size(238, 24);
+            this.cboContactos.TabIndex = 44;
+            this.cboContactos.SelectedIndexChanged += new System.EventHandler(this.cboContactos_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -206,7 +199,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cboContactos);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(572, 114);
             this.groupBox2.Name = "groupBox2";
@@ -232,15 +225,24 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox4.Controls.Add(this.cboTelefonos);
             this.groupBox4.Controls.Add(this.btnBorrarTelefono);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.txtEliminarTelefono);
             this.groupBox4.Location = new System.Drawing.Point(56, 418);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(732, 251);
             this.groupBox4.TabIndex = 48;
             this.groupBox4.TabStop = false;
+            // 
+            // cboTelefonos
+            // 
+            this.cboTelefonos.FormattingEnabled = true;
+            this.cboTelefonos.Location = new System.Drawing.Point(245, 75);
+            this.cboTelefonos.Name = "cboTelefonos";
+            this.cboTelefonos.Size = new System.Drawing.Size(240, 24);
+            this.cboTelefonos.TabIndex = 41;
+            this.cboTelefonos.SelectedIndexChanged += new System.EventHandler(this.cboTelefonos_SelectedIndexChanged);
             // 
             // frmAnyadirBorrarTelefono
             // 
@@ -252,6 +254,7 @@
             this.Controls.Add(this.lblResultado);
             this.Name = "frmAnyadirBorrarTelefono";
             this.Text = "AñadirTelefono";
+            this.Load += new System.EventHandler(this.frmAnyadirBorrarTelefono_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -272,14 +275,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblBTelefono;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEliminarTelefono;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBorrarTelefono;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboContactos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox cboTelefonos;
     }
 }
