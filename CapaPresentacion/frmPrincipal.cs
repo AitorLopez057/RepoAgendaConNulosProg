@@ -149,7 +149,7 @@ namespace CapaPresentacion
         }
         
 
-        private void dgvContactos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvContactos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {

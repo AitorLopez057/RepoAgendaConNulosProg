@@ -87,6 +87,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(228, 54);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(74, 22);
@@ -94,6 +95,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(228, 95);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(254, 22);
@@ -101,6 +103,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Location = new System.Drawing.Point(228, 144);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(254, 22);
@@ -108,6 +111,7 @@
             // 
             // txtNombreGrupo
             // 
+            this.txtNombreGrupo.Enabled = false;
             this.txtNombreGrupo.Location = new System.Drawing.Point(228, 189);
             this.txtNombreGrupo.Name = "txtNombreGrupo";
             this.txtNombreGrupo.Size = new System.Drawing.Size(254, 22);
@@ -115,6 +119,7 @@
             // 
             // txtTelefonos
             // 
+            this.txtTelefonos.Enabled = false;
             this.txtTelefonos.Location = new System.Drawing.Point(228, 236);
             this.txtTelefonos.Name = "txtTelefonos";
             this.txtTelefonos.Size = new System.Drawing.Size(664, 22);
