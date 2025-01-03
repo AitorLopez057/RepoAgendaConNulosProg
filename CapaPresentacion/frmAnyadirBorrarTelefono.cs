@@ -1,6 +1,8 @@
 ﻿using Entidades;
 using GestionAgenda;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -27,6 +29,7 @@ namespace CapaPresentacion
         private void frmAnyadirBorrarTelefono_Load(object sender, EventArgs e)
         {
             cboContactos.Items.AddRange(gestion.ContactosOrdenados().ToArray());
+
         }
 
         private void btnBorrarTelefono_Click(object sender, EventArgs e)
@@ -92,11 +95,54 @@ namespace CapaPresentacion
             cboTelefonos.Items.Clear();
             contactoSeleccionado = cboContactos.SelectedItem as Contactos;
             cboTelefonos.Items.AddRange(gestion.TelefonosDeUnContacto(contactoSeleccionado.IdContacto).ToArray());
+
+            //Mostrar información del contacto seleccionado
+            lblNombre.Text = contactoSeleccionado.Nombre;
+            lblEmail.Text = contactoSeleccionado.Email ?? "---";
+            lblGrupo.Text = contactoSeleccionado.Grupos?.NombreGrupo ?? "---";
+
+           
+            cboTlfonsDeContacto.Items.Clear(); 
+            foreach (var telefono in contactoSeleccionado.Telefonos)
+            {
+                cboTlfonsDeContacto.Items.Add(telefono);
+            }
+
+            if (cboTlfonsDeContacto.Items.Count == 0)
+            {
+                cboTlfonsDeContacto.Items.Add("No hay teléfonos");
+            }
+
+            if (cboTlfonsDeContacto.Items.Count > 0)
+            {
+                cboTlfonsDeContacto.SelectedIndex = 0; //ver primer telefono 
+            }
+
         }
 
         private void cboTelefonos_SelectedIndexChanged(object sender, EventArgs e)
         {
             telefonoSeleccionado = cboTelefonos.SelectedItem as Telefonos;
+        }
+
+        private void lblResultado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
