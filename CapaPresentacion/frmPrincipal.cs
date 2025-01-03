@@ -175,9 +175,10 @@ namespace CapaPresentacion
             }
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            frmEditarContacto frmEditarContacto = new frmEditarContacto();
+            frmEditarContacto.ShowDialog();
         }
     }
 }

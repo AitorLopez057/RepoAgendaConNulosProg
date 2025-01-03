@@ -102,5 +102,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void cboGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

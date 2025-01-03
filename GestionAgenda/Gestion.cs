@@ -236,5 +236,60 @@ namespace GestionAgenda
             return msg;
         }
 
+        //Editar contacto
+        public String EditarContacto(Contactos contacto)
+        {
+            string msg = "";
+            try
+            {
+                var contactoAEditar= miAgendaEntities.Contactos.Find(contacto.IdContacto);
+                if (contactoAEditar == null)
+                {
+                    return "El contacto no existe.";
+                }
+
+
+                contactoAEditar.Nombre = contacto.Nombre;
+                
+                contactoAEditar.Email = contacto.Email;
+
+                CambiarGrupoContacto(contactoAEditar, contacto.IdGrupo);
+
+                miAgendaEntities.SaveChanges();
+                msg = $"Contacto {contacto.Nombre} editado correctamente";
+            }
+            catch (Exception exc)
+            {
+                msg = "Error al editar el contacto: " + exc.Message;
+            }
+            return msg;
+        }
+
+        //Cambiar el grupo de un contacto
+        public string CambiarGrupoContacto(Contactos contacto,  int? idNuevoGrupo)
+        {
+            string msg = "";
+            try
+            {
+             
+                var grupo = miAgendaEntities.Grupos.Find(idNuevoGrupo);
+                if (grupo == null)
+                {
+                    return "El grupo especificado no existe.";
+                }
+
+                contacto.IdGrupo = idNuevoGrupo;
+                miAgendaEntities.SaveChanges();
+
+                return $"El contacto {contacto.Nombre} ha cambiado al grupo {grupo.NombreGrupo}.";
+            }
+            catch (Exception exc)
+            {
+                msg="Error al cambiar el grupo del contacto: " + exc.Message;
+                
+            }
+            return msg;
+        }
+
     }
 }

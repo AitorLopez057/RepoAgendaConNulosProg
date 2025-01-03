@@ -45,6 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnEditContacto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
             this.gboMantenimiento.SuspendLayout();
             this.gboGrupos.SuspendLayout();
@@ -129,13 +130,14 @@
             // gboMantenimiento
             // 
             this.gboMantenimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gboMantenimiento.Controls.Add(this.btnEditContacto);
             this.gboMantenimiento.Controls.Add(this.btnAnyadirTelefonoAContacto);
             this.gboMantenimiento.Controls.Add(this.btnEliminarContacto);
             this.gboMantenimiento.Controls.Add(this.btnDarAltaContacto);
             this.gboMantenimiento.Location = new System.Drawing.Point(886, 67);
-            this.gboMantenimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gboMantenimiento.Margin = new System.Windows.Forms.Padding(2);
             this.gboMantenimiento.Name = "gboMantenimiento";
-            this.gboMantenimiento.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gboMantenimiento.Padding = new System.Windows.Forms.Padding(2);
             this.gboMantenimiento.Size = new System.Drawing.Size(418, 148);
             this.gboMantenimiento.TabIndex = 34;
             this.gboMantenimiento.TabStop = false;
@@ -146,8 +148,8 @@
             this.btnAnyadirTelefonoAContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAnyadirTelefonoAContacto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnyadirTelefonoAContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAnyadirTelefonoAContacto.Location = new System.Drawing.Point(238, 57);
-            this.btnAnyadirTelefonoAContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnyadirTelefonoAContacto.Location = new System.Drawing.Point(213, 86);
+            this.btnAnyadirTelefonoAContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnyadirTelefonoAContacto.Name = "btnAnyadirTelefonoAContacto";
             this.btnAnyadirTelefonoAContacto.Size = new System.Drawing.Size(154, 40);
             this.btnAnyadirTelefonoAContacto.TabIndex = 2;
@@ -161,7 +163,7 @@
             this.btnEliminarContacto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnEliminarContacto.Location = new System.Drawing.Point(54, 86);
-            this.btnEliminarContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarContacto.Name = "btnEliminarContacto";
             this.btnEliminarContacto.Size = new System.Drawing.Size(104, 40);
             this.btnEliminarContacto.TabIndex = 1;
@@ -176,7 +178,7 @@
             this.btnDarAltaContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDarAltaContacto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDarAltaContacto.Location = new System.Drawing.Point(54, 28);
-            this.btnDarAltaContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDarAltaContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnDarAltaContacto.Name = "btnDarAltaContacto";
             this.btnDarAltaContacto.Size = new System.Drawing.Size(104, 40);
             this.btnDarAltaContacto.TabIndex = 0;
@@ -190,9 +192,9 @@
             this.gboGrupos.Controls.Add(this.btnEliminarGrupo);
             this.gboGrupos.Controls.Add(this.btnDarDeAltaUnGrupo);
             this.gboGrupos.Location = new System.Drawing.Point(886, 247);
-            this.gboGrupos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gboGrupos.Margin = new System.Windows.Forms.Padding(2);
             this.gboGrupos.Name = "gboGrupos";
-            this.gboGrupos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gboGrupos.Padding = new System.Windows.Forms.Padding(2);
             this.gboGrupos.Size = new System.Drawing.Size(418, 120);
             this.gboGrupos.TabIndex = 35;
             this.gboGrupos.TabStop = false;
@@ -204,7 +206,7 @@
             this.btnEliminarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnEliminarGrupo.Location = new System.Drawing.Point(263, 47);
-            this.btnEliminarGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarGrupo.Name = "btnEliminarGrupo";
             this.btnEliminarGrupo.Size = new System.Drawing.Size(104, 40);
             this.btnEliminarGrupo.TabIndex = 3;
@@ -218,7 +220,7 @@
             this.btnDarDeAltaUnGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDarDeAltaUnGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnDarDeAltaUnGrupo.Location = new System.Drawing.Point(54, 47);
-            this.btnDarDeAltaUnGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDarDeAltaUnGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.btnDarDeAltaUnGrupo.Name = "btnDarDeAltaUnGrupo";
             this.btnDarDeAltaUnGrupo.Size = new System.Drawing.Size(104, 40);
             this.btnDarDeAltaUnGrupo.TabIndex = 3;
@@ -232,9 +234,9 @@
             this.groupBox1.Controls.Add(this.btnContactosTelefono);
             this.groupBox1.Controls.Add(this.txtNumeroTelefono);
             this.groupBox1.Location = new System.Drawing.Point(584, 381);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(250, 77);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
@@ -245,9 +247,9 @@
             this.groupBox2.Controls.Add(this.btnTelefonosContacto);
             this.groupBox2.Controls.Add(this.txtIdContacto);
             this.groupBox2.Location = new System.Drawing.Point(266, 381);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(247, 77);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
@@ -257,12 +259,27 @@
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox3.Controls.Add(this.btnTodosContactos);
             this.groupBox3.Location = new System.Drawing.Point(23, 381);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(166, 77);
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
+            // 
+            // btnEditContacto
+            // 
+            this.btnEditContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEditContacto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditContacto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEditContacto.Location = new System.Drawing.Point(213, 28);
+            this.btnEditContacto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditContacto.Name = "btnEditContacto";
+            this.btnEditContacto.Size = new System.Drawing.Size(104, 40);
+            this.btnEditContacto.TabIndex = 3;
+            this.btnEditContacto.Text = "Editar un Contacto";
+            this.btnEditContacto.UseVisualStyleBackColor = false;
+            this.btnEditContacto.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmPrincipal
             // 
@@ -277,10 +294,9 @@
             this.Controls.Add(this.gboMantenimiento);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.dgvContactos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPrincipal";
             this.Text = "App Contactos";
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
             this.gboMantenimiento.ResumeLayout(false);
             this.gboGrupos.ResumeLayout(false);
@@ -312,6 +328,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnEditContacto;
     }
 }
 

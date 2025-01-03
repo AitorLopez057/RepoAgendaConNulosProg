@@ -65,6 +65,12 @@
     <Compile Include="frmAnyadirBorrarTelefono.Designer.cs">
       <DependentUpon>frmAnyadirBorrarTelefono.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditarContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarContacto.Designer.cs">
+      <DependentUpon>frmEditarContacto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEliminarContacto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAnyadirBorrarTelefono.resx">
       <DependentUpon>frmAnyadirBorrarTelefono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarContacto.resx">
+      <DependentUpon>frmEditarContacto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEliminarContacto.resx">
       <DependentUpon>frmEliminarContacto.cs</DependentUpon>

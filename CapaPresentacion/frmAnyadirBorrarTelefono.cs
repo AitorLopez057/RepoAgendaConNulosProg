@@ -15,7 +15,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
 
-            gestion = Program.gestion;
+            gestion = Program.gestion; 
 
             if (gestion == null)
             {

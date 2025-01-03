@@ -49,7 +49,7 @@
             // txtNombreContacto
             // 
             this.txtNombreContacto.Location = new System.Drawing.Point(381, 109);
-            this.txtNombreContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreContacto.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreContacto.Name = "txtNombreContacto";
             this.txtNombreContacto.Size = new System.Drawing.Size(198, 20);
             this.txtNombreContacto.TabIndex = 19;
@@ -70,7 +70,7 @@
             this.btnAñadirContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAñadirContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnAñadirContacto.Location = new System.Drawing.Point(307, 336);
-            this.btnAñadirContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAñadirContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAñadirContacto.Name = "btnAñadirContacto";
             this.btnAñadirContacto.Size = new System.Drawing.Size(154, 41);
             this.btnAñadirContacto.TabIndex = 14;
@@ -103,7 +103,7 @@
             // txtDescripcionTelefono
             // 
             this.txtDescripcionTelefono.Location = new System.Drawing.Point(158, 72);
-            this.txtDescripcionTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcionTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionTelefono.Name = "txtDescripcionTelefono";
             this.txtDescripcionTelefono.Size = new System.Drawing.Size(233, 20);
             this.txtDescripcionTelefono.TabIndex = 27;
@@ -122,7 +122,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(158, 43);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(233, 20);
             this.txtTelefono.TabIndex = 25;
@@ -154,7 +154,7 @@
             this.btnAñadirTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAñadirTelefono.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnAñadirTelefono.Location = new System.Drawing.Point(19, 103);
-            this.btnAñadirTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAñadirTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.btnAñadirTelefono.Name = "btnAñadirTelefono";
             this.btnAñadirTelefono.Size = new System.Drawing.Size(263, 37);
             this.btnAñadirTelefono.TabIndex = 29;
@@ -167,18 +167,19 @@
             this.cboGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGrupo.FormattingEnabled = true;
             this.cboGrupo.Location = new System.Drawing.Point(381, 132);
-            this.cboGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.cboGrupo.Name = "cboGrupo";
             this.cboGrupo.Size = new System.Drawing.Size(198, 21);
             this.cboGrupo.TabIndex = 30;
+            this.cboGrupo.SelectedIndexChanged += new System.EventHandler(this.cboGrupo_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Location = new System.Drawing.Point(1, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(279, 400);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
@@ -206,9 +207,9 @@
             this.groupBox2.Controls.Add(this.txtDescripcionTelefono);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(306, 164);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(424, 154);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
@@ -227,7 +228,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAñadirContacto);
             this.Controls.Add(this.lblResultado);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDarAltaContacto";
             this.Text = "DarAlta";
             this.groupBox2.ResumeLayout(false);
