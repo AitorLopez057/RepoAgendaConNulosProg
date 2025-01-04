@@ -91,6 +91,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Seleccionar contacto por Card";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // btnSacarContacto
             // 
@@ -101,6 +102,7 @@
             this.btnSacarContacto.TabIndex = 30;
             this.btnSacarContacto.Text = "Sacar Contacto Seleccionado";
             this.btnSacarContacto.UseVisualStyleBackColor = true;
+            this.btnSacarContacto.Click += new System.EventHandler(this.btnSacarContacto_Click_1);
             // 
             // listBox1
             // 
@@ -120,6 +122,7 @@
             this.btnBorrarContacto.TabIndex = 29;
             this.btnBorrarContacto.Text = "Borrar contacto Seleccionado";
             this.btnBorrarContacto.UseVisualStyleBackColor = true;
+            this.btnBorrarContacto.Click += new System.EventHandler(this.btnBorrarContacto_Click_1);
             // 
             // btnAñadirContacto
             // 
@@ -130,6 +133,7 @@
             this.btnAñadirContacto.TabIndex = 28;
             this.btnAñadirContacto.Text = "Añadir contacto";
             this.btnAñadirContacto.UseVisualStyleBackColor = true;
+            this.btnAñadirContacto.Click += new System.EventHandler(this.btnAñadirContacto_Click_1);
             // 
             // label2
             // 
@@ -154,6 +158,7 @@
             this.btnEditarGrupo.TabIndex = 25;
             this.btnEditarGrupo.Text = "Confirmar cambios";
             this.btnEditarGrupo.UseVisualStyleBackColor = false;
+            this.btnEditarGrupo.Click += new System.EventHandler(this.btnEditarGrupo_Click_1);
             // 
             // txtNuevoNombre
             // 
@@ -195,7 +200,6 @@
             this.lsbGrupos.Name = "lsbGrupos";
             this.lsbGrupos.Size = new System.Drawing.Size(363, 95);
             this.lsbGrupos.TabIndex = 25;
-            this.lsbGrupos.SelectedIndexChanged += new System.EventHandler(this.lsbGrupos_SelectedIndexChanged);
             // 
             // lblResultado
             // 
@@ -228,6 +232,7 @@
             this.lsbContactos.Name = "lsbContactos";
             this.lsbContactos.Size = new System.Drawing.Size(361, 173);
             this.lsbContactos.TabIndex = 0;
+            this.lsbContactos.SelectedIndexChanged += new System.EventHandler(this.lsbContactos_SelectedIndexChanged);
             // 
             // lblBTelefono
             // 
@@ -254,6 +259,7 @@
             this.Controls.Add(this.lblBTelefono);
             this.Name = "frmEditarGrupo";
             this.Text = "frmEditarGrupo";
+            this.Load += new System.EventHandler(this.frmEditarGrupo_Load_1);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);

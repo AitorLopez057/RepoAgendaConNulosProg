@@ -19,6 +19,7 @@ namespace CapaPresentacion
 
         private void btnTodosContactos_Click(object sender, EventArgs e)
         {
+            CrearCards();
             List<Contactos> contactos = new List<Contactos>();
             contactos = gestion.ContactosOrdenados();
             dgvContactos.DataSource = (from con in contactos
@@ -364,6 +365,11 @@ namespace CapaPresentacion
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
         {
 
         }

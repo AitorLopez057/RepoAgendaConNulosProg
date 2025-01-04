@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvContactos = new System.Windows.Forms.DataGridView();
             this.txtNumeroTelefono = new System.Windows.Forms.TextBox();
             this.btnContactosTelefono = new System.Windows.Forms.Button();
@@ -41,12 +43,12 @@
             this.btnEliminarContacto = new System.Windows.Forms.Button();
             this.btnDarAltaContacto = new System.Windows.Forms.Button();
             this.gboGrupos = new System.Windows.Forms.GroupBox();
+            this.btnEditarGrupo = new System.Windows.Forms.Button();
             this.btnEliminarGrupo = new System.Windows.Forms.Button();
             this.btnDarDeAltaUnGrupo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnEditarGrupo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
             this.gboMantenimiento.SuspendLayout();
@@ -59,7 +61,23 @@
             // dgvContactos
             // 
             this.dgvContactos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContactos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContactos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvContactos.Location = new System.Drawing.Point(23, 67);
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.RowHeadersWidth = 51;
@@ -218,6 +236,20 @@
             this.gboGrupos.TabStop = false;
             this.gboGrupos.Text = "Mantenimiento de Grupos";
             // 
+            // btnEditarGrupo
+            // 
+            this.btnEditarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEditarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnEditarGrupo.Location = new System.Drawing.Point(176, 47);
+            this.btnEditarGrupo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarGrupo.Name = "btnEditarGrupo";
+            this.btnEditarGrupo.Size = new System.Drawing.Size(104, 40);
+            this.btnEditarGrupo.TabIndex = 5;
+            this.btnEditarGrupo.Text = "Editar Grupo";
+            this.btnEditarGrupo.UseVisualStyleBackColor = false;
+            this.btnEditarGrupo.Click += new System.EventHandler(this.btnEditarGrupo_Click);
+            // 
             // btnEliminarGrupo
             // 
             this.btnEliminarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -284,28 +316,14 @@
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             // 
-            // btnEditarGrupo
-            // 
-            this.btnEditarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnEditarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEditarGrupo.Location = new System.Drawing.Point(176, 47);
-            this.btnEditarGrupo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditarGrupo.Name = "btnEditarGrupo";
-            this.btnEditarGrupo.Size = new System.Drawing.Size(104, 40);
-            this.btnEditarGrupo.TabIndex = 5;
-            this.btnEditarGrupo.Text = "Editar Grupo";
-            this.btnEditarGrupo.UseVisualStyleBackColor = false;
-            this.btnEditarGrupo.Click += new System.EventHandler(this.btnEditarGrupo_Click);
-            // 
             // panel1
             // 
             this.panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(26, 493);
+            this.panel1.Location = new System.Drawing.Point(23, 465);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(811, 259);
+            this.panel1.Size = new System.Drawing.Size(824, 259);
             this.panel1.TabIndex = 40;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -314,7 +332,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1370, 710);
+            this.ClientSize = new System.Drawing.Size(1370, 735);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -326,6 +344,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPrincipal";
             this.Text = "App Contactos";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
             this.gboMantenimiento.ResumeLayout(false);
             this.gboGrupos.ResumeLayout(false);
