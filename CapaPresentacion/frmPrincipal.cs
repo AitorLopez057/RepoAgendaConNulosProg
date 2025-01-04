@@ -12,6 +12,8 @@ namespace CapaPresentacion
     public partial class frmPrincipal : Form
     {
         Gestion gestion = Program.gestion;
+        private List<Contactos> contactosGeneral;
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -19,7 +21,8 @@ namespace CapaPresentacion
 
         private void btnTodosContactos_Click(object sender, EventArgs e)
         {
-            CrearCards();
+            contactosGeneral = gestion.ContactosOrdenados();
+            CrearCards(contactosGeneral);
             List<Contactos> contactos = new List<Contactos>();
             contactos = gestion.ContactosOrdenados();
             dgvContactos.DataSource = (from con in contactos
@@ -191,10 +194,10 @@ namespace CapaPresentacion
 
         //Controles dinámicos:
 
-        private void CrearCards()
+        private void CrearCards(List<Contactos> contactos)
         {
             panel1.Controls.Clear();
-            List<Contactos> contactos = gestion.ContactosOrdenados();
+            //List<Contactos> contactos = gestion.ContactosOrdenados();
             panel1.Controls.Clear();
             int x = panel1.AutoScrollPosition.X + 20;
             int y = panel1.AutoScrollPosition.Y + 30;
@@ -212,7 +215,7 @@ namespace CapaPresentacion
                 x += contactbox.Width + 20;
                 contactbox.Click += (sender, e) =>
                 {
-                    FocusCard((int)contactbox.Tag, true);
+                    FocusCard((int)contactbox.Tag, contactos, true);
                 };
                 contactbox.MouseDoubleClick += (sender, e) =>
                 {
@@ -228,7 +231,7 @@ namespace CapaPresentacion
                 };
                 picturebox.Click += (sender, e) =>
                 {
-                    FocusCard((int)picturebox.Tag);
+                    FocusCard((int)picturebox.Tag, contactos, true);
                 };
                 picturebox.MouseDoubleClick += (sender, e) =>
                 {
@@ -243,7 +246,7 @@ namespace CapaPresentacion
                 };
                 Nombre.Click += (sender, e) =>
                 {
-                    FocusCard((int)contactbox.Tag, true);
+                    FocusCard((int)contactbox.Tag, contactos, true);
                 };
                 Nombre.MouseDoubleClick += (sender, e) =>
                 {
@@ -258,7 +261,7 @@ namespace CapaPresentacion
                 };
                 Gmail.Click += (sender, e) =>
                 {
-                    FocusCard((int)contactbox.Tag, true);
+                    FocusCard((int)contactbox.Tag, contactos, true);
                 };
                 Gmail.MouseDoubleClick += (sender, e) =>
                 {
@@ -278,7 +281,7 @@ namespace CapaPresentacion
                     };
                     Grupo.Click += (sender, e) =>
                     {
-                        FocusCard((int)contactbox.Tag, true);
+                        FocusCard((int)contactbox.Tag, contactos, true);
                     };
                     Grupo.MouseDoubleClick += (sender, e) =>
                     {
@@ -300,7 +303,7 @@ namespace CapaPresentacion
                 };
                 Telefonos.Click += (sender, e) =>
                 {
-                    FocusCard((int)contactbox.Tag, true);
+                    FocusCard((int)contactbox.Tag, contactosGeneral, true);
                 };
                 Telefonos.MouseDoubleClick += (sender, e) =>
                 {
@@ -319,7 +322,7 @@ namespace CapaPresentacion
 
         }
 
-        private void FocusCard(int idSeleccionado, Boolean? dgv = false)
+        private void FocusCard(int idSeleccionado, List<Contactos> contactos, Boolean? dgv = false)
         {
             GroupBox seleccionado = new GroupBox();
             // Resetea el color de todos los GroupBox
@@ -342,7 +345,7 @@ namespace CapaPresentacion
             if (dgv == true)
             {
                 dgvContactos.ClearSelection();
-                int index = gestion.ContactosOrdenados().IndexOf(gestion.ContactoPorId(idSeleccionado));
+                int index = contactos.IndexOf(gestion.ContactoPorId(idSeleccionado));
                 dgvContactos.Rows[index].Selected = true;
             }
 
@@ -360,7 +363,17 @@ namespace CapaPresentacion
         {
             if (dgvContactos.SelectedRows.Count != 0)
             {
-                FocusCard((int)dgvContactos.SelectedRows[0].Cells[0].Value);
+                string columnHeader = dgvContactos.Columns[0].HeaderText;
+                if (columnHeader.Equals("IdContacto", StringComparison.OrdinalIgnoreCase))
+                {
+                    FocusCard((int)dgvContactos.SelectedRows[0].Cells[0].Value, contactosGeneral);
+                }
+                else
+                {
+                    String nombre = dgvContactos.SelectedRows[0].Cells[0].Value.ToString();
+                    FocusCard(contactosGeneral.SingleOrDefault(con => con.Nombre == nombre).IdContacto, contactosGeneral);
+                }
+
             }
         }
 
