@@ -79,6 +79,9 @@ namespace CapaPresentacion
             else
             {
                 lblResultado.Text = $"El contacto con nombre {contactoAux.Nombre} se creado correctamente.";
+
+                //Actualizar el cboTelefonos 
+                ActualizarTelefonos(telefonos);
             }
             telefonos = new List<Telefonos>();
         }
@@ -96,8 +99,32 @@ namespace CapaPresentacion
                 txtDescripcionTelefono.Text = "";
                 txtTelefono.Text = "";
             }
-        }
 
+            ActualizarTelefonos(telefonos);
+            
+
+        }
+        // Función para actualizar el cboTelefonos
+        private void ActualizarTelefonos(List<Telefonos> telefonos)
+        {
+            cboTelefonos.Items.Clear();
+            if (telefonos != null && telefonos.Count > 0)
+            {
+                foreach (var telefono in telefonos)
+                {
+                    cboTelefonos.Items.Add($"{telefono.Numero}: {telefono.Descripcion}");
+                }
+            }
+            else
+            {
+                cboTelefonos.Items.Add("No hay teléfonos añadidos.");
+            }
+           
+        }
+        private void cboTelefonos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -107,5 +134,7 @@ namespace CapaPresentacion
         {
 
         }
+
+       
     }
 }
