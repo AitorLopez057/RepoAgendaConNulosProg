@@ -195,6 +195,7 @@
             this.lsbGrupos.Name = "lsbGrupos";
             this.lsbGrupos.Size = new System.Drawing.Size(363, 95);
             this.lsbGrupos.TabIndex = 25;
+            this.lsbGrupos.SelectedIndexChanged += new System.EventHandler(this.lsbGrupos_SelectedIndexChanged);
             // 
             // lblResultado
             // 

@@ -291,5 +291,56 @@ namespace GestionAgenda
             return msg;
         }
 
+
+        public Boolean ExisteGrupo(int idGrupo)
+        {
+            if (miAgendaEntities.Grupos.Any(grup => grup.IdGrupo == idGrupo))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public String EditarGrupo(int idGrupo, string nuevoNombre)
+        {
+            string msg = "";
+            if (ExisteGrupo(idGrupo))
+            {
+                try
+                {
+                    Grupos grupo = miAgendaEntities.Grupos.Single(grup => grup.IdGrupo == idGrupo);
+                    grupo.NombreGrupo = nuevoNombre;
+                    miAgendaEntities.SaveChanges();
+                }
+                catch (Exception exc)
+                {
+                    msg = "Error al editar el Grupo: " + exc.Message;
+                    return msg;
+                }
+                return msg;
+            }
+            return "No existe el grupo seleccionado con id: " + idGrupo;
+        }
+
+        public String AñadirContactoAGrupo(int idGrupo, int idContacto)
+        {
+            Grupos grupo = miAgendaEntities.Grupos.SingleOrDefault(gru => gru.IdGrupo == idGrupo);
+            if (grupo != null) grupo.Contactos.Add(ContactoPorId(idContacto));
+            miAgendaEntities.SaveChanges();
+            return "";
+        }
+
+        public String SacarContactoDeGrupo(int idGrupo, int idContacto)
+        {
+            Grupos grupo = miAgendaEntities.Grupos.SingleOrDefault(gru => gru.IdGrupo == idGrupo);
+            if (grupo == null || !grupo.Contactos.Remove(ContactoPorId(idContacto))) return "El grupo no existe o el contacto no está en el grupo";
+            grupo.Contactos.Remove(ContactoPorId(idContacto));
+            miAgendaEntities.SaveChanges();
+            return "";
+        }
+
     }
 }
