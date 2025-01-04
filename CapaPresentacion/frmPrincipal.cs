@@ -6,6 +6,7 @@ using Entidades;
 using System.Linq;
 using System.Diagnostics.Contracts;
 using System.Runtime.Remoting.Channels;
+using System.Drawing;
 namespace CapaPresentacion
 {
     public partial class frmPrincipal : Form
@@ -179,6 +180,192 @@ namespace CapaPresentacion
         {
             frmEditarContacto frmEditarContacto = new frmEditarContacto();
             frmEditarContacto.ShowDialog();
+        }
+
+        private void btnEditarGrupo_Click(object sender, EventArgs e)
+        {
+            frmEditarGrupo femEditarGrupo = new frmEditarGrupo();
+            femEditarGrupo.ShowDialog();
+        }
+
+        //Controles dinámicos:
+
+        private void CrearCards()
+        {
+            panel1.Controls.Clear();
+            List<Contactos> contactos = gestion.ContactosOrdenados();
+            panel1.Controls.Clear();
+            int x = panel1.AutoScrollPosition.X + 20;
+            int y = panel1.AutoScrollPosition.Y + 30;
+            for (int i = 0; i <= contactos.Count - 1; i++)
+            {
+                Contactos contacto = contactos[i];
+                GroupBox contactbox = new GroupBox
+                {
+                    Name = "contact_" + contacto.IdContacto,
+                    Tag = contacto.IdContacto,
+                    Size = new Size(150, 200), // Ajusta el tamaño según sea necesario
+                    Location = new Point(x, y),
+                    BackColor = Color.White
+                };
+                x += contactbox.Width + 20;
+                contactbox.Click += (sender, e) =>
+                {
+                    FocusCard((int)contactbox.Tag, true);
+                };
+                contactbox.MouseDoubleClick += (sender, e) =>
+                {
+                    Detalles((int)contactbox.Tag);
+                };
+
+                PictureBox picturebox = new PictureBox
+                {
+                    Location = new Point(20, 10),
+                    Tag = contacto.IdContacto,
+                    BackgroundImage = Image.FromFile("usuario.png"),
+                    BackgroundImageLayout = ImageLayout.Stretch,
+                };
+                picturebox.Click += (sender, e) =>
+                {
+                    FocusCard((int)picturebox.Tag);
+                };
+                picturebox.MouseDoubleClick += (sender, e) =>
+                {
+                    Detalles((int)picturebox.Tag);
+                };
+
+                Label Nombre = new Label
+                {
+                    Text = contacto.Nombre,
+                    Tag = contacto.IdContacto,
+                    Location = new Point(10, 70) // Posición relativa al interior del GroupBox
+                };
+                Nombre.Click += (sender, e) =>
+                {
+                    FocusCard((int)contactbox.Tag, true);
+                };
+                Nombre.MouseDoubleClick += (sender, e) =>
+                {
+                    Detalles((int)contactbox.Tag);
+                };
+
+                Label Gmail = new Label
+                {
+                    Text = contacto.Email ?? "---",
+                    Tag = contacto.IdContacto,
+                    Location = new Point(10, 100) // Posición relativa al interior del GroupBox
+                };
+                Gmail.Click += (sender, e) =>
+                {
+                    FocusCard((int)contactbox.Tag, true);
+                };
+                Gmail.MouseDoubleClick += (sender, e) =>
+                {
+                    Detalles((int)contactbox.Tag);
+                };
+
+                int yTelefono = 160;
+                Label Grupo = null;
+                if (contacto.Grupos != null)
+                {
+                    Grupo = new Label
+                    {
+                        Text = "Nombre grupo: " + contacto.Grupos.NombreGrupo ?? "---",
+                        Tag = contacto.IdContacto,
+                        Location = new Point(10, 130), // Posición relativa al interior del GroupBox
+                        AutoSize = true
+                    };
+                    Grupo.Click += (sender, e) =>
+                    {
+                        FocusCard((int)contactbox.Tag, true);
+                    };
+                    Grupo.MouseDoubleClick += (sender, e) =>
+                    {
+                        Detalles((int)contactbox.Tag);
+                    };
+                }
+                else
+                {
+                    yTelefono = 130;
+                }
+
+
+                Label Telefonos = new Label
+                {
+                    Text = "Número de \nteléfonos: " + contacto.Telefonos.Count,
+                    Tag = contacto.IdContacto,
+                    Location = new Point(10, yTelefono), // Posición relativa al interior del GroupBox
+                    AutoSize = true
+                };
+                Telefonos.Click += (sender, e) =>
+                {
+                    FocusCard((int)contactbox.Tag, true);
+                };
+                Telefonos.MouseDoubleClick += (sender, e) =>
+                {
+                    Detalles((int)contactbox.Tag);
+                };
+
+
+                contactbox.Controls.Add(picturebox);
+                contactbox.Controls.Add(Nombre);
+                contactbox.Controls.Add(Gmail);
+                if (contacto.Grupos != null) contactbox.Controls.Add(Grupo);
+                contactbox.Controls.Add(Telefonos);
+
+                panel1.Controls.Add(contactbox);
+            }
+
+        }
+
+        private void FocusCard(int idSeleccionado, Boolean? dgv = false)
+        {
+            GroupBox seleccionado = new GroupBox();
+            // Resetea el color de todos los GroupBox
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (ctrl is GroupBox && ctrl.Tag.ToString() != idSeleccionado.ToString())
+                {
+                    ctrl.BackColor = Color.White;
+                }
+                else if (ctrl.Tag.ToString() == idSeleccionado.ToString())
+                {
+                    seleccionado = (GroupBox)ctrl;
+                }
+            }
+
+            // Cambia el color del GroupBox seleccionado
+            seleccionado.BackColor = Color.LightBlue;
+            Focus(); //stack over flow
+
+            if (dgv == true)
+            {
+                dgvContactos.ClearSelection();
+                int index = gestion.ContactosOrdenados().IndexOf(gestion.ContactoPorId(idSeleccionado));
+                dgvContactos.Rows[index].Selected = true;
+            }
+
+        }
+
+        private void Detalles(int idSeleccionado)
+        {
+            DetallesForm detalleForm = new DetallesForm();
+            Contactos contactoclicado = gestion.ContactoPorId(idSeleccionado);
+            detalleForm.SetDatos(contactoclicado.IdContacto.ToString(), contactoclicado.Nombre, contactoclicado.Email, contactoclicado.Grupos?.NombreGrupo, contactoclicado.toStringTelefonos());
+            detalleForm.Show();
+        }
+
+        private void dgvContactos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvContactos.SelectedRows.Count != 0)
+            {
+                FocusCard((int)dgvContactos.SelectedRows[0].Cells[0].Value);
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

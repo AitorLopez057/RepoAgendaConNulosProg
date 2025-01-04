@@ -36,6 +36,7 @@
             this.btnTelefonosContacto = new System.Windows.Forms.Button();
             this.lblMensaje = new System.Windows.Forms.Label();
             this.gboMantenimiento = new System.Windows.Forms.GroupBox();
+            this.btnEditContacto = new System.Windows.Forms.Button();
             this.btnAnyadirTelefonoAContacto = new System.Windows.Forms.Button();
             this.btnEliminarContacto = new System.Windows.Forms.Button();
             this.btnDarAltaContacto = new System.Windows.Forms.Button();
@@ -45,7 +46,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnEditContacto = new System.Windows.Forms.Button();
+            this.btnEditarGrupo = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
             this.gboMantenimiento.SuspendLayout();
             this.gboGrupos.SuspendLayout();
@@ -143,6 +145,21 @@
             this.gboMantenimiento.TabStop = false;
             this.gboMantenimiento.Text = "Mantenimiento de Contactos";
             // 
+            // btnEditContacto
+            // 
+            this.btnEditContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEditContacto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditContacto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEditContacto.Location = new System.Drawing.Point(213, 28);
+            this.btnEditContacto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditContacto.Name = "btnEditContacto";
+            this.btnEditContacto.Size = new System.Drawing.Size(104, 40);
+            this.btnEditContacto.TabIndex = 3;
+            this.btnEditContacto.Text = "Editar un Contacto";
+            this.btnEditContacto.UseVisualStyleBackColor = false;
+            this.btnEditContacto.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnAnyadirTelefonoAContacto
             // 
             this.btnAnyadirTelefonoAContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -189,6 +206,7 @@
             // gboGrupos
             // 
             this.gboGrupos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gboGrupos.Controls.Add(this.btnEditarGrupo);
             this.gboGrupos.Controls.Add(this.btnEliminarGrupo);
             this.gboGrupos.Controls.Add(this.btnDarDeAltaUnGrupo);
             this.gboGrupos.Location = new System.Drawing.Point(886, 247);
@@ -205,7 +223,7 @@
             this.btnEliminarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEliminarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarGrupo.Location = new System.Drawing.Point(263, 47);
+            this.btnEliminarGrupo.Location = new System.Drawing.Point(298, 47);
             this.btnEliminarGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarGrupo.Name = "btnEliminarGrupo";
             this.btnEliminarGrupo.Size = new System.Drawing.Size(104, 40);
@@ -266,27 +284,38 @@
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             // 
-            // btnEditContacto
+            // btnEditarGrupo
             // 
-            this.btnEditContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnEditContacto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditContacto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEditContacto.Location = new System.Drawing.Point(213, 28);
-            this.btnEditContacto.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditContacto.Name = "btnEditContacto";
-            this.btnEditContacto.Size = new System.Drawing.Size(104, 40);
-            this.btnEditContacto.TabIndex = 3;
-            this.btnEditContacto.Text = "Editar un Contacto";
-            this.btnEditContacto.UseVisualStyleBackColor = false;
-            this.btnEditContacto.Click += new System.EventHandler(this.button1_Click);
+            this.btnEditarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEditarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnEditarGrupo.Location = new System.Drawing.Point(176, 47);
+            this.btnEditarGrupo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarGrupo.Name = "btnEditarGrupo";
+            this.btnEditarGrupo.Size = new System.Drawing.Size(104, 40);
+            this.btnEditarGrupo.TabIndex = 5;
+            this.btnEditarGrupo.Text = "Editar Grupo";
+            this.btnEditarGrupo.UseVisualStyleBackColor = false;
+            this.btnEditarGrupo.Click += new System.EventHandler(this.btnEditarGrupo_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(26, 493);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(811, 259);
+            this.panel1.TabIndex = 40;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1370, 497);
+            this.ClientSize = new System.Drawing.Size(1370, 710);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -329,6 +358,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnEditContacto;
+        private System.Windows.Forms.Button btnEditarGrupo;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
