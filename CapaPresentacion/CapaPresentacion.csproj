@@ -71,6 +71,12 @@
     <Compile Include="frmEditarContacto.Designer.cs">
       <DependentUpon>frmEditarContacto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarGrupo.Designer.cs">
+      <DependentUpon>frmEditarGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEliminarContacto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarContacto.resx">
       <DependentUpon>frmEditarContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarGrupo.resx">
+      <DependentUpon>frmEditarGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEliminarContacto.resx">
       <DependentUpon>frmEliminarContacto.cs</DependentUpon>
