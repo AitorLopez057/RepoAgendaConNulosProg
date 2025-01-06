@@ -41,10 +41,14 @@
             this.btnAñadirTelefono = new System.Windows.Forms.Button();
             this.cboGrupo = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblBTelefono = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cboTelefonos = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +59,7 @@
             this.txtNombreContacto.Name = "txtNombreContacto";
             this.txtNombreContacto.Size = new System.Drawing.Size(198, 20);
             this.txtNombreContacto.TabIndex = 19;
+            this.txtNombreContacto.TextChanged += new System.EventHandler(this.txtNombreContacto_TextChanged_1);
             // 
             // label1
             // 
@@ -71,7 +76,7 @@
             // 
             this.btnAñadirContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAñadirContacto.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAñadirContacto.Location = new System.Drawing.Point(588, 109);
+            this.btnAñadirContacto.Location = new System.Drawing.Point(588, 108);
             this.btnAñadirContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAñadirContacto.Name = "btnAñadirContacto";
             this.btnAñadirContacto.Size = new System.Drawing.Size(154, 41);
@@ -173,19 +178,26 @@
             this.cboGrupo.Name = "cboGrupo";
             this.cboGrupo.Size = new System.Drawing.Size(198, 21);
             this.cboGrupo.TabIndex = 30;
-            this.cboGrupo.SelectedIndexChanged += new System.EventHandler(this.cboGrupo_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(1, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(279, 400);
+            this.groupBox1.Size = new System.Drawing.Size(279, 436);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(11, 18);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(254, 403);
+            this.panel1.TabIndex = 0;
             // 
             // lblBTelefono
             // 
@@ -210,13 +222,23 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtDescripcionTelefono);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(306, 164);
+            this.groupBox2.Location = new System.Drawing.Point(306, 213);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(436, 208);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
+            // 
+            // cboTelefonos
+            // 
+            this.cboTelefonos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTelefonos.FormattingEnabled = true;
+            this.cboTelefonos.Location = new System.Drawing.Point(221, 14);
+            this.cboTelefonos.Margin = new System.Windows.Forms.Padding(2);
+            this.cboTelefonos.Name = "cboTelefonos";
+            this.cboTelefonos.Size = new System.Drawing.Size(204, 21);
+            this.cboTelefonos.TabIndex = 38;
             // 
             // label2
             // 
@@ -229,22 +251,36 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Teléfonos del contacto actuales:";
             // 
-            // cboTelefonos
+            // txtEmail
             // 
-            this.cboTelefonos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTelefonos.FormattingEnabled = true;
-            this.cboTelefonos.Location = new System.Drawing.Point(221, 14);
-            this.cboTelefonos.Margin = new System.Windows.Forms.Padding(2);
-            this.cboTelefonos.Name = "cboTelefonos";
-            this.cboTelefonos.Size = new System.Drawing.Size(204, 21);
-            this.cboTelefonos.TabIndex = 38;
-            this.cboTelefonos.SelectedIndexChanged += new System.EventHandler(this.cboTelefonos_SelectedIndexChanged);
+            this.txtEmail.Location = new System.Drawing.Point(381, 157);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(198, 20);
+            this.txtEmail.TabIndex = 38;
+            this.txtEmail.MouseLeave += new System.EventHandler(this.txtEmail_MouseLeave);
+            this.txtEmail.MouseHover += new System.EventHandler(this.txtEmail_MouseHover);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.Location = new System.Drawing.Point(304, 157);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 17);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Email";
+            this.label7.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
+            this.label7.MouseHover += new System.EventHandler(this.label2_MouseHover);
             // 
             // frmDarAltaContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 386);
+            this.ClientSize = new System.Drawing.Size(769, 447);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblBTelefono);
             this.Controls.Add(this.groupBox1);
@@ -256,7 +292,9 @@
             this.Controls.Add(this.lblResultado);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDarAltaContacto";
-            this.Text = "DarAlta";
+            this.Text = " ";
+            this.Load += new System.EventHandler(this.frmDarAltaContacto_Load_1);
+            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -282,5 +320,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboTelefonos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label7;
     }
 }

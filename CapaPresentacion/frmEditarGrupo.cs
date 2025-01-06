@@ -257,6 +257,10 @@ namespace CapaPresentacion
             lsbGrupos.Items.Clear();
             lsbGrupos.Items.AddRange(gestion.GruposOrdenados().ToArray());
             listBox1.Items.AddRange(gestion.ContactosOrdenados().ToArray());
+
+            Grupos grupo = lsbGrupos.SelectedItem as Grupos;
+           // lsbContactos.Items.AddRange(gestion.ContactosOrdenados().Where(cont =>cont.Grupos != null && cont.Grupos.IdGrupo== grupo.IdGrupo).ToArray());
+
         }
 
 

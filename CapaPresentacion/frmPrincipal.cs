@@ -7,13 +7,16 @@ using System.Linq;
 using System.Diagnostics.Contracts;
 using System.Runtime.Remoting.Channels;
 using System.Drawing;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
+
 namespace CapaPresentacion
 {
     public partial class frmPrincipal : Form
     {
         Gestion gestion = Program.gestion;
-        private List<Contactos> contactosGeneral;
 
+        private List<Contactos> contactosGeneral;
         public frmPrincipal()
         {
             InitializeComponent();
@@ -51,6 +54,7 @@ namespace CapaPresentacion
 
         private void btnTelefonosContacto_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
             String idStr = txtIdContacto.Text;
             int id = 0;
             try
@@ -72,6 +76,7 @@ namespace CapaPresentacion
             else
             {
                 var telefonos = gestion.TelefonosDeUnContacto(id);
+                //CrearCards(gestion.TelefonosDeUnContacto(id)
                 dgvContactos.DataSource = (from tel in telefonos
                                            select new
                                            {
@@ -93,6 +98,7 @@ namespace CapaPresentacion
 
         private void btnContactosTelefono_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
             if (String.IsNullOrEmpty(txtNumeroTelefono.Text))
             {
                 lblMensaje.Text = "Inserte un teléfono";
@@ -109,6 +115,8 @@ namespace CapaPresentacion
                 }
                 else
                 {
+                    contactosGeneral = contactos;
+                    CrearCards(contactosGeneral);
                     dgvContactos.DataSource = (from con in contactos
                                                select new
                                                {
@@ -152,7 +160,7 @@ namespace CapaPresentacion
             frmAnyadirBorrarTelefono frmAnñadirTelefono = new frmAnyadirBorrarTelefono();
             frmAnñadirTelefono.ShowDialog();
         }
-        
+
 
         private void dgvContactos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -165,28 +173,30 @@ namespace CapaPresentacion
                     string email = dgvContactos.Rows[e.RowIndex].Cells["Email"].Value.ToString();
                     string nGrupo = dgvContactos.Rows[e.RowIndex].Cells["NombreGrupo"].Value.ToString();
                     string telefonos = dgvContactos.Rows[e.RowIndex].Cells["Telefonos"].Value.ToString();
-
+                    int idContacto = Convert.ToInt32(id);
+                    FocusCard(idContacto, contactosGeneral, true);
 
                     // Crea una instancia del formulario de detalle con los datos seleccionados
                     DetallesForm detalleForm = new DetallesForm();
                     detalleForm.SetDatos(id, name, email, nGrupo, telefonos);
                     detalleForm.Show();
-                } catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show("No se puede ver la informacion en este momento");
                 }
                 // Obtén los datos de la fila seleccionada
-                
+
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            frmEditarContacto frmEditarContacto = new frmEditarContacto();
-            frmEditarContacto.ShowDialog();
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
-        private void btnEditarGrupo_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             frmEditarGrupo femEditarGrupo = new frmEditarGrupo();
             femEditarGrupo.ShowDialog();
@@ -377,14 +387,10 @@ namespace CapaPresentacion
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnEditarGrupo_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-
+            frmEditarGrupo frmEditarGrupo = new frmEditarGrupo();
+            frmEditarGrupo.ShowDialog();
         }
     }
 }

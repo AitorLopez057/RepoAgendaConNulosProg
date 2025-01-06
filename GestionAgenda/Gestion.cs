@@ -117,6 +117,11 @@ namespace GestionAgenda
                     return $"El grupo de id '{contacto.IdGrupo}' no existe";
                 }
             }
+            //Controles del email
+            if (contacto.Email != null && !EmailValido(contacto.Email))
+            {
+                return "El email no es válido. Tiene que ser de la forma: < *@*.* >, sin espacios y con 5<numCaracteres<30";
+            }
             //Controles de los telefonos
             if (contacto.Telefonos != null)
             {
@@ -130,11 +135,23 @@ namespace GestionAgenda
                     return $"No puede haber números de teléfono con menos de 3 dígitos";
                 }
             }
+
             miAgendaEntities.Contactos.Add(contacto);
             int nAfectados = miAgendaEntities.SaveChanges();
             return "";
         }
 
+        /*solo cambio esto
+         *
+         * Contiene @ y no acaba ni empieza así        
+         * Acaba con .*** o .** pero ni empieza ni acaba en .
+         * No tiene espacios
+         * No tiene menos de 6 ni más de 30
+         */
+        private Boolean EmailValido(String email)
+        {
+            return email.Contains("@") && email.Substring(email.Length - 4, 4).Contains(".") && !email.Contains(" ") && email.Length >= 6 && email.Length <= 30 && !email.StartsWith(".") && !email.EndsWith(".") && !email.EndsWith("@") && !email.StartsWith("@");
+        }
         // 7. Borrar un teléfono
         public String BorrarTelefono(int idContacto, string numeroTelefono)
         {
