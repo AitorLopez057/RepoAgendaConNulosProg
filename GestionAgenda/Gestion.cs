@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations.Sql;
 using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -206,7 +207,6 @@ namespace GestionAgenda
 
             }catch (Exception exc) {
                 msg = "Error al obtener los contactos de un teléfono: "+ exc.Message;
-                msg = "Error al obtener los contactos de un teléfono: "+ exc.Message;
                 return null;
             }
         }
@@ -306,7 +306,10 @@ namespace GestionAgenda
 
         public String EditarGrupo(int idGrupo, string nuevoNombre)
         {
-            string msg = "";
+            if (String.IsNullOrWhiteSpace(nuevoNombre))
+            {
+                return "El nuevo nombre del grupo no puede quedar vacio";
+            }
             if (ExisteGrupo(idGrupo))
             {
                 try
@@ -317,10 +320,9 @@ namespace GestionAgenda
                 }
                 catch (Exception exc)
                 {
-                    msg = "Error al editar el Grupo: " + exc.Message;
-                    return msg;
+                    return "Error al editar el Grupo: " + exc.Message;
                 }
-                return msg;
+                return "";
             }
             return "No existe el grupo seleccionado con id: " + idGrupo;
         }

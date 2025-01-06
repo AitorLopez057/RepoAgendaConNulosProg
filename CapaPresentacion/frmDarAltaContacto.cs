@@ -81,7 +81,7 @@ namespace CapaPresentacion
                 lblResultado.Text = $"El contacto con nombre {contactoAux.Nombre} se creado correctamente.";
 
                 //Actualizar el cboTelefonos 
-                ActualizarTelefonos(telefonos);
+                ActualizarTelefonos();
             }
             telefonos = new List<Telefonos>();
         }
@@ -100,19 +100,19 @@ namespace CapaPresentacion
                 txtTelefono.Text = "";
             }
 
-            ActualizarTelefonos(telefonos);
+            ActualizarTelefonos();
             
 
         }
         // Función para actualizar el cboTelefonos
-        private void ActualizarTelefonos(List<Telefonos> telefonos)
+        private void ActualizarTelefonos()
         {
             cboTelefonos.Items.Clear();
             if (telefonos != null && telefonos.Count > 0)
             {
                 foreach (var telefono in telefonos)
                 {
-                    cboTelefonos.Items.Add($"{telefono.Numero}: {telefono.Descripcion}");
+                    cboTelefonos.Items.Add(telefono);
                 }
             }
             else
@@ -135,6 +135,30 @@ namespace CapaPresentacion
 
         }
 
-       
+        private void frmDarAltaContacto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (cboTelefonos.SelectedIndex==-1) {
+                MessageBox.Show("Debes seleccionar un teléfono");
+                return;
+            }
+            else
+            {
+                try
+                {
+                    telefonos.Remove((Telefonos) cboTelefonos.SelectedItem);
+                    ActualizarTelefonos();
+                }
+                catch 
+                {
+                    MessageBox.Show("No se ha podido eliminar el telefono");
+                }
+                
+            }
+        }
     }
 }
