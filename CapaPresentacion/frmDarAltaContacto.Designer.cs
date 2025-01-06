@@ -44,6 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblBTelefono = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnEliminarTelef = new System.Windows.Forms.Button();
             this.cboTelefonos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -109,7 +110,7 @@
             // 
             // txtDescripcionTelefono
             // 
-            this.txtDescripcionTelefono.Location = new System.Drawing.Point(153, 121);
+            this.txtDescripcionTelefono.Location = new System.Drawing.Point(157, 147);
             this.txtDescripcionTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionTelefono.Name = "txtDescripcionTelefono";
             this.txtDescripcionTelefono.Size = new System.Drawing.Size(233, 20);
@@ -119,7 +120,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(11, 121);
+            this.label3.Location = new System.Drawing.Point(15, 147);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 17);
@@ -128,7 +129,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(153, 92);
+            this.txtTelefono.Location = new System.Drawing.Point(157, 118);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(233, 20);
@@ -138,7 +139,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(11, 90);
+            this.label5.Location = new System.Drawing.Point(15, 116);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 17);
@@ -149,7 +150,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(110, 63);
+            this.label6.Location = new System.Drawing.Point(114, 89);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(206, 16);
@@ -160,7 +161,7 @@
             // 
             this.btnAñadirTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAñadirTelefono.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAñadirTelefono.Location = new System.Drawing.Point(142, 154);
+            this.btnAñadirTelefono.Location = new System.Drawing.Point(157, 183);
             this.btnAñadirTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.btnAñadirTelefono.Name = "btnAñadirTelefono";
             this.btnAñadirTelefono.Size = new System.Drawing.Size(110, 33);
@@ -214,6 +215,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.Controls.Add(this.btnEliminarTelef);
             this.groupBox2.Controls.Add(this.cboTelefonos);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnAñadirTelefono);
@@ -222,13 +224,28 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtDescripcionTelefono);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(306, 213);
+            this.groupBox2.Location = new System.Drawing.Point(306, 205);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(436, 208);
+            this.groupBox2.Size = new System.Drawing.Size(436, 231);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
+            // 
+            // btnEliminarTelef
+            // 
+            this.btnEliminarTelef.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminarTelef.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEliminarTelef.Location = new System.Drawing.Point(147, 39);
+            this.btnEliminarTelef.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarTelef.Name = "btnEliminarTelef";
+            this.btnEliminarTelef.Size = new System.Drawing.Size(144, 33);
+            this.btnEliminarTelef.TabIndex = 39;
+            this.btnEliminarTelef.Text = "Eliminar teléfono";
+            this.btnEliminarTelef.UseVisualStyleBackColor = false;
+            this.btnEliminarTelef.Click += new System.EventHandler(this.btnEliminarTelef_Click);
+            this.btnEliminarTelef.MouseLeave += new System.EventHandler(this.btnEliminarTelef_MouseLeave);
+            this.btnEliminarTelef.MouseHover += new System.EventHandler(this.btnEliminarTelef_MouseHover);
             // 
             // cboTelefonos
             // 
@@ -239,6 +256,8 @@
             this.cboTelefonos.Name = "cboTelefonos";
             this.cboTelefonos.Size = new System.Drawing.Size(204, 21);
             this.cboTelefonos.TabIndex = 38;
+            this.cboTelefonos.MouseLeave += new System.EventHandler(this.cboTelefonos_MouseLeave);
+            this.cboTelefonos.MouseHover += new System.EventHandler(this.cboTelefonos_MouseHover);
             // 
             // label2
             // 
@@ -323,5 +342,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnEliminarTelef;
     }
 }

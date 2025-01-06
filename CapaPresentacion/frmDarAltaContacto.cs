@@ -41,14 +41,17 @@ namespace CapaPresentacion
             {
                 if (cboGrupo.SelectedIndex == -1)
                 {
-                    lblResultado.Text = "Selecciona un grupo";
+                    error = "Selecciona un grupo";
                     //contactoAux = new Contactos(nombre, null, -1);
                     //contactoAux.Telefonos = telefonos;
                     //error = gestion.AnyadirContacto(contactoAux);
 
-                }else{
+                }
+                else
+                {
                     grupoAux = (Grupos)cboGrupo.SelectedItem;
-                    contactoAux = new Contactos(nombre, txtEmail.Text, grupoAux.IdGrupo); 
+                    contactoAux = new Contactos(txtNombreContacto.Text, txtEmail.Text, grupoAux.IdGrupo); 
+
                     contactoAux.Telefonos = telefonos;
                     if (telefonos.Count == 0)
                     {
@@ -66,16 +69,18 @@ namespace CapaPresentacion
                     {
                         error = gestion.AnyadirContacto(contactoAux);
                     }
-                    
+
                 }
-                
-            }catch (Exception ex){
+
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
-            
+
             if (error != "")
             {
-                MessageBox.Show (error);
+                lblResultado.Text=error;
                 return;
             }
             else
@@ -83,37 +88,45 @@ namespace CapaPresentacion
                 lblResultado.Text = $"El contacto con nombre {contactoAux.Nombre} se creado correctamente.";
 
                 //Actualizar el cboTelefonos 
-                ActualizarTelefonos(telefonos);
+                ActualizarTelefonos();
             }
             telefonos = new List<Telefonos>();
         }
-
+        
         private void btnAñadirTelefono_Click(object sender, EventArgs e)
         {
             int aux;
             if (!int.TryParse(txtTelefono.Text, out aux))
             {
-                MessageBox.Show($"'{txtTelefono.Text}' no es un valor numérico");
+                lblResultado.Text = $"'{txtTelefono.Text}' no es un valor numérico";
             }
+            else if(txtTelefono.Text.Length <3)
+            {
+                lblResultado.Text = "El teléfono debe tener mínimo 3 dígitos.";
+            }
+            
             else
             {
+
                 telefonos.Add(new Telefonos(txtTelefono.Text,txtDescripcionTelefono.Text));
+                lblResultado.Text = $"Teléfono {txtTelefono.Text} añadido correctamente. Cuando se cree el contacto se crearán los teléfonos";
                 txtDescripcionTelefono.Text = "";
                 txtTelefono.Text = "";
             }
 
-            ActualizarTelefonos(telefonos);
+            ActualizarTelefonos();
             
 
         }
         // Función para actualizar el cboTelefonos
-        private void ActualizarTelefonos(List<Telefonos> telefonos)
+        private void ActualizarTelefonos()
         {
             cboTelefonos.Items.Clear();
             if (telefonos != null && telefonos.Count > 0)
             {
                 foreach (var telefono in telefonos)
                 {
+
                     cboTelefonos.Items.Add($"{telefono.Numero}: {telefono.Descripcion}");
                 }
             }
@@ -363,6 +376,55 @@ namespace CapaPresentacion
         private void txtNombreContacto_TextChanged_1(object sender, EventArgs e)
         {
             CrearCards();
+        }
+
+        private void btnEliminarTelef_Click(object sender, EventArgs e)
+        {
+            int index= cboTelefonos.SelectedIndex;
+            if (index != -1)
+            {
+                Telefonos telefonoSeleccionado = telefonos.ElementAt(index);
+                telefonos.Remove(telefonoSeleccionado);
+                lblResultado.Text = $"El teléfono {telefonoSeleccionado.Numero} se ha eliminado correctamente";
+                ActualizarTelefonos();
+            }
+            else
+            {
+                lblResultado.Text = "Selecciona un teléfono para eliminar";
+            }
+            
+        }
+        private String msgViejo;
+        private void HoverEliminarTelefono()
+        {
+            msgViejo= lblResultado.Text;
+            lblResultado.Text = "info: selecciona un teléfono que desees y click para eliminar";
+            
+        }
+        private void QuitarHoverEliminarTelefono()
+        {
+            lblResultado.Text=msgViejo;
+        }
+
+        private void btnEliminarTelef_MouseHover(object sender, EventArgs e)
+        {
+            HoverEliminarTelefono(); 
+        }
+
+        private void btnEliminarTelef_MouseLeave(object sender, EventArgs e)
+        {
+            QuitarHoverEliminarTelefono();
+        }
+
+        private void cboTelefonos_MouseHover(object sender, EventArgs e)
+        {
+            HoverEliminarTelefono();
+        }
+
+        private void cboTelefonos_MouseLeave(object sender, EventArgs e)
+        {
+            QuitarHoverEliminarTelefono();
+
         }
     }
 }
