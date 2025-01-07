@@ -144,7 +144,7 @@ namespace CapaPresentacion
             {
                 return contSeleccionado;
             }
-            return lsbContactos.SelectedItem as Contactos;
+            return (Contactos) lsbContactos.SelectedItem;
         }
 
         //

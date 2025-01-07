@@ -24,12 +24,12 @@ namespace CapaPresentacion
                 MessageBox.Show("La inicialización de la aplicación ha fallado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
+            cboContactos.Items.AddRange(gestion.ContactosOrdenados().ToArray());
         }
 
         private void frmAnyadirBorrarTelefono_Load(object sender, EventArgs e)
         {
-            cboContactos.Items.AddRange(gestion.ContactosOrdenados().ToArray());
-
+            
         }
 
         private void btnBorrarTelefono_Click(object sender, EventArgs e)
@@ -50,22 +50,32 @@ namespace CapaPresentacion
             {
                 gestion.BorrarTelefono(contactoSeleccionado.IdContacto, telefonoSeleccionado.Numero);
                 lblResultado.Text = $"El teléfono {telefonoSeleccionado.Numero} del contacto {contactoSeleccionado.Nombre} ha sido eliminado correctamente.";
-                cboTelefonos.Items.Clear();
-                cboTelefonos.Items.AddRange(gestion.TelefonosDeUnContacto(contactoSeleccionado.IdContacto).ToArray());
-                cboTelefonos.Text = "";
             }
             else
             {
                 lblResultado.Text = $"Eliminación de teléfono {telefonoSeleccionado.Numero} del contacto {contactoSeleccionado.Nombre} abortado correctamente.";
             }
+<<<<<<< HEAD
             cboTlfonsDeContacto.Items.Clear();
             cboTlfonsDeContacto.Items.AddRange(gestion.TelefonosDeUnContacto(contactoSeleccionado.IdContacto).ToArray());
 
+=======
+            ActualizarCBOsDeTelefonos();
+>>>>>>> 74cdb057857c79e162037fb64e8607481ab77f61
         }
 
         private void btnAnyadirTelefono_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (string.IsNullOrEmpty(txtTelefono.Text) || txtTelefono.Text.Length < 3)
+=======
+            if (contactoSeleccionado == null)
+            {
+                lblResultado.Text = "Debes de seleccionar un contacto";
+                return;
+            }
+            if (string.IsNullOrEmpty(txtTelefono.Text))
+>>>>>>> 74cdb057857c79e162037fb64e8607481ab77f61
             {
                 lblResultado.Text = "Debes de introducir un número de teléfono de al menos 3 dígitos.";
                 return;
@@ -81,6 +91,7 @@ namespace CapaPresentacion
             if(txtDescripcion.Text == "")
             {
 
+<<<<<<< HEAD
                 DialogResult dr = MessageBox.Show($"Vas a añadir un teléfono sin descripción. Realmente deseas hacerlo?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.No)
                 {
@@ -100,37 +111,47 @@ namespace CapaPresentacion
             cboTelefonos.Items.Clear();
             cboTelefonos.Items.AddRange(gestion.TelefonosDeUnContacto(contactoSeleccionado.IdContacto).ToArray());
             
+=======
+            DialogResult dr = MessageBox.Show($"Vas a añadir un teléfono sin descripción. Realmente deseas hacerlo?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                Telefonos telefonoNuevo = new Telefonos(txtTelefono.Text, txtDescripcion.Text);
+                gestion.AnyadirTelefonoContacto(contactoSeleccionado.IdContacto, telefonoNuevo);
+                lblResultado.Text = $"Teléfono {telefonoNuevo.Numero} añadido correctamente al contacto {contactoSeleccionado.Nombre}.";
+                txtTelefono.Text = "";
+                txtDescripcion.Text = "";
+            }
+            else
+            {
+                lblResultado.Text = $"Creación de teléfono {txtTelefono.Text} del contacto {contactoSeleccionado.Nombre} abortado correctamente.";             
+            }
+            ActualizarCBOsDeTelefonos();
+>>>>>>> 74cdb057857c79e162037fb64e8607481ab77f61
         }
         private void cboContactos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboTelefonos.Items.Clear();
             contactoSeleccionado = cboContactos.SelectedItem as Contactos;
-            cboTelefonos.Items.AddRange(gestion.TelefonosDeUnContacto(contactoSeleccionado.IdContacto).ToArray());
 
             //Mostrar información del contacto seleccionado
             lblNombre.Text = contactoSeleccionado.Nombre;
             lblEmail.Text = contactoSeleccionado.Email ?? "---";
             lblGrupo.Text = contactoSeleccionado.Grupos?.NombreGrupo ?? "---";
 
-           
-            cboTlfonsDeContacto.Items.Clear(); 
-            foreach (var telefono in contactoSeleccionado.Telefonos)
-            {
-                cboTlfonsDeContacto.Items.Add(telefono);
-            }
+            ActualizarCBOsDeTelefonos();
 
             if (cboTlfonsDeContacto.Items.Count == 0)
             {
                 cboTlfonsDeContacto.Items.Add("No hay teléfonos");
             }
-
-            if (cboTlfonsDeContacto.Items.Count > 0)
-            {
-                cboTlfonsDeContacto.SelectedIndex = 0; //ver primer telefono 
-            }
-
+            cboTlfonsDeContacto.SelectedIndex = 0; //ver primer telefono 
         }
-
+        private void ActualizarCBOsDeTelefonos()
+        {
+            cboTlfonsDeContacto.Items.Clear();
+            cboTlfonsDeContacto.Items.AddRange(contactoSeleccionado.Telefonos.ToArray());
+            cboTelefonos.Items.Clear();
+            cboTelefonos.Items.AddRange(contactoSeleccionado.Telefonos.ToArray());
+        }
         private void cboTelefonos_SelectedIndexChanged(object sender, EventArgs e)
         {
             telefonoSeleccionado = cboTelefonos.SelectedItem as Telefonos;

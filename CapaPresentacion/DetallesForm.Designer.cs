@@ -33,11 +33,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtNombreGrupo = new System.Windows.Forms.TextBox();
-            this.txtTelefonos = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.Label();
+            this.txtNombreGrupo = new System.Windows.Forms.Label();
+            this.txtTelefonos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -87,43 +87,53 @@
             // 
             // txtID
             // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(228, 54);
+            this.txtID.AutoSize = true;
+            this.txtID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtID.Location = new System.Drawing.Point(247, 61);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(74, 22);
-            this.txtID.TabIndex = 5;
+            this.txtID.Size = new System.Drawing.Size(44, 16);
+            this.txtID.TabIndex = 10;
+            this.txtID.Text = "label6";
             // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
-            this.txtNombre.Location = new System.Drawing.Point(228, 95);
+            this.txtNombre.AutoSize = true;
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtNombre.Location = new System.Drawing.Point(247, 98);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(254, 22);
-            this.txtNombre.TabIndex = 6;
+            this.txtNombre.Size = new System.Drawing.Size(44, 16);
+            this.txtNombre.TabIndex = 11;
+            this.txtNombre.Text = "label7";
             // 
             // txtEmail
             // 
-            this.txtEmail.Enabled = false;
-            this.txtEmail.Location = new System.Drawing.Point(228, 144);
+            this.txtEmail.AutoSize = true;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtEmail.Location = new System.Drawing.Point(247, 144);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(254, 22);
-            this.txtEmail.TabIndex = 7;
+            this.txtEmail.Size = new System.Drawing.Size(44, 16);
+            this.txtEmail.TabIndex = 12;
+            this.txtEmail.Text = "label8";
             // 
             // txtNombreGrupo
             // 
-            this.txtNombreGrupo.Enabled = false;
-            this.txtNombreGrupo.Location = new System.Drawing.Point(228, 189);
+            this.txtNombreGrupo.AutoSize = true;
+            this.txtNombreGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtNombreGrupo.Location = new System.Drawing.Point(247, 189);
             this.txtNombreGrupo.Name = "txtNombreGrupo";
-            this.txtNombreGrupo.Size = new System.Drawing.Size(254, 22);
-            this.txtNombreGrupo.TabIndex = 8;
+            this.txtNombreGrupo.Size = new System.Drawing.Size(44, 16);
+            this.txtNombreGrupo.TabIndex = 13;
+            this.txtNombreGrupo.Text = "label9";
             // 
             // txtTelefonos
             // 
-            this.txtTelefonos.Enabled = false;
-            this.txtTelefonos.Location = new System.Drawing.Point(228, 236);
+            this.txtTelefonos.AutoSize = true;
+            this.txtTelefonos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtTelefonos.Location = new System.Drawing.Point(247, 242);
             this.txtTelefonos.Name = "txtTelefonos";
-            this.txtTelefonos.Size = new System.Drawing.Size(664, 22);
-            this.txtTelefonos.TabIndex = 9;
+            this.txtTelefonos.Size = new System.Drawing.Size(51, 16);
+            this.txtTelefonos.TabIndex = 14;
+            this.txtTelefonos.Text = "label10";
             // 
             // DetallesForm
             // 
@@ -155,10 +165,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtNombreGrupo;
-        private System.Windows.Forms.TextBox txtTelefonos;
+        private System.Windows.Forms.Label txtID;
+        private System.Windows.Forms.Label txtNombre;
+        private System.Windows.Forms.Label txtEmail;
+        private System.Windows.Forms.Label txtNombreGrupo;
+        private System.Windows.Forms.Label txtTelefonos;
     }
 }
