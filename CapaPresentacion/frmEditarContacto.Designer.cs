@@ -53,7 +53,6 @@
             this.lblBTelefono.Size = new System.Drawing.Size(191, 25);
             this.lblBTelefono.TabIndex = 44;
             this.lblBTelefono.Text = "Editar un Contacto";
-            this.lblBTelefono.Click += new System.EventHandler(this.lblBTelefono_Click);
             // 
             // cboGrupo
             // 

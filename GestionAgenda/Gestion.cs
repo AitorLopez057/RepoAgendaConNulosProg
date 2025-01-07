@@ -148,7 +148,7 @@ namespace GestionAgenda
          * No tiene espacios
          * No tiene menos de 6 ni más de 30
          */
-        private Boolean EmailValido(String email)
+        public Boolean EmailValido(String email)
         {
             return email.Contains("@") && email.Substring(email.Length - 4, 4).Contains(".") && !email.Contains(" ") && email.Length >= 6 && email.Length <= 30 && !email.StartsWith(".") && !email.EndsWith(".") && !email.EndsWith("@") && !email.StartsWith("@");
         }

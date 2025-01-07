@@ -52,6 +52,12 @@ namespace CapaPresentacion
                 if (nuevoEmail == "")
                 {
                     nuevoEmail = contactoSeleccionado.Email;
+               
+                }
+                if(gestion.EmailValido(nuevoEmail) == false)
+                {
+                    lblResultado.Text = "El email no es válido. Tiene que ser de la forma: < *@*.* >, sin espacios y con 5<numCaracteres<30";
+                    return;
                 }
 
                 var grupoSeleccionado = (Grupos)cboGrupo.SelectedItem;
@@ -78,15 +84,17 @@ namespace CapaPresentacion
             }
             catch { }
         }
-        private void lblBTelefono_Click(object sender, EventArgs e)
-        {
-
-        }
-
+   
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(cboContactos.SelectedIndex != -1)
+            {
+                var contacto = (Contactos)cboContactos.SelectedItem;
+                txtNombreNuevo.Text = contacto.Nombre;
+                txtEmailNuevo.Text = contacto.Email;
+                cboGrupo.SelectedIndex = gestion.GruposOrdenados().IndexOf(contacto.Grupos);
+            }
         }
 
         private void cboGrupo_SelectedIndexChanged(object sender, EventArgs e)

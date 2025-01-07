@@ -200,6 +200,7 @@
             this.lsbGrupos.Name = "lsbGrupos";
             this.lsbGrupos.Size = new System.Drawing.Size(363, 95);
             this.lsbGrupos.TabIndex = 25;
+            this.lsbGrupos.SelectedIndexChanged += new System.EventHandler(this.lsbGrupos_SelectedIndexChanged);
             // 
             // lblResultado
             // 
@@ -232,7 +233,6 @@
             this.lsbContactos.Name = "lsbContactos";
             this.lsbContactos.Size = new System.Drawing.Size(361, 173);
             this.lsbContactos.TabIndex = 0;
-            this.lsbContactos.SelectedIndexChanged += new System.EventHandler(this.lsbContactos_SelectedIndexChanged);
             // 
             // lblBTelefono
             // 

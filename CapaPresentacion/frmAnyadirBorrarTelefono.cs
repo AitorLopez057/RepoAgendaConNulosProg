@@ -58,15 +58,19 @@ namespace CapaPresentacion
             {
                 lblResultado.Text = $"Eliminación de teléfono {telefonoSeleccionado.Numero} del contacto {contactoSeleccionado.Nombre} abortado correctamente.";
             }
+            cboTlfonsDeContacto.Items.Clear();
+            cboTlfonsDeContacto.Items.AddRange(gestion.TelefonosDeUnContacto(contactoSeleccionado.IdContacto).ToArray());
+
         }
 
         private void btnAnyadirTelefono_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTelefono.Text))
+            if (string.IsNullOrEmpty(txtTelefono.Text) || txtTelefono.Text.Length < 3)
             {
-                lblResultado.Text = "Debes de introducir un número de teléfono.";
+                lblResultado.Text = "Debes de introducir un número de teléfono de al menos 3 dígitos.";
                 return;
             }
+            
 
             int resultado;
             if (!int.TryParse(txtTelefono.Text, out resultado))
@@ -74,21 +78,28 @@ namespace CapaPresentacion
                 lblResultado.Text = "El número de teléfono debe de ser un valor numérico.";
                 return;
             }
+            if(txtDescripcion.Text == "")
+            {
 
-            DialogResult dr = MessageBox.Show($"Vas a añadir un teléfono sin descripción. Realmente deseas hacerlo?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dr == DialogResult.Yes)
-            {
-                Telefonos telefonoNuevo = new Telefonos(txtTelefono.Text, txtDescripcion.Text);
-                gestion.AnyadirTelefonoContacto(contactoSeleccionado.IdContacto, telefonoNuevo);
-                lblResultado.Text = $"Teléfono {telefonoNuevo.Numero} añadido correctamente al contacto {contactoSeleccionado.Nombre}.";
-                txtTelefono.Text = "";
-                txtDescripcion.Text = "";
+                DialogResult dr = MessageBox.Show($"Vas a añadir un teléfono sin descripción. Realmente deseas hacerlo?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dr == DialogResult.No)
+                {
+                    lblResultado.Text = $"Creación de teléfono {txtTelefono.Text} del contacto {contactoSeleccionado.Nombre} abortado correctamente.";
+                    return;
+                }
             }
-            else
-            {
-                lblResultado.Text = $"Creación de teléfono {txtTelefono.Text} del contacto {contactoSeleccionado.Nombre} abortado correctamente.";
-                
-            }
+            Telefonos telefonoNuevo = new Telefonos(txtTelefono.Text, txtDescripcion.Text);
+            gestion.AnyadirTelefonoContacto(contactoSeleccionado.IdContacto, telefonoNuevo);
+            lblResultado.Text = $"Teléfono {telefonoNuevo.Numero} añadido correctamente al contacto {contactoSeleccionado.Nombre}.";
+            txtTelefono.Text = "";
+            txtDescripcion.Text = "";
+
+            cboTlfonsDeContacto.Items.Clear();
+            cboTlfonsDeContacto.Items.AddRange(gestion.TelefonosDeUnContacto(contactoSeleccionado.IdContacto).ToArray());
+
+            cboTelefonos.Items.Clear();
+            cboTelefonos.Items.AddRange(gestion.TelefonosDeUnContacto(contactoSeleccionado.IdContacto).ToArray());
+            
         }
         private void cboContactos_SelectedIndexChanged(object sender, EventArgs e)
         {

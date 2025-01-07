@@ -198,8 +198,8 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmEditarGrupo femEditarGrupo = new frmEditarGrupo();
-            femEditarGrupo.ShowDialog();
+            frmEditarContacto frmEditarContacto = new frmEditarContacto();
+            frmEditarContacto.ShowDialog();
         }
 
         //Controles dinámicos:
@@ -369,7 +369,15 @@ namespace CapaPresentacion
             detalleForm.Show();
         }
 
-        private void dgvContactos_SelectionChanged(object sender, EventArgs e)
+
+
+        private void btnEditarGrupo_Click(object sender, EventArgs e)
+        {
+            frmEditarGrupo frmEditarGrupo = new frmEditarGrupo();
+            frmEditarGrupo.ShowDialog();
+        }
+
+        private void dgvContactos_SelectionChanged_1(object sender, EventArgs e)
         {
             if (dgvContactos.SelectedRows.Count != 0)
             {
@@ -378,19 +386,13 @@ namespace CapaPresentacion
                 {
                     FocusCard((int)dgvContactos.SelectedRows[0].Cells[0].Value, contactosGeneral);
                 }
-                else
+                else if (columnHeader.Equals("Nombre", StringComparison.OrdinalIgnoreCase))
                 {
                     String nombre = dgvContactos.SelectedRows[0].Cells[0].Value.ToString();
                     FocusCard(contactosGeneral.SingleOrDefault(con => con.Nombre == nombre).IdContacto, contactosGeneral);
                 }
 
             }
-        }
-
-        private void btnEditarGrupo_Click(object sender, EventArgs e)
-        {
-            frmEditarGrupo frmEditarGrupo = new frmEditarGrupo();
-            frmEditarGrupo.ShowDialog();
         }
     }
 }

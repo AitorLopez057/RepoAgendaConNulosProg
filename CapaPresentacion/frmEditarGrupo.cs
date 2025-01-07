@@ -203,17 +203,43 @@ namespace CapaPresentacion
         //
         private void btnEditarGrupo_Click_1(object sender, EventArgs e)
         {
+           if(lsbGrupos.SelectedIndex == -1)
+            {
+                lblResultado.Text = "Debes de seleccionar un grupo.";
+                return;
+            }
+           
             String mensaje = gestion.EditarGrupo((lsbGrupos.SelectedItem as Grupos).IdGrupo, txtNuevoNombre.Text);
             if (mensaje == "")
             {
                 lblResultado.Text = "Grupo editado correctamente.";
                 lsbGrupos.Items.Clear();
                 lsbGrupos.Items.AddRange(gestion.GruposOrdenados().ToArray());
+                lsbContactos.Items.Clear();
+                txtNuevoNombre.Text = "";
+                listBox1.Items.AddRange(gestion.GruposOrdenados().ToArray());
+                panel1.Controls.Clear();
+
             }
+
             else lblResultado.Text = mensaje;
         }
         //
-        private void lsbContactos_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void frmEditarGrupo_Load_1(object sender, EventArgs e)
+        {
+            lsbContactos.Items.Clear();
+            lsbGrupos.Items.Clear();
+            lsbGrupos.Items.AddRange(gestion.GruposOrdenados().ToArray());
+            listBox1.Items.AddRange(gestion.ContactosOrdenados().ToArray());
+
+            Grupos grupo = lsbGrupos.SelectedItem as Grupos;
+           // lsbContactos.Items.AddRange(gestion.ContactosOrdenados().Where(cont =>cont.Grupos != null && cont.Grupos.IdGrupo== grupo.IdGrupo).ToArray());
+
+        }
+
+        private void lsbGrupos_SelectedIndexChanged(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             Grupos gruposSelec = (Grupos)lsbGrupos.SelectedItem;
@@ -250,19 +276,5 @@ namespace CapaPresentacion
                 }
             }
         }
-
-        private void frmEditarGrupo_Load_1(object sender, EventArgs e)
-        {
-            lsbContactos.Items.Clear();
-            lsbGrupos.Items.Clear();
-            lsbGrupos.Items.AddRange(gestion.GruposOrdenados().ToArray());
-            listBox1.Items.AddRange(gestion.ContactosOrdenados().ToArray());
-
-            Grupos grupo = lsbGrupos.SelectedItem as Grupos;
-           // lsbContactos.Items.AddRange(gestion.ContactosOrdenados().Where(cont =>cont.Grupos != null && cont.Grupos.IdGrupo== grupo.IdGrupo).ToArray());
-
-        }
-
-
     }
 }

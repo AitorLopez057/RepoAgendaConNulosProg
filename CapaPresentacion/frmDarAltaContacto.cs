@@ -180,7 +180,8 @@ namespace CapaPresentacion
             }
             else
             {
-                contactosExistentes = gestion.ContactosOrdenados().Where(con => con.Nombre.StartsWith(txtNombreContacto.Text.ToString())).ToList();
+                contactosExistentes = gestion.ContactosOrdenados().Where(con => con.Nombre.ToLower().StartsWith(txtNombreContacto.Text.ToString().ToLower())).ToList();
+
                 if (!contactosExistentes.Any(con => con.Nombre.ToLower().Equals(txtNombreContacto.Text.ToLower()))) lblResultado.Text = "info: Nombre válido: no hay contactos con ese nombre";
                 else lblResultado.Text = "info: Nombre NO valido: hay contactos con ese nombre";
             }
