@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnEditarGrupo = new System.Windows.Forms.Button();
+            this.txtNuevoNombre = new System.Windows.Forms.TextBox();
             this.rbtnContactoCard = new System.Windows.Forms.RadioButton();
             this.btnSacarContacto = new System.Windows.Forms.Button();
             this.lstContactos = new System.Windows.Forms.ListBox();
             this.btnAñadirContacto = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnEditarGrupo = new System.Windows.Forms.Button();
-            this.txtNuevoNombre = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lsbGrupos = new System.Windows.Forms.ListBox();
@@ -78,6 +78,38 @@
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Editar el grupo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(21, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(195, 20);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Nuevo nombre del Grupo";
+            // 
+            // btnEditarGrupo
+            // 
+            this.btnEditarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEditarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEditarGrupo.Location = new System.Drawing.Point(25, 97);
+            this.btnEditarGrupo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditarGrupo.Name = "btnEditarGrupo";
+            this.btnEditarGrupo.Size = new System.Drawing.Size(225, 53);
+            this.btnEditarGrupo.TabIndex = 25;
+            this.btnEditarGrupo.Text = "Confirmar cambios";
+            this.btnEditarGrupo.UseVisualStyleBackColor = false;
+            this.btnEditarGrupo.Click += new System.EventHandler(this.btnEditarGrupo_Click_1);
+            // 
+            // txtNuevoNombre
+            // 
+            this.txtNuevoNombre.Location = new System.Drawing.Point(25, 61);
+            this.txtNuevoNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNuevoNombre.Name = "txtNuevoNombre";
+            this.txtNuevoNombre.Size = new System.Drawing.Size(678, 22);
+            this.txtNuevoNombre.TabIndex = 27;
             // 
             // rbtnContactoCard
             // 
@@ -123,38 +155,6 @@
             this.btnAñadirContacto.Text = "Añadir contacto al grupo";
             this.btnAñadirContacto.UseVisualStyleBackColor = true;
             this.btnAñadirContacto.Click += new System.EventHandler(this.btnAñadirContacto_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 20);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Nuevo nombre del Grupo";
-            // 
-            // btnEditarGrupo
-            // 
-            this.btnEditarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnEditarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarGrupo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEditarGrupo.Location = new System.Drawing.Point(25, 97);
-            this.btnEditarGrupo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEditarGrupo.Name = "btnEditarGrupo";
-            this.btnEditarGrupo.Size = new System.Drawing.Size(225, 53);
-            this.btnEditarGrupo.TabIndex = 25;
-            this.btnEditarGrupo.Text = "Confirmar cambios";
-            this.btnEditarGrupo.UseVisualStyleBackColor = false;
-            this.btnEditarGrupo.Click += new System.EventHandler(this.btnEditarGrupo_Click_1);
-            // 
-            // txtNuevoNombre
-            // 
-            this.txtNuevoNombre.Location = new System.Drawing.Point(25, 61);
-            this.txtNuevoNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNuevoNombre.Name = "txtNuevoNombre";
-            this.txtNuevoNombre.Size = new System.Drawing.Size(678, 22);
-            this.txtNuevoNombre.TabIndex = 27;
             // 
             // groupBox2
             // 
@@ -229,9 +229,9 @@
             this.lblBTelefono.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblBTelefono.Location = new System.Drawing.Point(581, 11);
             this.lblBTelefono.Name = "lblBTelefono";
-            this.lblBTelefono.Size = new System.Drawing.Size(200, 29);
+            this.lblBTelefono.Size = new System.Drawing.Size(205, 29);
             this.lblBTelefono.TabIndex = 35;
-            this.lblBTelefono.Text = "Crear un Grupo";
+            this.lblBTelefono.Text = "Editar un Grupo";
             // 
             // rbtnContactoLista
             // 
@@ -282,7 +282,7 @@
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblBTelefono);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEditarGrupo";
             this.Text = "frmEditarGrupo";
             this.Load += new System.EventHandler(this.frmEditarGrupo_Load_1);
