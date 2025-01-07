@@ -54,9 +54,10 @@ namespace CapaPresentacion
                     nuevoEmail = contactoSeleccionado.Email;
                
                 }
-                if(gestion.EmailValido(nuevoEmail) == false)
+                String msg = gestion.EmailValido(nuevoEmail);
+                if(msg !="")
                 {
-                    lblResultado.Text = "El email no es válido. Tiene que ser de la forma: < *@*.* >, sin espacios y con 5<numCaracteres<30";
+                    lblResultado.Text = msg;
                     return;
                 }
 
@@ -102,5 +103,9 @@ namespace CapaPresentacion
 
         }
 
+        private void frmEditarContacto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

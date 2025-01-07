@@ -118,9 +118,13 @@ namespace GestionAgenda
                 }
             }
             //Controles del email
-            if (contacto.Email != null && !EmailValido(contacto.Email))
+            if (contacto.Email != null)
             {
-                return "El email no es válido. Tiene que ser de la forma: < *@*.* >, sin espacios y con 5<numCaracteres<30";
+                String msg = EmailValido(contacto.Email);
+                if (msg != "")
+                {
+                    return msg;
+                }
             }
             //Controles de los telefonos
             if (contacto.Telefonos != null)
@@ -148,9 +152,54 @@ namespace GestionAgenda
          * No tiene espacios
          * No tiene menos de 6 ni más de 30
          */
-        public Boolean EmailValido(String email)
+        public String EmailValido(String email)
         {
-            return email.Contains("@") && email.Substring(email.Length - 4, 4).Contains(".") && !email.Contains(" ") && email.Length >= 6 && email.Length <= 30 && !email.StartsWith(".") && !email.EndsWith(".") && !email.EndsWith("@") && !email.StartsWith("@");
+            if (string.IsNullOrEmpty(email))
+            {
+                return "No puede quedar vacio";
+            }
+            if (email.Contains(" "))
+            {
+                return "El email no puede contener espacios vacios";
+            }
+
+            
+            if (!email.Contains("@"))
+            {
+                return "El email debe contener un '@'";
+            }
+            if (email.EndsWith("@")||email.StartsWith("@"))
+            {
+                return "No puede empezar ni terminar por '@'";
+            }
+            if (email.IndexOf("@",email.IndexOf("@")+1) != -1)
+            {
+                return "El email debe contener un solo '@'";
+            }
+
+
+            if (!email.Contains("."))
+            {
+                return "El email debe contener un '.'";
+            }
+            if (email.EndsWith(".") || email.StartsWith("."))
+            {
+                return "No puede empezar ni terminar por '.'";
+            }
+            if (email.IndexOf(".", email.IndexOf("@")) == -1)
+            {
+                return "El '.' debe estar detrás del '@'";
+            }
+            if (email.IndexOf(".", email.IndexOf(".")+1) != -1)
+            {
+                return "El email debe contener un solo '.'";
+            }
+            String emailAntesArroba = email.Substring(0, email.Length - email.Substring(email.IndexOf("@")).Length);
+            if (emailAntesArroba.Length < 5 || emailAntesArroba.Length > 30)
+            {
+                return "Tiene que tener entre 5 y 30 carácteres antes del '@'";
+            }
+            return "";
         }
         // 7. Borrar un teléfono
         public String BorrarTelefono(int idContacto, string numeroTelefono)

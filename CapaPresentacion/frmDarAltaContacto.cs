@@ -124,11 +124,7 @@ namespace CapaPresentacion
             cboTelefonos.Items.Clear();
             if (telefonos != null && telefonos.Count > 0)
             {
-                foreach (var telefono in telefonos)
-                {
-
-                    cboTelefonos.Items.Add($"{telefono.Numero}: {telefono.Descripcion}");
-                }
+                cboTelefonos.Items.AddRange(telefonos.ToArray());
             }
             else
             {
@@ -384,10 +380,18 @@ namespace CapaPresentacion
             int index= cboTelefonos.SelectedIndex;
             if (index != -1)
             {
-                Telefonos telefonoSeleccionado = telefonos.ElementAt(index);
-                telefonos.Remove(telefonoSeleccionado);
-                lblResultado.Text = $"El teléfono {telefonoSeleccionado.Numero} se ha eliminado correctamente";
-                ActualizarTelefonos();
+                if (cboTelefonos.SelectedItem is Telefonos)
+                {
+                    Telefonos telefonoSeleccionado = telefonos.ElementAt(index);
+                    telefonos.Remove(telefonoSeleccionado);
+                    lblResultado.Text = $"El teléfono {telefonoSeleccionado.Numero} se ha eliminado correctamente";
+                    ActualizarTelefonos();
+                }
+                else
+                {
+                    lblResultado.Text = "No hay teléfonos que eliminar";
+                }
+
             }
             else
             {
