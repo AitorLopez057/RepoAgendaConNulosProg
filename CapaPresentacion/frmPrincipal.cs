@@ -173,6 +173,15 @@ namespace CapaPresentacion
             {
                 try
                 {
+                    string descripcion = dgvContactos.Rows[e.RowIndex].Cells["Descripción"].Value.ToString();
+                    MessageBox.Show("No se puede ver mas información sobre un telefono");
+                    return;
+                }catch (Exception ex)
+                {
+
+                }
+                try
+                {
                     id = dgvContactos.Rows[e.RowIndex].Cells["idContacto"].Value.ToString();
                     int idContacto = Convert.ToInt32(id);
                     FocusCard(idContacto, contactosGeneral, true);
