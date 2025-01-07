@@ -40,10 +40,10 @@ namespace CapaPresentacion
             List<Contactos> contactos = gestion.ContactosOrdenados()
                     .Where(con => con.Grupos != null && con.Grupos.IdGrupo == (lsbGrupos.SelectedItem as Grupos).IdGrupo)
                     .ToList();
-            lsbContactos.Items.Clear();
-            lsbContactos.Items.AddRange(contactos.ToArray());
-            listBox1.Items.Clear();
-            listBox1.Items.AddRange(gestion.ContactosOrdenados().Where(con => con.Grupos == null || con.Grupos.IdGrupo != ((Grupos)lsbGrupos.SelectedItem).IdGrupo).ToArray());
+            lsbContactosDeGrupo.Items.Clear();
+            lsbContactosDeGrupo.Items.AddRange(contactos.ToArray());
+            lstContactos.Items.Clear();
+            lstContactos.Items.AddRange(gestion.ContactosOrdenados().Where(con => con.Grupos == null || con.Grupos.IdGrupo != ((Grupos)lsbGrupos.SelectedItem).IdGrupo).ToArray());
         }
 
         private void CrearContactos()
@@ -140,11 +140,11 @@ namespace CapaPresentacion
 
         private Contactos getContactoSelec()
         {
-            if (radioButton1.Checked)
+            if (rbtnContactoCard.Checked)
             {
                 return contSeleccionado;
             }
-            return lsbContactos.SelectedItem as Contactos;
+            return lsbContactosDeGrupo.SelectedItem as Contactos;
         }
 
         //
@@ -178,14 +178,14 @@ namespace CapaPresentacion
         //
         private void btnAñadirContacto_Click_1(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null)
+            if (lstContactos.SelectedItem != null)
             {
                 if (lsbGrupos.SelectedItem == null)
                 {
                     lblResultado.Text = "Debes de seleccionar un grupo.";
                     return;
                 }
-                Contactos contacto = (Contactos)listBox1.SelectedItem;
+                Contactos contacto = (Contactos)lstContactos.SelectedItem;
                 gestion.AñadirContactoAGrupo((lsbGrupos.SelectedItem as Grupos).IdGrupo, contacto.IdContacto);
 
                 RecargarListas();
@@ -215,9 +215,9 @@ namespace CapaPresentacion
                 lblResultado.Text = "Grupo editado correctamente.";
                 lsbGrupos.Items.Clear();
                 lsbGrupos.Items.AddRange(gestion.GruposOrdenados().ToArray());
-                lsbContactos.Items.Clear();
+                lsbContactosDeGrupo.Items.Clear();
                 txtNuevoNombre.Text = "";
-                listBox1.Items.AddRange(gestion.GruposOrdenados().ToArray());
+                lstContactos.Items.AddRange(gestion.GruposOrdenados().ToArray());
                 panel1.Controls.Clear();
 
             }
@@ -229,10 +229,10 @@ namespace CapaPresentacion
 
         private void frmEditarGrupo_Load_1(object sender, EventArgs e)
         {
-            lsbContactos.Items.Clear();
+            lsbContactosDeGrupo.Items.Clear();
             lsbGrupos.Items.Clear();
             lsbGrupos.Items.AddRange(gestion.GruposOrdenados().ToArray());
-            listBox1.Items.AddRange(gestion.ContactosOrdenados().ToArray());
+            lstContactos.Items.AddRange(gestion.ContactosOrdenados().ToArray());
 
             Grupos grupo = lsbGrupos.SelectedItem as Grupos;
            // lsbContactos.Items.AddRange(gestion.ContactosOrdenados().Where(cont =>cont.Grupos != null && cont.Grupos.IdGrupo== grupo.IdGrupo).ToArray());
@@ -248,30 +248,30 @@ namespace CapaPresentacion
                 txtNuevoNombre.Text = gruposSelec.NombreGrupo;
                 if (gestion.ExisteGrupo(gruposSelec.IdGrupo))
                 {
-                    listBox1.Items.Clear();
-                    listBox1.Items.AddRange(gestion.ContactosOrdenados().Where(con => con.Grupos == null || con.Grupos.IdGrupo != gruposSelec.IdGrupo).ToArray());
+                    lstContactos.Items.Clear();
+                    lstContactos.Items.AddRange(gestion.ContactosOrdenados().Where(con => con.Grupos == null || con.Grupos.IdGrupo != gruposSelec.IdGrupo).ToArray());
 
                     List<Contactos> contactos = gestion.ContactosOrdenados()
                     .Where(con => con.Grupos != null && con.Grupos.IdGrupo == (lsbGrupos.SelectedItem as Grupos).IdGrupo)
                     .ToList();
 
-                    lsbContactos.Items.AddRange(contactos.ToArray());
+                    lsbContactosDeGrupo.Items.AddRange(contactos.ToArray());
                     if (contactos.Count == 0)
                     {
                         lblResultado.Text = "No hay contactos en el grupo seleccionado.";
-                        lsbContactos.Items.Clear();
+                        lsbContactosDeGrupo.Items.Clear();
                     }
                     else
                     {
-                        lsbContactos.Items.Clear();
-                        lsbContactos.Items.AddRange(contactos.ToArray());
+                        lsbContactosDeGrupo.Items.Clear();
+                        lsbContactosDeGrupo.Items.AddRange(contactos.ToArray());
                         CrearContactos();
                         lblResultado.Text = "";
                     }
                 }
                 else
                 {
-                    lsbContactos.Items.Clear();
+                    lsbContactosDeGrupo.Items.Clear();
                     lblResultado.Text = "No existe el grupo seleccionado.";
                 }
             }
