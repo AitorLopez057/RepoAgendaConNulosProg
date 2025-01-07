@@ -203,7 +203,7 @@ namespace CapaPresentacion
         }
 
         //Controles dinámicos:
-
+        private string mensjaViejo ;
         private void CrearCards(List<Contactos> contactos)
         {
             panel1.Controls.Clear();
@@ -230,6 +230,15 @@ namespace CapaPresentacion
                 contactbox.MouseDoubleClick += (sender, e) =>
                 {
                     Detalles((int)contactbox.Tag);
+                };
+                contactbox.MouseHover += (sender, e) =>
+                {
+                    mensjaViejo = lblMensaje.Text;
+                    lblMensaje.Text = "Haz doble click para ver los detalles del contacto";
+                };
+                contactbox.MouseLeave += (sender, e) =>
+                {
+                    lblMensaje.Text = mensjaViejo;
                 };
 
                 PictureBox picturebox = new PictureBox
