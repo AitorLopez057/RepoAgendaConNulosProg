@@ -121,8 +121,8 @@ namespace CapaPresentacion
                                                select new
                                                {
                                                    Nombre = con.Nombre,
-                                                   CantTelefonos = con.Telefonos.Count(),
-                                                   NombreGrupo = con.Grupos
+                                                   Telefonos = con.Telefonos.Count(),
+                                                   NombreGrupo = con.Grupos?.NombreGrupo ?? "---"
 
                                                }).ToList();
                     lblMensaje.Text = $"Contactos del teléfono {txtNumeroTelefono.Text}";
@@ -164,27 +164,67 @@ namespace CapaPresentacion
 
         private void dgvContactos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            string id;
+            string name;
+            string email;
+            string nGrupo;
+            string telefonos;
             if (e.RowIndex >= 0)
             {
                 try
                 {
-                    string id = dgvContactos.Rows[e.RowIndex].Cells["idContacto"].Value.ToString();
-                    string name = dgvContactos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                    string email = dgvContactos.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                    string nGrupo = dgvContactos.Rows[e.RowIndex].Cells["NombreGrupo"].Value.ToString();
-                    string telefonos = dgvContactos.Rows[e.RowIndex].Cells["Telefonos"].Value.ToString();
+                    id = dgvContactos.Rows[e.RowIndex].Cells["idContacto"].Value.ToString();
                     int idContacto = Convert.ToInt32(id);
                     FocusCard(idContacto, contactosGeneral, true);
 
-                    // Crea una instancia del formulario de detalle con los datos seleccionados
-                    DetallesForm detalleForm = new DetallesForm();
-                    detalleForm.SetDatos(id, name, email, nGrupo, telefonos);
-                    detalleForm.Show();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se puede ver la informacion en este momento");
+                    id = "";
                 }
+                try
+                {
+                    name = dgvContactos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    name = "";
+                }
+                try
+                {
+                    email = dgvContactos.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    email = "";
+                }
+                try
+                {
+                    nGrupo = dgvContactos.Rows[e.RowIndex].Cells["NombreGrupo"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    nGrupo = "";
+                }
+                try
+                {
+                    telefonos = dgvContactos.Rows[e.RowIndex].Cells["Telefonos"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    telefonos = "";
+                }
+
+                
+
+                // Crea una instancia del formulario de detalle con los datos seleccionados
+                DetallesForm detalleForm = new DetallesForm();
+                detalleForm.SetDatos(id, name, email, nGrupo, telefonos);
+                detalleForm.Show();
                 // Obtén los datos de la fila seleccionada
 
             }

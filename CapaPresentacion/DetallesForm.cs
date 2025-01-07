@@ -24,7 +24,7 @@ namespace CapaPresentacion
         {
 
         }
-        public void SetDatos(String id, String nombre, String email, String nombreGrupo, String telefonos) 
+        public void SetDatos(string id, String nombre, String email, String nombreGrupo, String telefonos) 
         {
             txtEmail.Text = email;
             txtID.Text = id;
