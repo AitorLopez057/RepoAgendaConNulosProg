@@ -126,12 +126,8 @@ namespace CapaPresentacion
             {
                 foreach (var telefono in telefonos)
                 {
-<<<<<<< HEAD
 
                     cboTelefonos.Items.Add($"{telefono.Numero}: {telefono.Descripcion}");
-=======
-                    cboTelefonos.Items.Add(telefono);
->>>>>>> 74cdb057857c79e162037fb64e8607481ab77f61
                 }
             }
             else
@@ -373,7 +369,6 @@ namespace CapaPresentacion
 
         }
 
-<<<<<<< HEAD
         private void frmDarAltaContacto_Load_1(object sender, EventArgs e)
         {
             CrearCards();
@@ -431,32 +426,6 @@ namespace CapaPresentacion
         {
             QuitarHoverEliminarTelefono();
 
-=======
-        private void frmDarAltaContacto_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (cboTelefonos.SelectedIndex==-1) {
-                MessageBox.Show("Debes seleccionar un teléfono");
-                return;
-            }
-            else
-            {
-                try
-                {
-                    telefonos.Remove((Telefonos) cboTelefonos.SelectedItem);
-                    ActualizarTelefonos();
-                }
-                catch 
-                {
-                    MessageBox.Show("No se ha podido eliminar el telefono");
-                }
-                
-            }
->>>>>>> 74cdb057857c79e162037fb64e8607481ab77f61
         }
     }
 }
